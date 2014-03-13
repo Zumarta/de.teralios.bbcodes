@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
+	<category name="wcf.bbcode">
+		<item name="wcf.bbcode.button.heading"><![CDATA[Heading]]></item>
+		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Cons List]]></item>
+		<item name="wcf.bbcode.button.subheading"><![CDATA[Subheading]]></item>
+		<item name="wcf.bbcode.heading.share"><![CDATA[Share anchor]]></item>
+		<item name="wcf.bbcode.proContra"><![CDATA[Pros & cons]]></item>
+	</category>
+</language>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/bbcode.xsd">
+	<import>
+		<bbcode name="heading">
+			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+			<wysiwygicon>heading.png</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.heading</buttonlabel>
+			<allowedchildren>none</allowedchildren>
+		</bbcode>
+		<bbcode name="subheading">
+			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+			<wysiwygicon>subheading.png</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
+			<allowedchildren>none</allowedchildren>
+		</bbcode>
+		<bbcode name="procontra">
+			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^.+$</validationpattern>
+				</attribute>
+			</attributes>
+			<wysiwygicon>procontra.png</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
+			<allowedchildren>none^b,i,u,s,sub,sup,color,font,size,url</allowedchildren>
+		</bbcode>
+		<bbcode name="xattach">
+			<classname><![CDATA[wcf\system\bbcode\XAttachBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>1</required>
+					<validationpattern>^[0-9]+$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(left|right)$</validationpattern>
+				</attribute>
+			</attributes>
+			<allowedchildren>none^b,i,u,s,sub,sup,color,font,url</allowedchildren>
+		</bbcode>
+	</import>
+</data>

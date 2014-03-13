@@ -1,0 +1,78 @@
+/* de.teralios.tjs.bbcodes
+@author	Karsten (Teralios) Achterrath
+@license GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+*/
+.proContraBox {
+	.icon-pro {
+		color: rgba(0,204,0,1);
+	}
+
+	.icon-contra {
+		color: rgba(204,0,0,1);
+	}
+}
+
+.proContraBoxContent {
+	div {
+		&:nth-child(odd) {
+			background-color: @wcfContainerBackgroundColor;
+		}
+	
+		&:nth-child(even) {
+			background-color: @wcfContainerAccentBackgroundColor;
+		}
+	
+		&:hover {
+			background-color: @wcfContainerHoverBackgroundColor;
+		}
+	}
+}
+
+.headingBBCode .subheadingBBCode {
+	font-weight: bold;
+	margin: 0.5em 0;
+}
+
+.headingBBCode {
+	font-size: @wcfSubHeadlineFontSize;
+}
+
+.subheadingBBCode {
+	font-size: @wcfTitleFontSize;
+}
+
+.xAttachBBCode {
+	border: 1px solid @wcfContainerBorderColor;
+	max-width: (280 + (@wcfGapSmall * 2));
+	
+	div {
+		padding: @wcfGapSmall;
+		font-size: @wcfSmallFontSize;
+		
+		&:first-child {
+			background-color: @wcfContainerBackgroundColor;
+			text-align: center;
+			overflow: hidden;
+		}
+		
+		&:nth-child(2) {
+			background-color: @wcfContainerAccentBackgroundColor;
+		}
+		
+		&:hover {
+			background-color: @wcfContainerHoverBackgroundColor;
+		}
+	}
+}
+
+.xAttachLeft {
+	float: left;
+	margin-right: @wcfGapSmall;
+	margin-bottom: (@wcfGapSmall * 2);	
+}
+
+.xAttachRight {
+	float: right;
+	margin-left: @wcfGapSmall;
+	margin-bottom: (@wcfGapSmall * 2);	
+}

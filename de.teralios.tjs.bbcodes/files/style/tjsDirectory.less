@@ -1,0 +1,33 @@
+/* de.teralios.tjs.bbcodes
+@author	Karsten (Teralios) Achterrath
+@license GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+*/
+
+#directoryParseJS {
+	display: none;	
+}
+
+.directoryFull {
+	overflow: hidden;
+		
+	div:nth-child(2) {
+		background-color: @wcfContainerBackgroundColor;
+		padding: @wcfGapSmall;
+	}
+		
+	ul {
+		list-style: none;
+			
+		li {
+			font-size: @wcfSubHeadlineFontSize;
+			
+			ul {
+				margin-left: (3 * @wcfGapMedium);
+				
+				li {
+					font-size: @wcfTitleFontSize;
+				}
+			}
+		}
+	}
+}
