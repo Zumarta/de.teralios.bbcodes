@@ -6,5 +6,3 @@ heading, subheading, procontra, xattach.
 Licence
 -------
 This package is free software and puplished unter the GNU General Pupblic Licence v3.0.
-
-
