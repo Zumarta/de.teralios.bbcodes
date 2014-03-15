@@ -41,7 +41,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		}
 		else {
 			// simple description.
-			$xAttach = $attachmentLink.'('.$description.')';
+			$xAttach = $attachmentLink.' ('.$description.')';
 		}
 		
 		return $xAttach;

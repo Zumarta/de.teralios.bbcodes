@@ -27,44 +27,25 @@ class HeadingBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$tag = mb_strtolower($openingTag['name']);
-		switch ($tag) {
-			case 'heading':
-				$tag = 'h2';
-				$css = ' class="headingBBCode"';
-				break;
-			default:
-				$tag = 'h3';
-				$css = ' class="subheadingBBCode"';
-				break;
-		}
-		
-		if ($parser->getOutputType() == 'text/html' && !empty($openingTag['attributes'][0])) {
-			$jumpMark = $openingTag['attributes'][0];
-			$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
-			$jumpMarkID = ' id="'.$jumpMark.'"';
-		}
-		else {
-			$jumpMark = '';
-			$jumpMarkLink = '';
-			$jumpMarkID = '';
-		}
-		
-		$return = '';
 		
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
-			if (!empty($jumpMark)) {
-				switch ($tag) {
-					case 'h2':
-						JumpMarkMap::getInstance()->addJumpMark($jumpMark, $content);
-						break;
-					case 'h3':
-						JumpMarkMap::getInstance()->addJumpMark($jumpMark, $content, true);
-						break;
-				}
+			if (!empty($openingTag['attributes'][0])) {
+				$jumpMark = $openingTag['attributes'][0];
+				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
+				JumpMarkMap::getInstance()->addJumpMark($jumpMark, $content, (($tag == 'heading') ? false : true));
+			}
+			else {
+				$jumpMark = '';
 			}
 			
-			$return = '<'.$tag.$css.$jumpMarkID.'>'.$content.'</'.$tag.'>';
+			WCF::getTPL()->assign(array(
+				'tag' => $tag,
+				'jumpMark' => $jumpMark,
+				'heading' => $content
+			));
+			
+			$return = WCF::getTPL()->fetch('headingBBCode');
 		}
 		// heading and subheading in simpleified-html.
 		else if ($parser->getOutputType('text/simplified-html')) {
