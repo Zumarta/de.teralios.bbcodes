@@ -5,6 +5,7 @@ namespace wcf\system\bbcode;
 // imports
 use wcf\system\jumpmark\JumpMarkMap;
 use wcf\system\WCF;
+use wcf\util\StringUtil;
 
 /**
  * Parse heading and subheading tag.
@@ -33,7 +34,7 @@ class HeadingBBCode extends AbstractBBCode {
 			if (!empty($openingTag['attributes'][0])) {
 				$jumpMark = $openingTag['attributes'][0];
 				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
-				JumpMarkMap::getInstance()->addJumpMark($jumpMark, $content, (($tag == 'heading') ? false : true));
+				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true)); // i can use {@$var} in a templalate as alternative way...
 			}
 			else {
 				$jumpMark = '';
