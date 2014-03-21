@@ -3,7 +3,7 @@
 		<legend>{lang}wcf.directory.title{/lang}</legend>
 		<div>
 			<ol class="sidebarNestedCategoryList">
-				{foreach from=$teraDirectory imte=$jumpMark}
+				{foreach from=$teraDirectory item=$jumpMark}
 					{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
 						<li>
 							{if $jumpMark->existsJumpMark()}
