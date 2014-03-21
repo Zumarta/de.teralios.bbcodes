@@ -4,7 +4,7 @@
 		<packagename>Teralios' Journal System - BBCodes</packagename>
 		<packagedescription>BBCodes for Teralios' Journal System.</packagedescription>
 		<version>1.1.0</version>
-		<date>2014-03-03</date>
+		<date>2014-03-21</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -13,7 +13,7 @@
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="2.0.3">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="2.0.4">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
