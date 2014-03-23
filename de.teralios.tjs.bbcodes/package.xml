@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package name="de.teralios.tjs.bbcodes" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
-		<packagename>Teralios' Journal System - BBCodes</packagename>
-		<packagedescription>BBCodes for Teralios' Journal System.</packagedescription>
+		<packagename>Teralios' BBCodes</packagename>
+		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>1.1.0 Beta 1</version>
 		<date>2014-03-21</date>
 	</packageinformation>
@@ -27,6 +27,10 @@
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.1.0 Beta 1">
 		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
