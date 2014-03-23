@@ -1,7 +1,7 @@
 var Tera = { };
 
-Tera.Directory = Class.extend({
-	_id = '',
+Tera.Directory = {
+	_id: '',
 	
 	init: function(id) {
 		if (id.substring(0, 1) != '#') {
@@ -17,4 +17,4 @@ Tera.Directory = Class.extend({
 		$(this._id).append($('#jsDirectory').contents());
 		$(this._id).show();
 	}
-});
+};

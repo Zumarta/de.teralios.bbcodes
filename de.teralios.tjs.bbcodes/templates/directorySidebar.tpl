@@ -6,7 +6,7 @@
 				{foreach from=$teraDirectory item=$jumpMark}
 					{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
 						<li>
-							{if $jumpMark->existsJumpMark()}
+							{if $jumpMark->existJumpMark()}
 								<a href="{$jumpMark->getJumpMark()->getLink()}">{$jumpMark->getJumpMark()->getTitle()}</a>
 							{/if}
 							{if $jumpMark->hasJumpMarks()}

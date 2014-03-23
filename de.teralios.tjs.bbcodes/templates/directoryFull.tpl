@@ -13,7 +13,7 @@
 								{if $jumpMark->hasJumpMarks()}
 									<ol>
 										{foreach from=$jumpMark item=$subJumpMark}
-											<li><a href="{$subJumpMark->getJumpMark()->getLink()}">{$subJumpMark->getJumpMark()->getTitle()}</a></li>
+											<li><span class="icon icon16 icon-caret-right"></span> <a href="{$subJumpMark->getJumpMark()->getLink()}">{$subJumpMark->getJumpMark()->getTitle()}</a></li>
 										{/foreach}
 									</ol>
 								{/if}

@@ -4,7 +4,10 @@
 		<item name="wcf.bbcode.button.heading"><![CDATA[Heading]]></item>
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Cons List]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Subheading]]></item>
-		<item name="wcf.bbcode.heading.share"><![CDATA[Share anchor]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pros & cons]]></item>
+	</category>
+	<category name="wcf.directory">
+		<item name="wcf.directory.share"><![CDATA[Share anchor]]></item>
+		<item name="wcf.directory.title"><![CDATA[Directory]]></item>
 	</category>
 </language>
