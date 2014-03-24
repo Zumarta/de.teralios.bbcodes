@@ -22,33 +22,9 @@ class ProContraBBCode extends AbstractBBCode {
 		$points = array('contra' => array(), 'neutral' => array(), 'pro' => array());
 		
 		// split on \n and <br />
-		$elements = explode('<br />', $content);
+		$elements = preg_split('#\[(+|-|*)\]#', $elements, -1,PREG_SPLIT_DELIM_CAPTURE);
 		if (count($elements) > 0) {
-			foreach ($elements AS $point) {
-				$point = \wcf\util\StringUtil::trim($point);
-				$length = mb_strlen($point);
-				if ($length == 0) {
-					continue;
-				}
-				
-				$start = $point{0};
-				$content = \wcf\util\StringUtil::trim(mb_substr($point, 1));
-				$contentLength = $length - 1;
-				switch ($start) {
-					case '+':
-						if ($contentLength > 0) {
-							$points['pro'][] = $content;
-						}
-						break;
-					case '-':
-						if ($contentLength > 0) {
-							$points['contra'][] = $content;
-						}
-						break;
-					default:
-						$points['neutral'][] = $point;
-				}
-			}
+			// @todo rework
 		}
 	
 		if ($parser->getOutputType() == 'text/html') {
