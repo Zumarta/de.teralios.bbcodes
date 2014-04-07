@@ -22,7 +22,7 @@ class ProContraBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$title = (isset($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
-		$oldStyle = (isset($openingTag['attributes'][1]) && $openingTag['attributes'][1] == 1) ? 'old' : 0;
+		$oldStyle = (isset($openingTag['attributes'][1]) && $openingTag['attributes'][1] == 1) ? 'old' : 'new';
 		
 		if (preg_match(self::PATTERN, $content)) {
 			// split on [+] [-] or [*]
