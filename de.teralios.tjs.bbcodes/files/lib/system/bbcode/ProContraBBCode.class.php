@@ -22,6 +22,8 @@ class ProContraBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$title = (isset($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
+		$oldStyle = (isset($openingTag['attributes'][1]) && $openingTag['attributes'][1] == 1) ? 'old' : 0;
+		
 		if (preg_match(self::PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();
@@ -61,14 +63,20 @@ class ProContraBBCode extends AbstractBBCode {
 			}
 			WCF::getTPL()->assign(array(
 				'title' => $title,
-				'points' => $points
+				'points' => $points,
+				'proContraStyle' => $oldStyle
 			));
-			$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 		}
 		else {
-			// no valid list
-			$return = $openingTag['source'].$content.$closingTag['source'];
+			WCF::getTPL()->assign(array(
+				'title' => $title,
+				'points' => array(),
+				'content' => $content
+			));
 		}
+		
+		// @todo simple html.
+		$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 		
 		return $return;
 	}

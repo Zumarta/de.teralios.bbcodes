@@ -32,6 +32,10 @@
 					<required>0</required>
 					<validationpattern>^.+$</validationpattern>
 				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^[10]{1}$</validationpattern>
+				</attribute>
 			</attributes>
 			<wysiwygicon>procontra.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
