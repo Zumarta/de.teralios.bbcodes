@@ -27,7 +27,7 @@ class ProContraBBCode extends AbstractBBCode {
 		if (preg_match(self::PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();
-			$elements = preg_split('#\[([+-\\\*])\]#', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+			$elements = preg_split(self::PATTERN, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
 			
 			// remove first element.
 			unset($elements[0]);
