@@ -1,10 +1,10 @@
 {if $teraDirectory|isset && $teraDirectory->hasJumpMarks() || $teraJSCall|isset == false}
 	<div id="jsDirectory">
-	{if $teraDirectoryType|isset && $teraDirectoryType == 'sidebar'}
-		{include file='directorySidebar' application='wcf'}
-	{else}
-		{include file='directoryFull' application='wcf'}
-	{/if}
+		{if $teraDirectoryType|isset && $teraDirectoryType == 'sidebar'}
+			{include file='directorySidebar' application='wcf'}
+		{else}
+			{include file='directoryFull' application='wcf'}
+		{/if}
 	</div>
 	<script data-relocate="true" src="{@$__wcf->getPath()}js/Tera.Directory{if !ENABLE_DEBUG_MODE}.min{/if}.js?v={@$__wcfVersion}"></script>
 	<script data-relocate="true">
