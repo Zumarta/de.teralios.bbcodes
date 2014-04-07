@@ -2,7 +2,7 @@
 @author	Karsten (Teralios) Achterrath
 @license GNU General Public License <http://opensource.org/licenses/gpl-license.php>
 */
-.proContraBox {
+.proContraBBCode {
 	.icon-pro {
 		color: rgba(0,204,0,1);
 	}
@@ -10,20 +10,35 @@
 	.icon-contra {
 		color: rgba(204,0,0,1);
 	}
-}
-
-.proContraBoxContent {
-	div {
-		&:nth-child(odd) {
-			background-color: @wcfContainerBackgroundColor;
-		}
 	
-		&:nth-child(even) {
-			background-color: @wcfContainerAccentBackgroundColor;
+	.content {
+		div {
+			padding: @wcfGapSmall;
+		
+			&:nth-child(odd) {
+				background-color: @wcfContainerBackgroundColor;
+			}
+		
+			&:nth-child(even) {
+				background-color: @wcfContainerAccentBackgroundColor;
+			}
+		
+			&:hover {
+				background-color: @wcfContainerHoverBackgroundColor;
+			}
 		}
+	}
 	
-		&:hover {
-			background-color: @wcfContainerHoverBackgroundColor;
+	.styleNew {
+		.proAndContra {
+			.pro {
+				width: 49%;
+				float: left;
+			}
+			
+			.contra {
+				margin-left: 50%;
+			}
 		}
 	}
 }
