@@ -11,7 +11,8 @@
 		//<![CDATA[
 		$(function(){
 			var id = '{if $teraDirectoryID|isset}{$teraDirectoryID}{else}#directoryJSPlaceholder{/if}';
-			Tera.Directory.init(id);
+			var addClass = '{if $teraDirectoryClassAdd|isset}{$teraDirectoryClassAdd}{/if}'
+			Tera.Directory.init(id, addClass);
 		});
 		//]]>
 	</script>
