@@ -5,6 +5,9 @@
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Contras]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Überschrift 2]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
+		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
+		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
+Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der Pro-Contra-Liste muss diesem ein [+][-] oder [*] voran geststellt werden]]></item>
 	</category>
 	<category name="wcf.directory">
 		<item name="wcf.directory.share"><![CDATA[Anker teilen]]></item>

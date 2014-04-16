@@ -5,6 +5,9 @@
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Cons]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Subheading]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pros & cons]]></item>
+		<item name="wcf.bbcode.proContra.empty"><![CDATA[No points]]></item>
+		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, the bbcode is use with the old syntax.<br />
+The syntax has change. For every new point in the list, use the prefix [+][-] or [*].]]></item>
 	</category>
 	<category name="wcf.directory">
 		<item name="wcf.directory.share"><![CDATA[Share anchor]]></item>
