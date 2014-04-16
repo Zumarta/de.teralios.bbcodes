@@ -10,7 +10,7 @@ use wcf\system\WCF;
  *
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
- * @license	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  * @package de.teralios.tjs.bbcodes
  */
 class JumpMark {

@@ -7,4 +7,4 @@ Also a default implementation of a directory, when content use bbcodes (heading 
 
 Licence
 -------
-This package is free software and puplished under the GNU General Pupblic Licence v3.0.
+This package is free software and puplished under the GNU Lesser General Pupblic Licence v3.0.
