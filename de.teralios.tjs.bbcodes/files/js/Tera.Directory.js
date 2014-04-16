@@ -24,11 +24,15 @@ Tera.Directory = {
 	},
 	
 	parse: function() {
-		var directory = $(this._id);
-		directory.append($('#jsDirectory').contents());
-		if (this._addClass) {
-			directory.addClass(addClass);
+		var htmlSource = $('#directoryJS').contents();
+		var placeHolder = $(this._id);
+	
+		if (htmlSource.length > 1) {
+			placeHolder.append(htmlSource);
+			if (this._addClass) {
+				placeHolder.addClass(this._addClass);
+			}
+			placeHolder.show();
 		}
-		directory.show();
 	}
 };
