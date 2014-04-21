@@ -1,6 +1,6 @@
 {if $teraDirectory|isset && $teraDirectory->hasJumpMarks() || $teraJSCall|isset == false}
 	<div id="directoryJS">
-		{if $teraDirectoryType|isset && $teraDirectoryType == 'sidebar'}
+		{if $directoryType|isset && $teraDirectoryType == 'sidebar'}
 			{include file='directorySidebar' application='wcf'}
 		{else}
 			{include file='directoryFull' application='wcf'}
@@ -10,8 +10,8 @@
 	<script data-relocate="true">
 		//<![CDATA[
 		$(function(){
-			var id = '{if $teraDirectoryID|isset}{$teraDirectoryID}{else}#directoryJSPlaceholder{/if}';
-			var addClass = '{if $teraDirectoryClassAdd|isset}{$teraDirectoryClassAdd}{/if}';
+			var id = '{if $directoryID|isset}{$directoryID}{else}#directoryJSPlaceholder{/if}';
+			var addClass = '{if $directoryAddClass|isset}{$directoryAddClass}{/if}';
 			Tera.Directory.init(id, addClass);
 		});
 		//]]>
