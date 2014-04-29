@@ -1,9 +1,9 @@
-{if $teraDirectory|isset && $teraDirectory->hasJumpMarks()}
+{if $directory|isset && $directory->hasJumpMarks()}
 	<fieldset class="dashboardBox">
 		<legend>{lang}wcf.directory.title{/lang}</legend>
 		<div>
 			<ol class="sidebarNestedCategoryList">
-				{foreach from=$teraDirectory item=$jumpMark}
+				{foreach from=$directory item=$jumpMark}
 					{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
 						<li>
 							{if $jumpMark->existJumpMark()}

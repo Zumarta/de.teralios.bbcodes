@@ -1,6 +1,6 @@
-{if $teraDirectory|isset && $teraDirectory->hasJumpMarks() || $teraJSCall|isset == false}
+{if $directory|isset && $directory->hasJumpMarks() || $teraJSCall|isset == false}
 	<div id="directoryJS">
-		{if $directoryType|isset && $teraDirectoryType == 'sidebar'}
+		{if $directoryType|isset && $directoryType == 'sidebar'}
 			{include file='directorySidebar' application='wcf'}
 		{else}
 			{include file='directoryFull' application='wcf'}

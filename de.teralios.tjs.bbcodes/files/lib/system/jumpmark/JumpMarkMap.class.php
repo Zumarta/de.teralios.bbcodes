@@ -51,7 +51,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
-		WCF::getTPL()->assign('teraDirectory', $this);
+		WCF::getTPL()->assign('directory', $this);
 	}
 	
 	/**

@@ -6,7 +6,9 @@
  * @license		GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  * @package		de.teralios.tjs.bbcodes
  */
-var Tera = { };
+if (!Tera) {
+	var Tera = { };
+}
 
 Tera.Directory = {
 	_id: '',
