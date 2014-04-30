@@ -1,4 +1,6 @@
-{if $directory|isset && $directory->hasJumpMarks() || $teraJSCall|isset == false}
+{if $teraDirectoryID|isset}{assign var='directoryID' value=$teraDirectoryID}
+{if $teraDirectoryType|isset}{assign var='directoryType' value=$teraDirectoryType}
+{if $directory|isset && $directory->hasJumpMarks() || $directoryJSCall|isset == false}
 	<div id="directoryJS">
 		{if $directoryType|isset && $directoryType == 'sidebar'}
 			{include file='directorySidebar' application='wcf'}
@@ -16,5 +18,5 @@
 		});
 		//]]>
 	</script>
-	{assign var='teraJSCall' value=true}
+	{assign var='directoryJSCall' value=true}
 {/if}
