@@ -31,8 +31,8 @@
 
 	<instructions type="update" fromversion="1.1.1">
 		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
-		<instruction type="template">templates.tar</instruction>
 	</instructions>
 </package>
