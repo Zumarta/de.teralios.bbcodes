@@ -15,6 +15,12 @@
 	<requiredpackages>
 		<requiredpackage minversion="2.0.4">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
+	
+	<excludedPackages>
+		<excludepackage versions="*">de.teralios.wbb.jumpMarks</excludepackage>
+		<excludepackage versions="1.1.0">de.teralios.wbb.directory</excludepackage>
+		<excludepackage versions="1.1.0">de.teralios.blog.directory</excludepackage>
+	</excludedPackages>
 
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>
