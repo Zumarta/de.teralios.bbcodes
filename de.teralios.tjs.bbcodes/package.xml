@@ -17,9 +17,9 @@
 	</requiredpackages>
 	
 	<excludedPackages>
-		<excludepackage versions="*">de.teralios.wbb.jumpMarks</excludepackage>
-		<excludepackage versions="1.1.0">de.teralios.wbb.directory</excludepackage>
-		<excludepackage versions="1.1.0">de.teralios.blog.directory</excludepackage>
+		<excludepackage version="*">de.teralios.wbb.jumpMarks</excludepackage>
+		<excludepackage version="1.1.0">de.teralios.wbb.directory</excludepackage>
+		<excludepackage version="1.1.0">de.teralios.blog.directory</excludepackage>
 	</excludedPackages>
 
 	<instructions type="install">
