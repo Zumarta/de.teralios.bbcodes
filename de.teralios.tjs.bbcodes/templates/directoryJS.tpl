@@ -1,5 +1,5 @@
-{if $teraDirectoryID|isset}{assign var='directoryID' value=$teraDirectoryID}
-{if $teraDirectoryType|isset}{assign var='directoryType' value=$teraDirectoryType}
+{if $teraDirectoryID|isset}{assign var='directoryID' value=$teraDirectoryID}{/if}
+{if $teraDirectoryType|isset}{assign var='directoryType' value=$teraDirectoryType}{/if}
 {if $directory|isset && $directory->hasJumpMarks() || $directoryJSCall|isset == false}
 	<div id="directoryJS">
 		{if $directoryType|isset && $directoryType == 'sidebar'}
