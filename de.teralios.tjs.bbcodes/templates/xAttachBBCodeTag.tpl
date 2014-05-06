@@ -1,3 +1,4 @@
+<!-- xAttach BBCode is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 {if $xAttachCSS|isset == false && $xAttachSize|isset && $xAttachSize > 0}
 	<style type="text/css">
 		.xAttachBBCode {

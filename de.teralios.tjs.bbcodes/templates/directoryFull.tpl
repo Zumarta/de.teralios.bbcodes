@@ -1,5 +1,6 @@
 {if $directory|isset}
 	{if $directory->hasJumpMarks()}
+		<!-- directory is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 		<div class="directoryFull tabularBox">
 			<div class="tabularBoxTitle"><header><h2>{lang}wcf.directory.title{/lang}</h2></header></div>
 			<div>

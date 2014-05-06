@@ -1,3 +1,4 @@
+<!-- heading and subheading BBCode are parts of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 <{if $tag == 'heading'}h2 class="headingBBCode"{else}h3 class="subheadingBBCode"{/if}{if $jumpMark|empty == false} id="{$jumpMark}"{/if}>
 	{@$heading}
 	{if $jumpMark|empty == false}

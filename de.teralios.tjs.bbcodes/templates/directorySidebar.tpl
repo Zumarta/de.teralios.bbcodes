@@ -1,4 +1,5 @@
 {if $directory|isset && $directory->hasJumpMarks()}
+	<!-- sidebar directory is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 	<fieldset class="dashboardBox">
 		<legend>{lang}wcf.directory.title{/lang}</legend>
 		<div>
