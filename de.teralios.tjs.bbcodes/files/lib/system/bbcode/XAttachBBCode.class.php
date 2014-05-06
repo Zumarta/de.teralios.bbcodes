@@ -35,7 +35,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		if ($parser->getOutputType() == 'text/html') {
 			// new size
 			if (ATTACHMENT_THUMBNAIL_WIDTH != 280) {
-				$width = ATTACHMENT_THUMBNAIL_WIDTH + (str_replace('px', '', StyleHandler::getStyle()->getVariable('wcfGapTiny')));
+				$width = ATTACHMENT_THUMBNAIL_WIDTH + (str_replace('px', '', StyleHandler::getInstance()->getStyle()->getVariable('wcfGapTiny')) * 2);
 				WCF::getTPL()->assign('xAttachSize', $width);
 			}
 			

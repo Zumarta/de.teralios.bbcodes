@@ -82,12 +82,12 @@
 /** CSS for xattach bbcode */
 .xAttachBBCode {
 	border: 1px solid @wcfContainerBorderColor;
-	max-width: (280 + (@wcfGapTiny * 2));
+	max-width: (280 + ((@wcfGapTiny) * 2));
+	text-align: center;
 	
 	div {
-		padding: @wcfGapSmall;
+		padding: @wcfGapTiny;
 		font-size: @wcfSmallFontSize;
-		text-align: center;
 		
 		&:first-child {
 			background-color: @wcfContainerBackgroundColor;
