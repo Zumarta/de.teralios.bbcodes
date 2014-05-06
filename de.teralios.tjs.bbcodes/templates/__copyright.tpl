@@ -1,0 +1,1 @@
+{if $proContraDevNote|isset || $directoryDevNote|isset}<address class="copyright marginTop">{lang}wcf.teralios.bbcodes.devNote{/lang}</address>{/if}
