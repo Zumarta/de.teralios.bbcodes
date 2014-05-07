@@ -1,4 +1,4 @@
-{if $proContraDevNote|isset || $directoryDevNote|isset}
+{if ($proContraDevNote|isset || $directoryDevNote|isset) && $tjsShowDevNote|isset}
 	<address class="copyright marginTop">
 		{if $proContraDevNote|isset && $directoryDevNote|isset}
 			{lang}wcf.teralios.bbcodes.devNote{/lang}

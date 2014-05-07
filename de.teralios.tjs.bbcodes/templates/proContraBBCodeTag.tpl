@@ -9,6 +9,7 @@
 	{else}
 		<div class="content {if $proContraStyle|isset && $proContraStyle == 'old'}styleOld{else}styleNew{/if}">
 			{if ($points['pro']|isset && $points['pro']|count) || ($points['contra']|isset && $points['contra']|count)}
+				{if $proContraStyle|isset == false || $proContraStyle != 'old'}<div>{/if}
 				{if $points['pro']|isset && $points['pro']|count}
 					{if $proContraStyle|isset && $proContraStyle == 'old'}<div>{/if}
 					<ul class="pro">
@@ -27,12 +28,13 @@
 					</ul>
 					{if $proContraStyle|isset && $proContraStyle == 'old'}</div>{/if}
 				{/if}
+				{if $proContraStyle|isset == false || $proContraStyle != 'old'}</div>{/if}
 			{/if}
 			{if $points['neutral']|isset && $points['neutral']|count}
 				<div>
 					<ul class="neutral">
 						{foreach from=$points['neutral'] item=$point}
-							<li><span class="icon icon16 icon-question-sign"></span> {@$point}</li>
+							<li><span class="icon icon16 icon-play-sign"></span> {@$point}</li>
 						{/foreach}
 					</ul>
 				</div>
