@@ -78,6 +78,9 @@ class ProContraBBCode extends AbstractBBCode {
 		// @todo simple html.
 		$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 		
+		// test copyright
+		WCF::getTPL()->assign('proContraDevNote', true);
+		
 		return $return;
 	}
 }

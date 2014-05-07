@@ -34,7 +34,10 @@ class HeadingBBCode extends AbstractBBCode {
 			if (!empty($openingTag['attributes'][0])) {
 				$jumpMark = $openingTag['attributes'][0];
 				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
-				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true)); // i can use {@$var} in a templalate as alternative way...
+				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+				
+				// test copyright
+				WCF::getTPL()->assign('directoryDevNote', true);
 			}
 			else {
 				$jumpMark = '';
@@ -59,7 +62,7 @@ class HeadingBBCode extends AbstractBBCode {
 					break;
 			}
 		}
-		
+			
 		// return
 		return $return;
 	}
