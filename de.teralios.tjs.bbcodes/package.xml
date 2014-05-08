@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>1.2.0</version>
-		<date>2014-05-05</date>
+		<version>1.2.1</version>
+		<date>2014-05-08</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -25,7 +25,14 @@
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction><!-- Test!!! -->
+		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.2.0">
+		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
+		<instruction type="language">language/*.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 
 	<instructions type="update" fromversion="1.1.1">
@@ -33,6 +40,7 @@
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.1.0">
@@ -40,5 +48,6 @@
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 </package>
