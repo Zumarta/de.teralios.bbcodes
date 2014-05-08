@@ -35,9 +35,6 @@ class HeadingBBCode extends AbstractBBCode {
 				$jumpMark = $openingTag['attributes'][0];
 				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
 				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
-				
-				// test copyright
-				WCF::getTPL()->assign('directoryDevNote', true);
 			}
 			else {
 				$jumpMark = '';

@@ -48,6 +48,13 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	protected $currentCounter = 0;
 	
 	/**
+	 * Dev note is set.
+	 * 
+	 * @var	boolean
+	 */
+	protected $devNoteIsSet = false;
+	
+	/**
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
@@ -98,6 +105,12 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return boolean
 	 */
 	public function hasJumpMarks() {
+		// set dev note.
+		if ($this->devNoteIsSet == false) {
+			$this->devNoteIsSet = true;
+			WCF::getTPL()->assign('directoryDevNote', true);
+		}
+		
 		return ($this->count() > 0) ? true : false;
 	}
 
