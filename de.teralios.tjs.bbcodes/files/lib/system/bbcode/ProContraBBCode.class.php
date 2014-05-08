@@ -15,7 +15,7 @@ use wcf\util\StringUtil;
  * @package de.teralios.tjs.bbcodes
  */
 class ProContraBBCode extends AbstractBBCode {
-	const PATTERN = '#\[([+-\\\*])\]#';
+	const SPLIT_PATTERN = '#\[([+-\\\*])\]#';
 
 	/**
 	 * @see	\wcf\system\bbcode\IBBCode::getParsedTag()
@@ -24,10 +24,10 @@ class ProContraBBCode extends AbstractBBCode {
 		$title = (isset($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
 		$oldStyle = (isset($openingTag['attributes'][1]) && $openingTag['attributes'][1] == 1) ? 'old' : 'new';
 		
-		if (preg_match(self::PATTERN, $content)) {
+		if (preg_match(self::SPLIT_PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();
-			$elements = preg_split(self::PATTERN, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+			$elements = preg_split(self::SPLIT_PATTERN, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
 			
 			// remove first element.
 			unset($elements[0]);
@@ -40,7 +40,7 @@ class ProContraBBCode extends AbstractBBCode {
 				while ($i < $count) {
 					$value = StringUtil::trim($elements[($i + 1)]);
 					if (!empty($value) && $value != '<br />') {
-						$pairs[] = array('sign' => $elements[$i], 'value' => $elements[($i + 1)]);
+						$pairs[] = array('sign' => $elements[$i], 'value' => $value);
 					}
 					$i =  $i+2;
 				}
