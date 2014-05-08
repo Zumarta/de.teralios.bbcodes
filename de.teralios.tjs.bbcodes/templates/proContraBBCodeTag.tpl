@@ -9,30 +9,28 @@
 	{else}
 		<div class="content {if $proContraStyle|isset && $proContraStyle == 'old'}styleOld{else}styleNew{/if}">
 			{if ($points['pro']|isset && $points['pro']|count) || ($points['contra']|isset && $points['contra']|count)}
-				{if $points['pro']|isset && $points['pro']|count}
-					{if $proContraStyle|isset && $proContraStyle == 'old'}<div>{/if}
-					<ul class="pro">
-						{foreach from=$points['pro'] item=$point}
-							<li><span class="icon icon16 icon-plus-sign"></span> {@$point}</li>
-						{/foreach}
-					</ul>
-					{if $proContraStyle|isset && $proContraStyle == 'old'}</div>{/if}
-				{/if}
-				{if $points['contra']|isset && $points['contra']|count}
-					{if $proContraStyle|isset && $proContraStyle == 'old'}<div>{/if}
-					<ul class="contra">
-						{foreach from=$points['contra'] item=$point}
-							<li><span class="icon icon16 icon-minus-sign"></span> {@$point}</li>
-						{/foreach}
-					</ul>
-					{if $proContraStyle|isset && $proContraStyle == 'old'}</div>{/if}
-				{/if}
+				<div>
+					{if $points['pro']|isset && $points['pro']|count}
+						<ul class="pro">
+							{foreach from=$points['pro'] item=$point}
+								<li><span class="icon icon16 icon-plus-sign"></span> {@$point}</li>
+							{/foreach}
+						</ul>
+					{/if}
+					{if $points['contra']|isset && $points['contra']|count}
+						<ul class="contra">
+							{foreach from=$points['contra'] item=$point}
+								<li><span class="icon icon16 icon-minus-sign"></span> {@$point}</li>
+							{/foreach}
+						</ul>
+					{/if}
+				</div>
 			{/if}
 			{if $points['neutral']|isset && $points['neutral']|count}
 				<div>
 					<ul class="neutral">
 						{foreach from=$points['neutral'] item=$point}
-							<li><span class="icon icon16 icon-question-sign"></span> {@$point}</li>
+							<li><span class="icon icon16 icon-play-sign"></span> {@$point}</li>
 						{/foreach}
 					</ul>
 				</div>
