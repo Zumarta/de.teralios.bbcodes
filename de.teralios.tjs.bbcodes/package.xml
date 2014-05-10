@@ -3,7 +3,7 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>1.2.1</version>
+		<version>1.2.2</version>
 		<date>2014-05-09</date>
 	</packageinformation>
 	
@@ -26,6 +26,11 @@
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.2.1">
+		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.2.0">

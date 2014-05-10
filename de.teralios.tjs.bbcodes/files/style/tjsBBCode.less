@@ -9,19 +9,48 @@
 .proContraBBCode {
 	.pro {
 		.icon {
-			color: rgba(0,204,0,1) !important;
+			color: rgba(0,204,0,1);
+		}
+		
+		li:hover {
+			color: rgba(0,127,0,1);
+			background-color: rgba(0,255,0,0.1);
+			
+			.icon {
+				color: rgba(0,127,0,1);
+			}
 		}
 	}
 
 	.contra {
 		.icon {
-			color: rgba(204,0,0,1) !important;
+			color: rgba(204,0,0,1);
+		}
+		
+		li:hover {
+			color: rgba(128,0,0,1);
+			background-color: rgba(255,0,0,0.1);
+			
+			.icon {
+				color: rgba(128,0,0,1);
+			}
 		}
 	}
 	
 	.neutral {
 		.icon {
-			color: rgba(127,127,127,1) !important;
+			color: rgba(127,127,127,1);
+		}
+		
+		li {
+			&:hover {
+				color: rgba(0,0,0,1);
+				background-color: rgba(0,0,0,0.1);	
+			
+				.icon {
+					color: rgba(0,0,0,1);
+				}
+			}
 		}
 	}
 	
@@ -40,15 +69,20 @@
 	}
 	
 	li {
-		display: table-row;
+		width: 100%;
+		margin-top: @wcfGapTiny;
+		padding: @wcfGapTiny;
 		
-		&:hover {
-				background-color: @wcfContainerHoverBackgroundColor;
+		&:first-child {
+			margin-top: 0 !important;
 		}
 		
-		span {
-			display: table-cell;
-			width: 25px;
+		div {
+			display: table-row;
+			span {
+				display: table-cell;
+				width: 20px;
+			}
 		}
 	}
 	

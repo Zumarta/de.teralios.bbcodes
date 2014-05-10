@@ -13,14 +13,14 @@
 					{if $points['pro']|isset && $points['pro']|count}
 						<ul class="pro">
 							{foreach from=$points['pro'] item=$point}
-								<li><span class="icon icon16 icon-plus-sign"></span> {@$point}</li>
+								<li><div><span class="icon icon16 icon-plus-sign"></span> {@$point}</div></li>
 							{/foreach}
 						</ul>
 					{/if}
 					{if $points['contra']|isset && $points['contra']|count}
 						<ul class="contra">
 							{foreach from=$points['contra'] item=$point}
-								<li><span class="icon icon16 icon-minus-sign"></span> {@$point}</li>
+								<li><div><span class="icon icon16 icon-minus-sign"></span> {@$point}</div></li>
 							{/foreach}
 						</ul>
 					{/if}
@@ -31,7 +31,7 @@
 				<div>
 					<ul class="neutral">
 						{foreach from=$points['neutral'] item=$point}
-							<li><span class="icon icon16 icon-play-sign"></span> {@$point}</li>
+							<li><div><span class="icon icon16 icon-play-sign"></span> {@$point}</div></li>
 						{/foreach}
 					</ul>
 				</div>
