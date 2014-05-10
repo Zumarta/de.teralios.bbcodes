@@ -6,50 +6,53 @@
  * @license GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  */
 /* CSS for procontra bbcode */
+/*
+This all is not optimize for dark styles...
+*/
 .proContraBBCode {
 	.pro {
 		.icon {
-			color: rgba(0,204,0,1);
+			color: @wcfSuccessBackgroundColor;
 		}
 		
 		li:hover {
-			color: rgba(0,127,0,1);
-			background-color: rgba(0,255,0,0.1);
+			color: @wcfSuccessColor;
+			background-color: @wcfSuccessBackgroundColor;
 			
 			.icon {
-				color: rgba(0,127,0,1);
+				color: @wcfSuccessColor;
 			}
 		}
 	}
 
 	.contra {
 		.icon {
-			color: rgba(204,0,0,1);
+			color: @wcfErrorBackgroundColor;
 		}
 		
 		li:hover {
-			color: rgba(128,0,0,1);
-			background-color: rgba(255,0,0,0.1);
+			color: @wcfErrorColor;
+			background-color: @wcfErrorBackgroundColor;
 			
 			.icon {
-				color: rgba(128,0,0,1);
+				color: @wcfErrorColor;
 			}
 		}
 	}
 	
 	.neutral {
 		.icon {
-			color: rgba(127,127,127,1);
+			color: @wcfWarningColor;
 		}
 		
 		li {
 			&:hover {
-				color: rgba(0,0,0,1);
-				background-color: rgba(0,0,0,0.1);	
+				color: @wcfWarningColor;
+				background-color: @wcfWarningBackgroundColor;	
+			}
 			
-				.icon {
-					color: rgba(0,0,0,1);
-				}
+			.icon {
+				color: @wcfWarningColor;
 			}
 		}
 	}
@@ -78,7 +81,6 @@
 			display: table-row;
 			span {
 				display: table-cell;
-				vertical-align: middle;
 				width: 20px;
 			}
 		}
