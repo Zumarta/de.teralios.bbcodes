@@ -15,7 +15,7 @@ final class BBCodeCopyright {
 		}
 		else {
 			static::$counter++;
-			if (static::$counter >= BBCodeCopyright::DISPLAY_DEV_NOTE && (!defined('TJS_BBCODE_NO_DEV_NOTE') || StringUtil::getHash(TJS_BBCODE_NO_DEV_NOTE) == static::$key)) {
+			if (static::$counter >= BBCodeCopyright::DISPLAY_DEV_NOTE && (!defined('TJS_BBCODE_NO_DEV_NOTE') || StringUtil::getHash(TJS_BBCODE_NO_DEV_NOTE) != static::$key)) {
 				WCF::getTPL()->assign('tjsShowDevNote', true);
 			}
 		}
