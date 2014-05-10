@@ -24,6 +24,7 @@
 							{/foreach}
 						</ul>
 					{/if}
+					<div class="clearfix"></div>
 				</div>
 			{/if}
 			{if $points['neutral']|isset && $points['neutral']|count}

@@ -36,10 +36,19 @@
 			&:nth-child(even) {
 				background-color: @wcfContainerAccentBackgroundColor;
 			}
+		}
+	}
+	
+	li {
+		display: table-row;
 		
-			&:hover {
+		&:hover {
 				background-color: @wcfContainerHoverBackgroundColor;
-			}
+		}
+		
+		span {
+			display: table-cell;
+			width: 25px;
 		}
 	}
 	
@@ -69,7 +78,7 @@
 /** CSS for heading and subheading bbcode */
 .headingBBCode .subheadingBBCode {
 	font-weight: bold;
-	margin-bottom: @wcfTinySmall;
+	margin-bottom: @wcfGapSmall;
 }
 
 
