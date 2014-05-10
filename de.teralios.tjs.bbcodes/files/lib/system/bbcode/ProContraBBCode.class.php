@@ -4,6 +4,7 @@ namespace wcf\system\bbcode;
 
 // imports
 use wcf\system\WCF;
+use wcf\system\tjs\TJSDevNoteCounter;
 use wcf\util\StringUtil;
 
 /**
@@ -78,8 +79,8 @@ class ProContraBBCode extends AbstractBBCode {
 		// @todo simple html.
 		$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 		
-		// test copyright
-		WCF::getTPL()->assign('proContraDevNote', true);
+		// copyright counter.
+		TJSDevNoteCounter::count();
 		
 		return $return;
 	}

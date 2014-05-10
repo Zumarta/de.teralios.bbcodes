@@ -8,12 +8,10 @@
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
 Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der Pro-Contra-Liste muss diesem ein [+][-] oder [*] voran geststellt werden]]></item>
-		<item name="wcf.bbcode.proContra.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Pro- & Contraliste</strong> erstellt mit <strong>Teralios' BBCodes</strong></a>]]></item>
 	</category>
 	<category name="wcf.directory">
 		<item name="wcf.directory.share"><![CDATA[Anker teilen]]></item>
 		<item name="wcf.directory.title"><![CDATA[Inhaltsverzeichnis]]></item>
-		<item name="wcf.directory.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Inhaltsverzeichnis</strong> erstellt mit <strong>Teralios' BBCodes</strong></a>]]></item>
 	</category>
 	<category name="wcf.teralios">
 		<item name="wcf.teralios.bbcodes.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Inhaltsverzeichnis</strong> und <strong>Pro- & Contraliste</strong> erstellt mit <strong>Teralios' BBCodes</strong></a>]]></item>

@@ -5,6 +5,7 @@ namespace wcf\system\jumpmark;
 // imports
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
+use wcf\system\tjs\TJSDevNoteCounter;
 use wcf\util\JSON;
 
 /**
@@ -46,13 +47,6 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @var number
 	 */
 	protected $currentCounter = 0;
-	
-	/**
-	 * Dev note is set.
-	 * 
-	 * @var	boolean
-	 */
-	protected $devNoteIsSet = false;
 	
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
@@ -105,11 +99,8 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return boolean
 	 */
 	public function hasJumpMarks() {
-		// set dev note.
-		if ($this->devNoteIsSet == false) {
-			$this->devNoteIsSet = true;
-			WCF::getTPL()->assign('directoryDevNote', true);
-		}
+		// copyright counter
+		TJSDevNoteCounter::count();
 		
 		return ($this->count() > 0) ? true : false;
 	}

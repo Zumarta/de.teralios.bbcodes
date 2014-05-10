@@ -8,12 +8,10 @@
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[No points]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, the bbcode is use with the old syntax.<br />
 The syntax has change. For every new point in the list, use the prefix [+][-] or [*].]]></item>
-		<item name="wcf.bbcode.proContra.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Pro- & Contralist</strong> created with <strong>Teralios' BBCodes</strong></a>]]></item>
 	</category>
 	<category name="wcf.directory">
 		<item name="wcf.directory.share"><![CDATA[Share anchor]]></item>
 		<item name="wcf.directory.title"><![CDATA[Directory]]></item>
-		<item name="wcf.directory.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Directory</strong> createt with <strong>Teralios' BBCodes</strong></a>]]></item>
 	</category>
 	<category name="wcf.teralios">
 		<item name="wcf.teralios.bbcodes.devNote"><![CDATA[<a href="http://www.teralios.de"><strong>Directory</strong> and <strong>Pro- & Contralist</strong> created with <strong>Teralios' BBCodes</strong></a>]]></item>
