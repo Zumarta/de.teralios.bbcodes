@@ -8,6 +8,7 @@ final class BBCodeCopyright {
 	const DISPLAY_DEV_NOTE = 3;
 	private static $key = '1b0d911514cc24c30a65918a6d6573d45e6da006';
 	private static $counter = 0;
+	private static $copyrightKey = null;
 	
 	public static function count() {
 		if (static::$counter > BBCodeCopyright::DISPLAY_DEV_NOTE) {
@@ -15,9 +16,13 @@ final class BBCodeCopyright {
 		}
 		else {
 			static::$counter++;
-			if (static::$counter >= BBCodeCopyright::DISPLAY_DEV_NOTE && (!defined('TJS_BBCODE_NO_DEV_NOTE') || StringUtil::getHash(TJS_BBCODE_NO_DEV_NOTE) != static::$key)) {
+			if (static::$counter >= BBCodeCopyright::DISPLAY_DEV_NOTE && (empty(static::$copyrightKey) || static::$copyrightKey != static::$key)) {
 				WCF::getTPL()->assign('tjsShowDevNote', true);
 			}
 		}
+	}
+	
+	public static function setKey(CopyrightKey $key) {
+		static::$copyrightKey = $key;
 	}
 }
