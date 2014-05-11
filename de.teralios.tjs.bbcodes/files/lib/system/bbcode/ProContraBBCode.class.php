@@ -76,11 +76,15 @@ class ProContraBBCode extends AbstractBBCode {
 			));
 		}
 		
-		// @todo simple html.
-		$return = WCF::getTPL()->fetch('proContraBBCodeTag');
-		
-		// copyright counter.
-		BBCodeCopyright::setCopyright();
+		if ($parser->getOutputType('text/html')) {
+			$return = WCF::getTPL()->fetch('proContraBBCodeTag');
+			
+			// copyright counter.
+			BBCodeCopyright::setCopyright();
+		}
+		else {
+			$return = WCF::getTPL()->fetch('proContraBBCodeTagSimple');
+		}
 		
 		return $return;
 	}

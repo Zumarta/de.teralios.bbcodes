@@ -14,7 +14,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="2.0.4">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.0.0">de.teralios.copyright</requiredpackage>
+		<requiredpackage minversion="1.0.0" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
 	</requiredpackages>
 	
 	<excludedPackages>
@@ -26,7 +26,6 @@
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction>
 		<instruction type="option">option.xml</instruction>
 	</instructions>
 </package>

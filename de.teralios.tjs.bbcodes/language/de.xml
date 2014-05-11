@@ -9,11 +9,18 @@
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
 Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der Pro-Contra-Liste muss diesem ein [+][-] oder [*] voran geststellt werden]]></item>
 	</category>
+	
 	<category name="wcf.directory">
 		<item name="wcf.directory.share"><![CDATA[Anker teilen]]></item>
 		<item name="wcf.directory.title"><![CDATA[Inhaltsverzeichnis]]></item>
 	</category>
+	
 	<category name="wcf.teralios">
 		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"><strong>Diese Seite nutzt <strong>Teralios' BBCodes</strong></a>]]></item>
+	</category>
+	
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.bbcodes_headline_automark">Heading- und Subheading Sprungmarken erzeugen</item>
+		<item name="wcf.acp.option.bbcodes_headline_automark.description"></item>
 	</category>
 </language>
