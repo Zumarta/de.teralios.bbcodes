@@ -22,6 +22,7 @@ class HeadingBBCode extends AbstractBBCode {
 	 * @var	array<string>
 	 */
 	protected static $jumpMarks = array();
+	protected static $autoMarkPrefix = 'autoMark';
 
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
@@ -33,11 +34,17 @@ class HeadingBBCode extends AbstractBBCode {
 		if ($parser->getOutputType() == 'text/html') {
 			if (!empty($openingTag['attributes'][0])) {
 				$jumpMark = $openingTag['attributes'][0];
-				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
-				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+			}
+			else if (BBCODES_HEADLINE_AUTOMARK == 1) {
+				$jumpMark = static::$autoMarkPrefix;
 			}
 			else {
 				$jumpMark = '';
+			}
+			
+			if (!empty($jumpMark)) {
+				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
+				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 			}
 			
 			WCF::getTPL()->assign(array(
