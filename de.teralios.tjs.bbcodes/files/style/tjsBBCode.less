@@ -5,54 +5,62 @@
  * @author	Karsten (Teralios) Achterrath
  * @license GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  */
-/* CSS for procontra bbcode */
-/*
-This all is not optimize for dark styles...
-*/
+// CSS for procontra bbcode
+// BBCode variables
+@tjsProColor = rgb(0,191,0);
+@tjsProColorHover = rgb(0,127,0);
+@tjsProBackgroundColor = rgba(0,255,0,0.1);
+@tjsContraColor = rgb(191,0,0);
+@tjsContraColorHover = rgb(127,0,0);
+@tjsContraBackgroundColor = rgba(255,0,0,0.1);
+@tjsNeutralColor = rgb(191,191,191);
+@tjsNeutralColorHover = rgb(63,63,63);
+@tjsNeutralBackgroundColor = fadeout(@tjsNeutralColorHover, 90%);
+
 .proContraBBCode {
 	.pro {
 		.icon {
-			color: @wcfSuccessBackgroundColor;
+			color: @tjsProColor;
 		}
 		
 		li:hover {
-			color: @wcfSuccessColor;
-			background-color: @wcfSuccessBackgroundColor;
+			color: @tjsProColorHover;
+			background-color: @tjsProBackgroundColor;
 			
 			.icon {
-				color: @wcfSuccessColor;
+				color: @tjsProColorHover;
 			}
 		}
 	}
 
 	.contra {
 		.icon {
-			color: @wcfErrorBackgroundColor;
+			color: @tjsContraColor;
 		}
 		
 		li:hover {
-			color: @wcfErrorColor;
-			background-color: @wcfErrorBackgroundColor;
+			color: @tjsContraColorHover;
+			background-color: @tjsContraBackgroundColor;
 			
 			.icon {
-				color: @wcfErrorColor;
+				color: @tjsContraColorHover;
 			}
 		}
 	}
 	
 	.neutral {
 		.icon {
-			color: @wcfWarningColor;
+			color: @tjsNeutralColor;
 		}
 		
 		li {
 			&:hover {
-				color: @wcfWarningColor;
-				background-color: @wcfWarningBackgroundColor;	
+				color: @tjsNeutralColorHover;
+				background-color: @tjsNeutralBackgroundColor;	
 			}
 			
 			.icon {
-				color: @wcfWarningColor;
+				color: @tjsNeutralColorHover;
 			}
 		}
 	}

@@ -5,7 +5,7 @@ use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 final class BBCodeCopyright {
-	const DISPLAY_DEV_NOTE = 5;
+	const DISPLAY_DEV_NOTE = 3;
 	private static $key = '1b0d911514cc24c30a65918a6d6573d45e6da006';
 	private static $counter = 0;
 	
