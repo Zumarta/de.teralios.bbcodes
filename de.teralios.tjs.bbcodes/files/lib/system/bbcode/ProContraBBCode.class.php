@@ -75,8 +75,9 @@ class ProContraBBCode extends AbstractBBCode {
 				'content' => $content
 			));
 		}
-		
-		if ($parser->getOutputType('text/html')) {
+	
+		// out put
+		if ($parser->getOutputType() == 'text/html') {
 			$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 			
 			// copyright counter.
