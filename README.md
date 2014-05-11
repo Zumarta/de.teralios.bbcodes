@@ -1,4 +1,4 @@
-de.teralios.tjs.bbcodes
+Teralios' BBCodes
 =======================
 This is a package for the WoltLab Community Framework and adds 4 special bbcodes.
 heading, subheading, procontra, xattach.
