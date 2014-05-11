@@ -4,7 +4,7 @@ namespace wcf\system\bbcode;
 
 // imports
 use wcf\system\WCF;
-use wcf\system\teralios\BBCodeCopyright;
+use wcf\system\copyright\BBCodeCopyright;
 use wcf\util\StringUtil;
 
 /**
@@ -80,7 +80,7 @@ class ProContraBBCode extends AbstractBBCode {
 		$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 		
 		// copyright counter.
-		BBCodeCopyright::count();
+		BBCodeCopyright::setCopyright();
 		
 		return $return;
 	}

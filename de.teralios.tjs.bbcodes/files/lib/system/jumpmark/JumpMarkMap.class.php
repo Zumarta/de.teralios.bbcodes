@@ -5,7 +5,7 @@ namespace wcf\system\jumpmark;
 // imports
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
-use wcf\system\teralios\BBCodeCopyright;
+use wcf\system\copyright\BBCodeCopyright;
 use wcf\util\JSON;
 
 /**
@@ -99,8 +99,8 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return boolean
 	 */
 	public function hasJumpMarks() {
-		// copyright counter
-		BBCodeCopyright::count();
+		// copyright counter.
+		BBCodeCopyright::setCopyright();
 		
 		return ($this->count() > 0) ? true : false;
 	}
