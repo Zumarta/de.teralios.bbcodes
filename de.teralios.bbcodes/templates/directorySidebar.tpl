@@ -8,12 +8,12 @@
 					{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
 						<li>
 							{if $jumpMark->existJumpMark()}
-								<a href="{$jumpMark->getJumpMark()->getLink()}">{$jumpMark->getJumpMark()->getTitle()}</a>
+								<a href="{$jumpMark->getJumpMark()->getAnchor()}">{$jumpMark->getJumpMark()->getTitle()}</a>
 							{/if}
 							{if $jumpMark->hasJumpMarks()}
 								<ol>
 									{foreach from=$jumpMark item=$subJumpMark}
-										<li><a href="{$subJumpMark->getJumpMark()->getLink()}">{$subJumpMark->getJumpMark()->getTitle()}</a></li>
+										<li><a href="{$subJumpMark->getJumpMark()->getAnchor()}">{$subJumpMark->getJumpMark()->getTitle()}</a></li>
 									{/foreach}
 								</ol>
 							{/if}

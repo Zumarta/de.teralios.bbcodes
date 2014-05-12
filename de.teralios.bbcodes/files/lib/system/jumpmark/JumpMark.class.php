@@ -55,7 +55,8 @@ class JumpMark {
 	}
 	
 	/**
-	 * Return link for jumpmark/anchor.
+	 * Return link with anchor for share it.
+	 * 
 	 * @return string
 	 */
 	public function getLink() {
@@ -71,6 +72,15 @@ class JumpMark {
 		}
 		
 		return $link;
+	}
+	
+	/**
+	 * Return Anchor for current site.
+	 *
+	 * @return string
+	 */
+	public function getAnchor() {
+		return WCF::getRequestURI().'#'.$this->jumpMark;
 	}
 	
 	/**
