@@ -83,6 +83,8 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 			$this->currentCounter = $this->counter;
 			$this->counter++;
 		}
+		
+		return $jumpMark;
 	}
 	
 	/**

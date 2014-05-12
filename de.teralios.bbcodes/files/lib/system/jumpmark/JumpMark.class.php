@@ -29,6 +29,13 @@ class JumpMark {
 	protected $title = '';
 	
 	/**
+	 * Canocial URL.
+	 *
+	 * @var	string
+	 */
+	protected static $canocialUrl = '';
+	
+	/**
 	 * Creates JumpMark object.
 	 * 
 	 * @param	string	$jumpMark
@@ -40,11 +47,20 @@ class JumpMark {
 	}
 	
 	/**
-	 * Return link for jump mark/anchor.
+	 * Return link for jumpmark/anchor.
 	 * @return string
 	 */
 	public function getLink() {
-		return WCF::getRequestURI().'#'.$this->jumpMark;
+		return ((!empty(static::$canocialUrl)) ? static::$canocialUrl : WCF::getRequestURI()).'#'.$this->jumpMark;
+	}
+	
+	/**
+	 * Return jumpmark.
+	 *
+	 * @return string
+	 */
+	public function getJumpMark() {
+		return $this->jumpMark;
 	}
 	
 	/**
@@ -53,5 +69,14 @@ class JumpMark {
 	 */
 	public function getTitle() {
 		return $this->title;
+	}
+	
+	/**
+	 * Set a canocial url.
+	 *
+	 * @param	string		$canocialUrl
+	 */
+	public static function setCanocialUrl($canocialUrl) {
+		static::$canocialUrl = $canocialUrl;
 	}
 }

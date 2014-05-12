@@ -44,7 +44,8 @@ class HeadingBBCode extends AbstractBBCode {
 			
 			if (!empty($jumpMark)) {
 				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
-				JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+				$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+				
 			}
 			
 			WCF::getTPL()->assign(array(
