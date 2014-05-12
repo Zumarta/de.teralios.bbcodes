@@ -10,7 +10,7 @@ if (!Tera) {
 	var Tera = { };
 }
 
-Tera.Directory = {
+Tera.xAttachment = {
 		_editorID = '',
 		
 		init: function(editorID) {
