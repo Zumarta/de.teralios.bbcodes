@@ -29,6 +29,13 @@ class JumpMark {
 	protected $title = '';
 	
 	/**
+	 * Base link for jumpmark
+	 *
+	 * @var	string
+	 */
+	protected $baseLink = '';
+	
+	/**
 	 * Canocial URL.
 	 *
 	 * @var	string
@@ -51,7 +58,18 @@ class JumpMark {
 	 * @return string
 	 */
 	public function getLink() {
-		return ((!empty(static::$canocialUrl)) ? static::$canocialUrl : WCF::getRequestURI()).'#'.$this->jumpMark;
+		$link = '#'.$this->jumpMark;
+		if (!empty($this->baseLink)) {
+			$link = $this->baseLink.$link;
+		}
+		else if (!empty(static::$canocialUrl)) {
+			$link = static::$canocialUrl.$link;
+		}
+		else {
+			$link = WCF::getRequestURI().$link;
+		}
+		
+		return $link;
 	}
 	
 	/**
@@ -69,6 +87,15 @@ class JumpMark {
 	 */
 	public function getTitle() {
 		return $this->title;
+	}
+	
+	/**
+	 * Set base link.
+	 *
+	 * @param	string	$baseLink
+	 */
+	public function setBaseLink($baseLink) {
+		$this->baseLink = $baseLink;
 	}
 	
 	/**
