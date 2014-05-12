@@ -4,6 +4,7 @@ namespace wcf\system\jumpmark;
 
 // imports
 use wcf\system\WCF;
+use wcf\util\StringUtil;
 
 /**
  * Basic class for a jump mark.
@@ -95,7 +96,7 @@ class JumpMark {
 	 * @param	string	$baseLink
 	 */
 	public function setBaseLink($baseLink) {
-		$this->baseLink = $baseLink;
+		$this->baseLink = StringUtil::trim($baseLink);
 	}
 	
 	/**
@@ -104,6 +105,10 @@ class JumpMark {
 	 * @param	string		$canocialUrl
 	 */
 	public static function setCanocialUrl($canocialUrl) {
-		static::$canocialUrl = $canocialUrl;
+		static::$canocialUrl = StringUtil::trim($canocialUrl);
+	}
+	
+	public function __toString() {
+		return $this->jumpMark;
 	}
 }

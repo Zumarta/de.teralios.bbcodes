@@ -4,5 +4,6 @@
 	{if $jumpMark|empty == false}
 		{event name='jumpMark'}
 		<span class="jsOnly"><a href="{$jumpMark->getLink()}" class="jsTooltip jsButtonShare" title="{lang}wcf.directory.share{/lang}" data-link-title="{@$heading}"><span class="icon icon16 icon-link"></span></a></span>
+		{$jumpMark->setBaseLink('')}
 	{/if}
 </{if $tag == 'heading'}h2{else}h3{/if}>
