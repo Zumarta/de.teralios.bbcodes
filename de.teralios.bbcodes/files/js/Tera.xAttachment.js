@@ -9,20 +9,21 @@
 if (!Tera) {
 	var Tera = { };
 }
-
+// fields  messageFormAttachments
 Tera.xAttachment = {
-		_editorID = '',
+		_editorID: '',
 		
 		init: function(editorID) {
 			this._editorID = editorID;
 			
 			WCF.DOMNodeInsertedHandler.addCallback('Tera.Directory', $.proxy(this._catchButton, this));
-		}
+			this._catchButton();
+		},
 		
 		_catchButton: function() {
 			$('.jsButtonInsertAttachment').off('click');
 			$('.jsButtonInsertAttachment').click($.proxy(this._xAttachInsert, this));
-		}
+		},
 		
 		/**
 		 * Attachment insert.

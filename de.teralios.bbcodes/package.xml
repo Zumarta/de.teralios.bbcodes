@@ -27,6 +27,7 @@
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="option">option.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.3.0">
@@ -35,5 +36,6 @@
 		<instruction type="bbcode">bbcode.xml</instruction>
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="option">option.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 </package>

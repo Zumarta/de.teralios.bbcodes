@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/eventlistener.xsd">
+	<import>
+		<templatelistener name="xAttachCatchButton">
+			<templatename>messageFormAttachments</templatename>
+			<eventname>fields</eventname>
+			<templatecode><![CDATA[{include file='__xAttachCatchButton' application='wcf'}]]></templatecode>
+			<environment>user</environment>
+		</templatelistener>
+	</import>
+</data>
