@@ -18,6 +18,7 @@
 	</requiredpackages>
 	
 	<excludedPackages>
+		<excludedpackage version="2.1.0 Alpha 1">com.woltlab.wcf</excludedpackage>
 		<excludepackage version="*">de.teralios.tjs.bbcodes</excludepackage>
 	</excludedPackages>
 
