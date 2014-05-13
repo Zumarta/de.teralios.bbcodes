@@ -13,8 +13,8 @@
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="2.0.4">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.0.0" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
+		<requiredpackage minversion="2.0.5">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.0.1" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
 	</requiredpackages>
 	
 	<excludedPackages>
