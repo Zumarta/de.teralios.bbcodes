@@ -12,9 +12,11 @@ if (!Tera) {
 // fields  messageFormAttachments
 Tera.xAttachment = {
 		_editorID: '',
+		_wcf21: false,
 		
-		init: function(editorID) {
+		init: function(editorID, wcf21) {
 			this._editorID = editorID;
+			this._wcf21 = wcf21;
 			
 			WCF.DOMNodeInsertedHandler.addCallback('Tera.Directory', $.proxy(this._catchButton, this));
 			this._catchButton();
@@ -24,17 +26,22 @@ Tera.xAttachment = {
 			$('.jsButtonInsertAttachment').off('click');
 			$('.jsButtonInsertAttachment').click($.proxy(this._xAttachInsert, this));
 		},
-		
-		/**
-		 * Attachment insert.
-		 * @author	Alexander Ebert
-		 * @copyright	2001-2014 WoltLab GmbH
-		 * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
-		 */
-		_xAttachInsert: function(event) {
-			var $attachmentID = $(event.currentTarget).data('objectID');
+
+		_xAttachInsert: function(event, attachmentID) {
+			var $attachmentID = (event === null) ? attachmentID : $(event.currentTarget).data('objectID');
 			var $bbcode = '[xattach=' + $attachmentID + '][/xattach]';
 			
+			if (this._wcf21 == false) {
+				this._insertVersion20($bbcode);
+			}
+			else {
+				this._insertVersion21($bbcode);
+			}
+		},
+		
+		_insertVersion20: function(bbCode) {
+			$bbCode = bbCode;
+	
 			var $ckEditor = ($.browser.mobile) ? null : $('#' + this._editorID).ckeditorGet();
 			if ($ckEditor !== null && $ckEditor.mode === 'wysiwyg') {
 				// in design mode
@@ -51,6 +58,14 @@ Tera.xAttachment = {
 					var $position = $textarea.getCaret();
 					$textarea.val( $value.substr(0, $position) + $bbcode + $value.substr($position) );
 				}
+			}
+		},
+		
+		_insertVersion21: function(bbCode) {
+			var $bbcode = bbCode;
+
+			if ($.browser.redactor) {
+				$('#' + this._editorID).redactor('insertDynamic', $bbcode);
 			}
 		}
 }
