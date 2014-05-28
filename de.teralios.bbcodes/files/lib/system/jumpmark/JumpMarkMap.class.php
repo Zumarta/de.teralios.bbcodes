@@ -88,6 +88,13 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	}
 	
 	/**
+	 * Clear jumpmark map.
+	 */
+	public function clearMap() {
+		$this->jumpMarks = array();
+	}
+	
+	/**
 	 * Return Jumpmarks as json string.
 	 * @return string
 	 */

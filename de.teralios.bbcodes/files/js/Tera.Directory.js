@@ -13,6 +13,8 @@ if (!Tera) {
 Tera.Directory = {
 	_id: '',
 	_addClass: '',
+	_classTo: '',
+	_classFrom: '',
 	
 	init: function(id, addClass) {
 		if (id.substring(0, 1) != '#') {
@@ -25,6 +27,18 @@ Tera.Directory = {
 		this.parse();
 	},
 	
+	initPerItem: function(classTo, classFrom, addClass) {
+		if (classTo.substring(0,1) != '.') {
+			this._classTo = '.' + classTo;
+		}
+		
+		if (classFrom.substring(0,1) != '.') {
+			this._classFrom = '.' + classFrom;
+		}
+		
+		this._addClass = addClass;
+	},
+	
 	parse: function() {
 		var htmlSource = $('#directoryJS').contents();
 		var placeHolder = $(this._id);
@@ -34,6 +48,20 @@ Tera.Directory = {
 			if (this._addClass) {
 				placeHolder.addClass(this._addClass);
 			}
+			placeHolder.show();
+		}
+	},
+	
+	parsePerItem: function() {
+		var htmlSource = $(this._classFrom).contents();
+		var placeHolder = $(this._classTo);
+		
+		if (htmlSource.length > 1) {
+			placeHolder.append(htmlSource);
+			if (this._addClass) {
+				placeHolder.addClass(this._addClass);
+			}
+			
 			placeHolder.show();
 		}
 	}
