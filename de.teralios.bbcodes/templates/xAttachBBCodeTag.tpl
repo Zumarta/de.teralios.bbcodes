@@ -9,5 +9,5 @@
 {/if}
 <div class="xAttachBBCode{if $float|empty}{else} xAttach{$float|ucfirst}{/if}">
 	<div>{@$attachmentLink}</div>
-	<div>{@$description}</div>
+	{if $description|empty == false}<div>{@$description}</div>{/if}
 </div>
