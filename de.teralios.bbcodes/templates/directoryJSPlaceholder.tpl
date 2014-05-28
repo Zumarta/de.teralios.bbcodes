@@ -1,1 +1,1 @@
-<div id="directoryJSPlaceholder"></div>
+<div id="directoryPlaceholder" class="directoryHidden"></div>
