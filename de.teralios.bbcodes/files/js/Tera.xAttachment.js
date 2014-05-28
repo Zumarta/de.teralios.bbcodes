@@ -17,7 +17,6 @@ Tera.xAttachment = {
 		init: function(editorID, wcf21) {
 			this._editorID = editorID;
 			this._wcf21 = wcf21;
-			
 			WCF.DOMNodeInsertedHandler.addCallback('Tera.Directory', $.proxy(this._catchButton, this));
 			this._catchButton();
 		},
@@ -39,8 +38,8 @@ Tera.xAttachment = {
 			}
 		},
 		
-		_insertVersion20: function(bbCode) {
-			$bbCode = bbCode;
+		_insertVersion20: function(bbcode) {
+			var $bbcode = bbcode;
 	
 			var $ckEditor = ($.browser.mobile) ? null : $('#' + this._editorID).ckeditorGet();
 			if ($ckEditor !== null && $ckEditor.mode === 'wysiwyg') {
@@ -61,8 +60,8 @@ Tera.xAttachment = {
 			}
 		},
 		
-		_insertVersion21: function(bbCode) {
-			var $bbcode = bbCode;
+		_insertVersion21: function(bbcode) {
+			var $bbcode = bbcode;
 
 			if ($.browser.redactor) {
 				$('#' + this._editorID).redactor('insertDynamic', $bbcode);
