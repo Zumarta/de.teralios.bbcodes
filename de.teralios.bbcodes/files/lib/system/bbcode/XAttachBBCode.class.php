@@ -25,7 +25,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		if (isset($openingTag['attributes'][0])) {
 			$attachmentID = $openingTag['attributes'][0];
 		}
-		$float = (isset($openingTag['attributes'][1])) ? $openingTag['attributes'][1] : '';
+		$float = (isset($openingTag['attributes'][1])) ? $openingTag['attributes'][1] : 'inline';
 		$openingTag['attributes'][1] = '';
 		$description = $content;
 		
