@@ -22,7 +22,27 @@ class HeadingBBCode extends AbstractBBCode {
 	 * @var	array<string>
 	 */
 	protected static $jumpMarks = array();
-	protected static $autoMarkPrefix = 'autoMark';
+	
+	/**
+	 * String for automatic generated jump marks.
+	 *
+	 * @var	string
+	 */
+	protected static $autoMarkPrefix = 'autoMark_%s';
+	
+	/**
+	 * Index of automatic generated jump marks.
+	 *
+	 * @var	integer
+	 */
+	protected static $autoMarkIndex = 1;
+	
+	/**
+	 * Prefix for jump marks.
+	 *
+	 * @var	string
+	 */
+	protected static $jumpMarkPrefix = 'a-%s';
 
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
@@ -36,14 +56,15 @@ class HeadingBBCode extends AbstractBBCode {
 				$jumpMark = $openingTag['attributes'][0];
 			}
 			else if (BBCODES_HEADLINE_AUTOMARK == 1) {
-				$jumpMark = static::$autoMarkPrefix;
+				$jumpMark = sprintf(static::$autoMarkPrefix, static::$autoMarkIndex);
+				++static::$autoMarkIndex;
 			}
 			else {
 				$jumpMark = '';
 			}
 			
 			if (!empty($jumpMark)) {
-				$jumpMark = 'a-'.self::jumpMarkExists($jumpMark, $jumpMark);
+				$jumpMark = sprintf(static::$jumpMarkPrefix, static::jumpMarkExists($jumpMark, $jumpMark));
 				$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 				
 			}
