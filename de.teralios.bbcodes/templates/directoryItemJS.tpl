@@ -11,8 +11,8 @@
 		//<![CDATA[
 		$(function(){
 			var addClass = '{if $directoryAddClass|isset}{$directoryAddClass}{/if}';
-			var toClass = 'directoryItemPlaceholder{$directoryItemIndex}'
-			var fromClass = 'directoryItemParse{$directoryItemIndex}'
+			var toClass = 'directoryItemPlaceholder{$directoryItemParseClassIndexx}'
+			var fromClass = 'directoryItemParse{$directoryItemParseClassIndex}'
 			Tera.Directory.initItem(toClass, fromClass, addClass);
 		});
 		//]]>
