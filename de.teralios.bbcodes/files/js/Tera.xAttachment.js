@@ -17,7 +17,8 @@ Tera.xAttachment = {
 		init: function(editorID, wcf21) {
 			this._editorID = editorID;
 			this._wcf21 = wcf21;
-			WCF.DOMNodeInsertedHandler.addCallback('Tera.Directory', $.proxy(this._catchButton, this));
+			
+			WCF.DOMNodeInsertedHandler.addCallback('Tera.xAttachment', $.proxy(this._catchButton, this));
 			this._catchButton();
 		},
 		
