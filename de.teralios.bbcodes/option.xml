@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/option.xsd">
 	<import>
+		<categories>
+			<category name="message.general.teraBBCodes">
+				<parent>message.general</parent>
+			</category>
+		</categories>
 		<options>
 			<!-- index.general -->
 			<option name="bbcodes_headline_automark">
-				<categoryname>message.general</categoryname>
+				<categoryname>message.general.teraBBCodes</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="bbcodes_xattach_freestyle">
+				<categoryname>message.general.teraBBCodes</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>

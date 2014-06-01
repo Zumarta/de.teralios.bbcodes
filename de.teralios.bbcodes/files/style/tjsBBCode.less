@@ -135,7 +135,7 @@
 }
 
 /** CSS for xattach bbcode */
-.xAttachBBCode {
+.xAttachBorderBBCode {
 	border: 1px solid @wcfContainerBorderColor;
 	max-width: (280 + ((@wcfGapTiny) * 2));
 	text-align: center;
@@ -155,6 +155,19 @@
 		
 		&:hover {
 			background-color: @wcfContainerHoverBackgroundColor;
+		}
+	}
+}
+
+.xAttachBBCode {
+	maxwidth: (280 + ((@wcfGapTiny) * 2));
+	text-align: center;
+	div {
+		padding: @wcfGapTiny;
+		font-size: @wcfSmallFontSize;
+	
+		&:nth-child(2):before {
+			content: "- ";
 		}
 	}
 }
