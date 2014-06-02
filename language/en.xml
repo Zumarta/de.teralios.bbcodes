@@ -22,5 +22,7 @@ The syntax has change. For every new point in the list, use the prefix [+][-] or
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.bbcodes_headline_automark">Heading and Subheading creates jumpmarks</item>
 		<item name="wcf.acp.option.bbcodes_headline_automark.description"></item>
+		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Borderless style for attachments in messages</item>
+		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>
 </language>
