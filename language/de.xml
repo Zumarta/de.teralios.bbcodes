@@ -20,7 +20,9 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 	</category>
 	
 	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 		<item name="wcf.acp.option.bbcodes_headline_automark">Heading- und Subheading Sprungmarken erzeugen</item>
 		<item name="wcf.acp.option.bbcodes_headline_automark.description"></item>
+		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Rahmenlose Darstellung des Ahnangs im Text</item>
 	</category>
 </language>
