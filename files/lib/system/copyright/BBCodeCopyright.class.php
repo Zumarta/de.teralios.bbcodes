@@ -1,7 +1,6 @@
 <?php
 namespace wcf\system\copyright;
 
-
 final class BBCodeCopyright extends AbstractCopyright {
 	protected static $countedCopyright = true;
 	protected static $countMax = 3;
