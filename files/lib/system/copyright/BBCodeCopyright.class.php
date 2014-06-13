@@ -1,6 +1,14 @@
 <?php
 namespace wcf\system\copyright;
 
+/**
+ * BBCode copyright.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
+ * @package	de.teralios.tjs.bbcodes
+ */
 final class BBCodeCopyright extends AbstractCopyright {
 	protected static $countedCopyright = true;
 	protected static $countMax = 3;
