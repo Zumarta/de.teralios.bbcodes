@@ -2,7 +2,7 @@
 namespace wcf\system\copyright;
 
 
-final class BBCodeCopyright extends AbstractCopyright {
+final class TeraliosBBCodes extends AbstractCopyright {
 	protected static $countedCopyright = true;
 	protected static $countMax = 3;
 	protected static $langVar = 'wcf.teralios.copyright.bbcodes';
