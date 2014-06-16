@@ -9,7 +9,7 @@ namespace wcf\system\copyright;
  * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  * @package	de.teralios.tjs.bbcodes
  */
-final class TeraliosBBCodes extends AbstractCopyright {
+final class TeraliosBBCodesCopyright extends AbstractCopyright {
 	protected static $countedCopyright = true;
 	protected static $countMax = 3;
 	protected static $langVar = 'wcf.teralios.copyright.bbcodes';
