@@ -2,7 +2,7 @@
 namespace wcf\system\copyright;
 
 /**
- * BBCode copyright.
+ * Teralios BBCode Copyright class.
  *
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
