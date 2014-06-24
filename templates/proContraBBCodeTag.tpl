@@ -1,4 +1,3 @@
-<!-- pro and contra bbcode is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 <div class="tabularBox proContraBBCode">
 	<div class="tabularBoxTitle"><header><h2>{$title}</h2></header></div>
 	{if $points|empty || ($points['pro']|empty && $points['contra']|empty && $points['neutral']|empty)}
