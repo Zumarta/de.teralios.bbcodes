@@ -183,8 +183,16 @@
 	margin-left: @wcfGapSmall;
 	margin-bottom: @wcfGapSmall;	
 }
-
+	
 .xAttachInline {
 	display: inline-block;
 	margin: @wcfGapTiny;
+}
+
+@media only screen and (max-width: 800px) {
+	.xAttachLeft, .xAttachRight {
+		float: none;
+		display: block;
+		margin: @wcfGapSmall;	
+	}
 }
