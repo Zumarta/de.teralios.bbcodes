@@ -166,11 +166,8 @@
 		padding: @wcfGapTiny;
 		font-size: @wcfSmallFontSize;
 	
-		&:nth-child(2) {
-			text-align: right;
-			&::before {
-				content: "- ";
-			}
+		&:nth-child(2)::before {
+			content: "- ";
 		}	
 	}
 }
