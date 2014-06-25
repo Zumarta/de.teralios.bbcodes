@@ -50,7 +50,7 @@
 				</attribute>
 				<attribute name="1">
 					<required>0</required>
-					<validationpattern>^(left|right|inline|center)$</validationpattern>
+					<validationpattern>^(left|right|inline)$</validationpattern>
 				</attribute>
 			</attributes>
 			<allowedchildren>none^b,i,u,s,sub,sup,color,font,url</allowedchildren>
