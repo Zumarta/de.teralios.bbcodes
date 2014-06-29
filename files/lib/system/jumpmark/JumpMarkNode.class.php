@@ -11,10 +11,8 @@ namespace wcf\system\jumpmark;
  * @package
  */
 class JumpMarkNode {
-	
 	/**
 	 * Jump mark object.
-	 * 
 	 * @var \wcf\system\jumpmark\JumpMark
 	 */
 	protected $jumpMark = null;

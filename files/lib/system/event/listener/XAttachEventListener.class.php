@@ -6,7 +6,14 @@ use wcf\system\event\IEventListener;
 use wcf\system\wcf;
 use wcf\util\ArrayUtil;
 
-
+/**
+ * Check wcf version for experimantal wcf2.1 support.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
+ * @package de.teralios.bbcodes
+ */
 final class XAttachEventListener implements IEventListener {
 	/**
 	 * @see \wcf\system\event\IEventListener::execute()

@@ -17,28 +17,24 @@ use wcf\util\StringUtil;
 class JumpMark {
 	/**
 	 * Jump mark element. (Used in id-Tags)
-	 * 
 	 * @var string
 	 */
 	protected $jumpMark = '';
 	
 	/**
-	 * Title
-	 * 
+	 * Title 
 	 * @var string
 	 */
 	protected $title = '';
 	
 	/**
 	 * Base link for jumpmark
-	 *
 	 * @var	string
 	 */
 	protected $baseLink = '';
 	
 	/**
 	 * Canocial URL.
-	 *
 	 * @var	string
 	 */
 	protected static $canocialUrl = '';
@@ -94,6 +90,7 @@ class JumpMark {
 	
 	/**
 	 * Return title for jump mark/anchor.
+	 * 
 	 * @return	string
 	 */
 	public function getTitle() {

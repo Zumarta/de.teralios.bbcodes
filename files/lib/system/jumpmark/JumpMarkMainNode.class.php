@@ -13,14 +13,12 @@ namespace wcf\system\jumpmark;
 class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	/**
 	 * Sub jump marks.
-	 * 
 	 * @var array<\wcf\system\jumpmark\JumpMarkNode>
 	 */
 	protected $subMark = array();
 	
 	/**
 	 * Index for \Iterator.
-	 * 
 	 * @var	number
 	 */
 	protected $index = 0;

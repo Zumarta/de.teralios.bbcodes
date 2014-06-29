@@ -18,28 +18,24 @@ use wcf\util\StringUtil;
 class HeadingBBCode extends AbstractBBCode {
 	/**
 	 * Array with jump marks for checking jump marks.
-	 * 
 	 * @var	array<string>
 	 */
 	protected static $jumpMarks = array();
 	
 	/**
 	 * String for automatic generated jump marks.
-	 *
 	 * @var	string
 	 */
 	protected static $autoMarkPrefix = 'autoMark_%s';
 	
 	/**
 	 * Index of automatic generated jump marks.
-	 *
 	 * @var	integer
 	 */
 	protected static $autoMarkIndex = 1;
 	
 	/**
 	 * Prefix for jump marks.
-	 *
 	 * @var	string
 	 */
 	protected static $jumpMarkPrefix = 'a-%s';

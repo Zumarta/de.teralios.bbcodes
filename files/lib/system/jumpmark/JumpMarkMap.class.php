@@ -19,31 +19,25 @@ use wcf\util\JSON;
 class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	
 	/**
-	 * Main jump marks.
-	 * 
+	 * Main jump marks. 
 	 * @var array<\wcf\system\jumpmarks\JumpMarkMainNode>
 	 */
 	protected $jumpMarks = array();
 	
 	/**
 	 * Index for \Iterator.
-	 * 
 	 * @var	number
 	 */
 	protected $index = 0;
 	
 	/**
 	 * Counter for setting jump marks.
-	 * 
 	 * @var	number
 	 */
 	protected $counter = 0;
 	
 	/**
 	 * Current Counter for jump marks.
-	 * 
-	 * Use when a sub jump mark is given.
-	 * 
 	 * @var number
 	 */
 	protected $currentCounter = 0;
@@ -96,6 +90,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	
 	/**
 	 * Return Jumpmarks as json string.
+	 * 
 	 * @return string
 	 */
 	public function getJSON() {
