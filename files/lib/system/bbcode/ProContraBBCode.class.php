@@ -81,7 +81,7 @@ class ProContraBBCode extends AbstractBBCode {
 			$return = WCF::getTPL()->fetch('proContraBBCodeTag');
 			
 			// copyright counter.
-			TeraliosBBCodesCopyright::setCopyright();
+			TeraliosBBCodesCopyright::callCopyright();
 		}
 		else {
 			$return = WCF::getTPL()->fetch('proContraBBCodeTagSimple');

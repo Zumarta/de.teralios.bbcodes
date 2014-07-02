@@ -10,8 +10,8 @@ namespace wcf\system\copyright;
  * @package	de.teralios.tjs.bbcodes
  */
 final class TeraliosBBCodesCopyright extends AbstractCopyright {
-	protected static $countedCopyright = true;
-	protected static $countMax = 3;
-	protected static $langVar = 'wcf.teralios.copyright.bbcodes';
-	protected static $key = '1b0d911514cc24c30a65918a6d6573d45e6da006';
+	protected $counted = true;
+	protected $callsToShow = 2;
+	protected $languageVariable = 'wcf.teralios.copyright.bbcodes';
+	protected $key = '1b0d911514cc24c30a65918a6d6573d45e6da006';
 }
