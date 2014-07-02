@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
 	<category name="wcf.bbcode">
+		<item name="wcf.bbcode.button.footnote"><![CDATA[Fußnote]]></item>
 		<item name="wcf.bbcode.button.heading"><![CDATA[Überschrift 1]]></item>
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Contras]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Überschrift 2]]></item>
+		<item name="wcf.bbcode.footnote"><![CDATA[Fußnoten]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
