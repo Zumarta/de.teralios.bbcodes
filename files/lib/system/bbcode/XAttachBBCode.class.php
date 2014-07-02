@@ -1,5 +1,4 @@
 <?php
-// namespace
 namespace wcf\system\bbcode;
 
 // imports

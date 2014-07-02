@@ -1,6 +1,7 @@
 <?php
 namespace wcf\system\event\listener;
 
+// imports
 use wcf\data\package\Package;
 use wcf\system\event\IEventListener;
 use wcf\system\wcf;
