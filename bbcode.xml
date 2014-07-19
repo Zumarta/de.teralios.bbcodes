@@ -72,7 +72,7 @@
 			</attributes>
 			<wysiwygicon>procontra.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
-			<allowedchildren>none^b,i,u,s,sub,sup,color,font,size,url</allowedchildren>
+			<allowedchildren>none^b,i,u,s,color,font,url,lexicon</allowedchildren>
 		</bbcode>
 		
 		<!-- xattach bbcode -->
@@ -88,7 +88,7 @@
 					<validationpattern>^(left|right|inline)$</validationpattern>
 				</attribute>
 			</attributes>
-			<allowedchildren>none^b,i,u,s,sub,sup,color,font,url</allowedchildren>
+			<allowedchildren>none^b,i,u,s,sub,sup,color,font,url,lexicon</allowedchildren>
 		</bbcode>
 	</import>
 </data>
