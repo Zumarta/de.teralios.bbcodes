@@ -4,7 +4,7 @@
 		<script data-relocate="true">
 			//<![CDATA[
 			$(function() {
-				Tera.xAttachment.init('{@$wysiwygContainerID}', {if $isWCF21|isset && $isWCF21 == true}true{else}false{/if});
+				new Tera.xAttachment('{@$wysiwygContainerID}', {if $isWCF21|isset && $isWCF21 == true}true{else}false{/if});
 			});
 			//]]>
 		</script>

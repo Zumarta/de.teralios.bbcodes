@@ -14,7 +14,7 @@
 		$(function(){
 			var id = '{if $directoryID|isset}{$directoryID}{else}#directoryPlaceholder{/if}';
 			var addClass = '{if $directoryAddClass|isset}{$directoryAddClass}{/if}';
-			Tera.Directory.init(id, addClass);
+			new Tera.Directory(id, addClass);
 		});
 		//]]>
 	</script>

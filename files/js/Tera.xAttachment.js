@@ -10,7 +10,7 @@ if (!Tera) {
 	var Tera = { };
 }
 // fields  messageFormAttachments
-Tera.xAttachment = {
+Tera.xAttachment = Class.extend({
 		_editorID: '',
 		_wcf21: false,
 		
@@ -68,4 +68,4 @@ Tera.xAttachment = {
 				$('#' + this._editorID).redactor('insertDynamic', $bbcode);
 			}
 		}
-}
+});

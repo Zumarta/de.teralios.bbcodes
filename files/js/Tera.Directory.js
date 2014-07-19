@@ -10,7 +10,7 @@ if (!Tera) {
 	var Tera = { };
 }
 
-Tera.Directory = {
+Tera.Directory =  Class.extend({
 	_id: '',
 	_addClass: '',
 	_toClass: '',
@@ -65,4 +65,4 @@ Tera.Directory = {
 			placeHolder.show();
 		}
 	}
-};
+});
