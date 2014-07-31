@@ -18,7 +18,7 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 	</category>
 	
 	<category name="wcf.teralios">
-		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de">Diese Seite nutzt <strong>Teralios' BBCodes</strong></a>]]></item>
+		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Diese Seite nutzt <strong>Teralios' BBCodes</strong></a>]]></item>
 	</category>
 	
 	<category name="wcf.acp.option">
