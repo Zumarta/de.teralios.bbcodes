@@ -7,5 +7,12 @@
 			<templatecode><![CDATA[{include file='__xAttachCatchButton' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
+		
+		<templatelistener name="footnoteBlock">
+			<templatename>footer</templatename>
+			<eventname>contents</eventname>
+			<templatecode><![CDATA[{include file='footnotes' application='wcf'}]]></templatecode>
+			<environment>user</environment>
+		</templatelistener>
 	</import>
 </data>

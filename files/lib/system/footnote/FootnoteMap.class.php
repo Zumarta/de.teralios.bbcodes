@@ -2,20 +2,43 @@
 namespace wcf\system\footnote;
 
 // imports
+use wcf\system\exception\SystemException;
 use wcf\system\SingletonFactory;
+use wcf\system\WCF;
 
 class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 	protected $index = 1;
-	protected $indexArray = 1;
+	protected $indexArray = 0;
 	protected $footnotes = array();
 	
-	public function add($text, $allowHTML = true) {		
-		if (isset($this->footnotes[$this->index])) {
+	protected function init() {
+		WCF::getTPL()->assign('footnoteMap', $this);
+	}
+	
+	public function add($text = '', $allowHTML = true) {		
+		if (isset($this->footnotes[$this->indexArray])) {
 			++$this->index;
+			++$this->indexArray;
 		}
 		
-		$this->footnotes[$this->index] = new Footnote($this->index, $text, (($allowHTML) ? Footnote::TYPE_HTML : Footnote::TYPE_NO_HTML));
+		$this->footnotes[] = new Footnote($this->index, $text, (($allowHTML) ? Footnote::TYPE_HTML : Footnote::TYPE_NO_HTML));
 		return $this->index;
+	}
+	
+	/**
+	 * Return a foot note.
+	 *
+	 * @param	integer		$index
+	 * @throws SystemException
+	 * @return \wcf\system\footnote\Footnote
+	 */
+	public function getFootnote($index) {
+		if (!isset($this->footnotes[$index])) {
+			throw new SystemException("No footnote found with index '".$index."'.");
+		}
+		else {
+			return $this->footnotes[$index];
+		}
 	}
 	
 	/**
@@ -50,7 +73,7 @@ class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @see Iterator::rewind()
 	 */
 	public function rewind() {
-		$this->index = 1;
+		$this->indexArray = 0;
 	}
 
 	/**

@@ -18,6 +18,14 @@ class Footnote {
 		$this->type = $type;
 	}
 	
+	public function setText($text, $type = self::TYPE_NO_HTML) {
+		$this->text = $text;
+	}
+	
+	public function getTagIndex() {
+		return 'footnote'.$this->index;
+	}
+	
 	public function getIndex() {
 		return $this->index;
 	}

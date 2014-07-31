@@ -18,6 +18,15 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
+			
+			<option name="bbcodes_footnote_style">
+				<categoryname>message.general.teraBBCodes</categoryname>
+				<optiontype>select</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<selectoptions><![CDATA[1:wcf.bbcode.footnote.variant.1
+2:wcf.bbcode.footnote.variant.2
+3:wcf.bbcode.footnote.variant.3]]></selectoptions>
+			</option>
 		</options>
 	</import>
 </data>

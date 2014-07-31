@@ -5,6 +5,14 @@
  * @author	Karsten (Teralios) Achterrath
  * @license GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  */
+// CSS for footnotes
+.footnoteList {
+	.footnoteIndex {
+		float: left;
+		margin-right: @wcfGapSmall;
+	}	
+}
+
 // CSS for procontra bbcode
 // BBCode variables
 @tjsProColor: rgb(0,191,0);
@@ -17,7 +25,24 @@
 @tjsNeutralColorHover: rgb(63,63,63);
 @tjsNeutralBackgroundColor: fadeout(@tjsNeutralColorHover, 90%);
 
+.proContraBBCodeLeft {
+	display: inline-block;
+	widht: 50;
+	float: left;
+	margin-right: @wcfGapTiny;
+}
+
+.proContraBBCodeRight {
+	display: inline-block;
+	widht: 50;
+	float: right;
+	margin-left: @wcfGapTiny;
+}
+
 .proContraBBCode {
+	margin-top: @wcfGapTiny;
+	margin-bottom: @wcfGapTiny;
+	
 	.pro {
 		.icon {
 			color: @tjsProColor;

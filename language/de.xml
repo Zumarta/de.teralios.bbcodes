@@ -6,6 +6,9 @@
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Contras]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Überschrift 2]]></item>
 		<item name="wcf.bbcode.footnote"><![CDATA[Fußnoten]]></item>
+		<item name="wcf.bbcode.footnote.variant.1"><![CDATA[<sup>1</sup>]]></item>
+		<item name="wcf.bbcode.footnote.variant.2"><![CDATA[[1]]]></item>
+		<item name="wcf.bbcode.footnote.variant.3"><![CDATA[*]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
@@ -22,9 +25,10 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.bbcodes_headline_automark">Heading- und Subheading Sprungmarken erzeugen</item>
-		<item name="wcf.acp.option.bbcodes_headline_automark.description"></item>
-		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Rahmenlose Darstellung des Ahnangs im Text</item>
+		<item name="wcf.acp.option.bbcodes_footnote_style"><![CDATA[Stil der Fußnoten]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_style.description"><![CDATA[Die Variante mit dem Asterisk (*) kann bei vielen Fußnoten unschön aussehen.]]></item>
+		<item name="wcf.acp.option.bbcodes_headline_automark"><![CDATA[Heading- und Subheading Sprungmarken erzeugen]]></item>
+		<item name="wcf.acp.option.bbcodes_xattach_freestyle"><![CDATA[Rahmenlose Darstellung des Ahnangs im Text]]></item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>
 </language>

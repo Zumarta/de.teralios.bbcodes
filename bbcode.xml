@@ -26,9 +26,15 @@
 		<!-- footnote -->
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<wysiwygicon>box.png</wysiwygicon>
+			<wysiwygicon>footnote.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
-			<allowedchildren>all</allowedchildren>
+			<allowedchildren>none</allowedchildren>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
 		</bbcode>
 		
 		<!-- heading and subheading bbcode -->
@@ -68,6 +74,10 @@
 				<attribute name="1">
 					<required>0</required>
 					<validationpattern>^[10]{1}$</validationpattern>
+				</attribute>
+				<attribute name="2">
+					<required>0</required>
+					<validationpattern>^(left|right)$</validationpattern>
 				</attribute>
 			</attributes>
 			<wysiwygicon>procontra.png</wysiwygicon>
