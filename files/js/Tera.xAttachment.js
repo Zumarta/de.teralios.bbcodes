@@ -9,7 +9,10 @@
 if (!Tera) {
 	var Tera = { };
 }
-// fields  messageFormAttachments
+
+/**
+ * Catch attachmant insert button.
+ */
 Tera.xAttachment = Class.extend({
 		_editorID: '',
 		_wcf21: false,
