@@ -3,6 +3,7 @@
 		<div class="containerHeadline">
 			<h3>{lang}wcf.teralios.footnotes{/lang}</h3>
 		</div>
+		{event name='beforeContent'}
 		<ul>
 			{foreach from=$footnoteMap item='footnote'}
 				<li id="{$footnote->getTagIndex()}">
@@ -20,5 +21,6 @@
 				</li>
 			{/foreach}
 		</ul>
+		{event name='afterContent'}
 	</div>
 {/if}

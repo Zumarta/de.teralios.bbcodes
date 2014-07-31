@@ -4,6 +4,7 @@
 		<div class="directoryFull tabularBox">
 			<div class="tabularBoxTitle"><header><h2>{lang}wcf.directory.title{/lang}</h2></header></div>
 			<div>
+				{event name='beforeContent'}
 				<ol>
 					{foreach from=$directory item=$jumpMark}
 						{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
@@ -22,6 +23,7 @@
 						{/if}
 					{/foreach}
 				</ol>
+				{event name='afterContent'}
 			</div>
 		</div>
 	{/if}

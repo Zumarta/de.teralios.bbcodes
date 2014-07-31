@@ -21,6 +21,7 @@
 					{/if}
 				{/foreach}
 			</ol>
+			{event name='afterContent'}
 		</div>
 	</fieldset>
 {/if}

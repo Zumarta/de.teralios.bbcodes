@@ -13,6 +13,7 @@
 			var addClass = '{if $directoryAddClass|isset}{$directoryAddClass}{/if}';
 			var toClass = 'directoryItemPlaceholder{$directoryItemParseClassIndex}'
 			var fromClass = 'directoryItemParse{$directoryItemParseClassIndex}'
+			{event name='javascript'}
 			Tera.Directory.initItem(toClass, fromClass, addClass);
 		});
 		//]]>
