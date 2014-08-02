@@ -1,4 +1,4 @@
-{if $footnoteMap|isset && $footnoteMap|count > 0}
+{if $footnoteMap|isset && $footnoteMap->hasFootnotes()}
 	<div class="container containerPadding marginTop footnoteList">
 		<div class="containerHeadline">
 			<h3>{lang}wcf.teralios.footnotes{/lang}</h3>

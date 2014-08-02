@@ -2,6 +2,7 @@
 namespace wcf\system\footnote;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\exception\SystemException;
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
@@ -13,6 +14,12 @@ class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 	
 	protected function init() {
 		WCF::getTPL()->assign('footnoteMap', $this);
+	}
+	
+	public function hasFootnotes() {
+		TeraliosBBCodesCopyright::callCopyright();
+		
+		return ($this->count()) ? true : false;
 	}
 	
 	public function add($text = '', $allowHTML = true) {		

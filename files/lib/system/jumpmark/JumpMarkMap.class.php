@@ -108,11 +108,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return boolean
 	 */
 	public function hasJumpMarks() {
-		// copyright counter.
-		if ($this->copyrightCalled == false) {
-			TeraliosBBCodesCopyright::callCopyright();
-			$this->copyrightCalled = true;
-		}
+		TeraliosBBCodesCopyright::callCopyright();
 		
 		return ($this->count() > 0) ? true : false;
 	}
