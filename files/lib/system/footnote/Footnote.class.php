@@ -22,8 +22,8 @@ class Footnote {
 		$this->text = $text;
 	}
 	
-	public function getTagIndex() {
-		return 'footnote'.$this->index;
+	public function getTagID() {
+		return static::getTagIndex($this->index);
 	}
 	
 	public function getIndex() {
@@ -37,5 +37,9 @@ class Footnote {
 		else {
 			return StringUtil::encodeHTML($this->text);
 		}
+	}
+	
+	public static function getTagIndex($index) {
+		return 'footnote'.$index;
 	}
 }

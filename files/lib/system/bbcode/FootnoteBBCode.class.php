@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\footnote\Footnote;
 use wcf\system\footnote\FootnoteMap;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
@@ -23,8 +24,9 @@ class FootnoteBBCode extends AbstractBBCode {
 			$footnoteIndex = static::$footnotes[$hash];
 		}
 		
+		// get a short preview for title tag.
 		$tooltipContent = StringUtil::truncate(StringUtil::stripHTML($content), 100);
-		$footnoteTagIndex = 'footnote'.$footnoteIndex;
+		$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
 		
 		WCF::getTPL()->assign(array(
 			'footnoteTagID' => $footnoteTagIndex,

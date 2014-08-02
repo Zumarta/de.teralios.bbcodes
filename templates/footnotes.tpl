@@ -6,7 +6,7 @@
 		{event name='beforeContent'}
 		<ul>
 			{foreach from=$footnoteMap item='footnote'}
-				<li id="{$footnote->getTagIndex()}">
+				<li id="{$footnote->getTagID()}">
 					<div class="footnoteIndex">
 						{if BBCODES_FOOTNOTE_STYLE == 1}
 							<sup><small>{$footnote->getIndex()}</small></sup>
