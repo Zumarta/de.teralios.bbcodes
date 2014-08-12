@@ -27,18 +27,6 @@ Tera.Directory =  Class.extend({
 		this.parse();
 	},
 	
-	initItem: function(toClass, fromClass, addClass) {
-		if (toClass.substring(0,1) != '.') {
-			this._toClass = '.' + toClass;
-		}
-		
-		if (fromClass.substring(0,1) != '.') {
-			this._fromClass = '.' + fromClass;
-		}
-		
-		this._addClass = addClass;
-	},
-	
 	parse: function() {
 		var htmlSource = $('#directoryParse').contents();
 		var placeHolder = $(this._id);
@@ -48,20 +36,6 @@ Tera.Directory =  Class.extend({
 			if (this._addClass) {
 				placeHolder.addClass(this._addClass);
 			}
-			placeHolder.show();
-		}
-	},
-	
-	parsePerItem: function() {
-		var htmlSource = $(this._fromClass).contents();
-		var placeHolder = $(this._toClass);
-		
-		if (htmlSource.length > 1) {
-			placeHolder.append(htmlSource);
-			if (this._addClass) {
-				placeHolder.addClass(this._addClass);
-			}
-			
 			placeHolder.show();
 		}
 	}
