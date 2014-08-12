@@ -6,7 +6,7 @@
 			{if $content|empty == false}<div>{@$content}</div>{/if}
 		</div>
 	{else}
-		<div class="content {if $proContraStyle|isset && $proContraStyle == 'old'}styleOld{else}styleNew{/if}">
+		<div class="content">
 			{event name='beforeContent'}
 			{if ($pcPoints['pro']|isset && $pcPoints['pro']|count) || ($pcPoints['contra']|isset && $pcPoints['contra']|count)}
 				<div>

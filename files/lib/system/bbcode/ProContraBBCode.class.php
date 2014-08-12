@@ -22,9 +22,8 @@ class ProContraBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$title = (isset($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
-		$oldStyle = (isset($openingTag['attributes'][1]) && $openingTag['attributes'][1] == 1) ? 'old' : 'new';
-		if (isset($openingTag['attributes'][2])) {
-			$position = StringUtil::firstCharToUpperCase($openingTag['attributes'][2]);
+		if (isset($openingTag['attributes'][1])) {
+			$position = StringUtil::firstCharToUpperCase($openingTag['attributes'][1]);
 		}
 		else {
 			$position = 0;
@@ -70,7 +69,6 @@ class ProContraBBCode extends AbstractBBCode {
 			WCF::getTPL()->assign(array(
 				'pcTitle' => $title,
 				'pcPoints' => $points,
-				'pcStyle' => $oldStyle,
 				'pcPosition' => $position
 			));
 		}

@@ -73,10 +73,6 @@
 				</attribute>
 				<attribute name="1">
 					<required>0</required>
-					<validationpattern>^[10]{1}$</validationpattern>
-				</attribute>
-				<attribute name="2">
-					<required>0</required>
 					<validationpattern>^(left|right)$</validationpattern>
 				</attribute>
 			</attributes>
