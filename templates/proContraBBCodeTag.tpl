@@ -1,4 +1,4 @@
-<div class="tabularBox proContraBBCode{if $pcPosition != 0} proContraBBCode{$pcPosition}{/if}">
+<div class="tabularBox proContraBBCode{if $pcPosition == 'Left' || $pcPosition == 'Right'} proContraBBCode{$pcPosition}{/if}">
 	<div class="tabularBoxTitle"><header><h2>{$pcTitle}</h2></header></div>
 	{if $pcPoints|empty || ($pcPoints['pro']|empty && $pcPoints['contra']|empty && $pcPoints['neutral']|empty)}
 		<div class="content">

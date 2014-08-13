@@ -25,7 +25,8 @@
 				<defaultvalue>1</defaultvalue>
 				<selectoptions><![CDATA[1:wcf.bbcode.footnote.variant.1
 2:wcf.bbcode.footnote.variant.2
-3:wcf.bbcode.footnote.variant.3]]></selectoptions>
+3:wcf.bbcode.footnote.variant.3
+3:wcf.bbcode.footnote.variant.4]]></selectoptions>
 			</option>
 		</options>
 	</import>

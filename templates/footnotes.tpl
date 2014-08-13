@@ -12,8 +12,10 @@
 							<sup><small>{$footnote->getIndex()}</small></sup>
 						{elseif BBCODES_FOOTNOTE_STYLE == 2}
 							[{$footnote->getIndex()}]
-						{else}
+						{elseif BBCODES_FOOTNOTE_STYLE == 3}
 							{'*'|str_repeat:$footnote->getIndex()}
+						{else}
+							<sup><small>{$footnote->getIndex()|romanize}</small></sup>
 						{/if}
 					</div>
 					<div class="footnoteText">{@$footnote->getText()}</div>

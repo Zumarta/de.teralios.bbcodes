@@ -7,8 +7,8 @@
  */
 // CSS for box bbcode
 .boxBBCode {
-	margin-top: @wcfGapTiny;
-	margin-bottom: @wcfGapTiny;
+	margin-top: @wcfGapSmall;
+	margin-bottom: @wcfGapSmall;
 	
 	.content {
 		padding: @wcfGapSmall;
@@ -17,12 +17,12 @@
 }
 .boxLeft {
 	float: left;
-	margin-right: @wcfGapTiny;
+	margin-right: @wcfGapSmall;
 }
 
 .boxRight {
 	float: right;
-	margin-left: @wcfGapTiny;
+	margin-left: @wcfGapSmall;
 }
 
 .boxSize3 {
@@ -41,8 +41,17 @@
 .footnoteList {
 	.footnoteIndex {
 		float: left;
-		margin-right: @wcfGapSmall;
-	}	
+		padding-right: @wcfGapSmall;
+		font-weight: bold;
+	}
+	
+	& > ul > li {
+		margin-bottom: @wcfGapSmall;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 // CSS for procontra bbcode
@@ -59,21 +68,21 @@
 
 .proContraBBCodeLeft {
 	display: inline-block;
-	widht: 50;
+	width: 50%;
 	float: left;
-	margin-right: @wcfGapTiny;
+	margin-right: @wcfGapSmall;
 }
 
 .proContraBBCodeRight {
 	display: inline-block;
-	widht: 50;
+	width: 50%;
 	float: right;
-	margin-left: @wcfGapTiny;
+	margin-left: @wcfGapSmall;
 }
 
 .proContraBBCode {
-	margin-top: @wcfGapTiny;
-	margin-bottom: @wcfGapTiny;
+	margin-top: @wcfGapSmall;
+	margin-bottom: @wcfGapSmall;
 	
 	.pro {
 		.icon {

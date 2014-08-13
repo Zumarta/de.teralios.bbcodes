@@ -3,7 +3,9 @@
 		<sup><small>{$footnoteIndex}</small></sup>
 	{elseif BBCODES_FOOTNOTE_STYLE == 2}
 		[{$footnoteIndex}]
-	{else}
+	{elseif BBCODES_FOOTNOTE_STYLE == 3}
 		{'*'|str_repeat:$footnoteIndex}
+	{else}
+		<sup><small>{$footnoteIndex|romanize}</small></sup>
 	{/if}
 </a>
