@@ -15,7 +15,7 @@ class FootnoteBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
 		// footnote and fn parse.
-		if ($openingTag['name'] == 'fn' || $openingTag['name'] == 'footnote') {
+		if ($openingTag['name'] == 'footnote') {
 			// no content and no index for content tag: drop footnote.
 			$content = StringUtil::trim($content);
 			if (empty($content) && !isset($openingTag['attributes'][0])) {

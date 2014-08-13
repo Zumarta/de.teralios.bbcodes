@@ -38,18 +38,6 @@
 			</attributes>
 		</bbcode>
 		
-		<bbcode name="fn">
-			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<sourcecode>1</sourcecode>
-			<allowedchildren>none</allowedchildren>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
-		</bbcode>
-		
 		<bbcode name="footnotecontent">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<sourcecode>1</sourcecode>
@@ -60,20 +48,6 @@
 				</attribute>
 			</attributes>
 		</bbcode>
-		
-		
-		<bbcode name="fnc">
-			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<sourcecode>1</sourcecode>
-			<attributes>
-				<attribute name="0">
-					<required>1</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
-		</bbcode>
-		
-		
 		<!-- heading and subheading bbcode -->
 		<bbcode name="heading">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
