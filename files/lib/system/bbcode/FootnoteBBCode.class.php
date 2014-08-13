@@ -9,31 +9,55 @@ use wcf\util\StringUtil;
 
 class FootnoteBBCode extends AbstractBBCode {
 	protected static $footnotes = array();
+	
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
-	public function getParsedTag(array $openingTag, $content, array $closingTag,\wcf\system\bbcode\BBCodeParser $parser) {
-		
-		// build hash from content and check footnotes for existing hash. When exists, use old index and co.
-		$hash = StringUtil::getHash($content);
-		if (!isset(static::$footnotes[$hash])) {
-			$footnoteIndex = FootnoteMap::getInstance()->add($content, true);
-			static::$footnotes[$hash] = $footnoteIndex;
+	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
+		// footnote and fn parse.
+		if ($openingTag == 'fn' || $openingTag == 'footnote') {
+			// no content and no index for content tag: drop footnote.
+			$content = StringUtil::trim($content);
+			if (empty($content) && !isset($openingTag['attributes'][0])) {
+				return '';
+			}
+			
+			// build hash from content or use index for content attribute
+			$hash = (!empty($content)) ? StringUtil::getHash($content) : $openingTag['attributes'][0];
+			
+			// check footnotes for existing content or 
+			if (!isset(static::$footnotes[$hash])) {
+				$footnoteIndex = FootnoteMap::getInstance()->add($content, true);
+				static::$footnotes[$hash] = $footnoteIndex;
+			}
+			else {
+				$footnoteIndex = static::$footnotes[$hash];
+			}
+			
+			// get a short preview from content (if is set)
+			$tooltipContent = StringUtil::truncate(StringUtil::stripHTML($content), 100);
+			$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
+			
+			WCF::getTPL()->assign(array(
+				'footnoteTagID' => $footnoteTagIndex,
+				'footnoteIndex' => $footnoteIndex,
+				'footnoteTooltip' => $tooltipContent
+			));
+			
+			return WCF::getTPL()->fetch('footnoteBBCode');
 		}
+		// footnote content
 		else {
-			$footnoteIndex = static::$footnotes[$hash];
+			$contentIndex = $openingTag['attributes'][0];
+			if (isset(static::$footnotes[$contentIndex])) {
+				$index = static::$footnotes[$contentIndex];
+				$footnote = FootnoteMap::getInstance()->getFootnote($index);
+				if ($footnote != false) {
+					$footnote->setText(StringUtil::trim($content));
+				}
+			}
+			
+			return '';
 		}
-		
-		// get a short preview for title tag.
-		$tooltipContent = StringUtil::truncate(StringUtil::stripHTML($content), 100);
-		$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
-		
-		WCF::getTPL()->assign(array(
-			'footnoteTagID' => $footnoteTagIndex,
-			'footnoteIndex' => $footnoteIndex,
-			'footnoteTooltip' => $tooltipContent
-		));
-		
-		return WCF::getTPL()->fetch('footnoteBBCode');
 	}
 }

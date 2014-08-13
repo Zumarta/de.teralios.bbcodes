@@ -27,7 +27,7 @@
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<wysiwygicon>footnote.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
+			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
 			<allowedchildren>none</allowedchildren>
 			<attributes>
 				<attribute name="0">
@@ -36,6 +36,43 @@
 				</attribute>
 			</attributes>
 		</bbcode>
+		
+		<bbcode name="fn">
+			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
+			<allowedchildren>none</allowedchildren>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+		</bbcode>
+		
+		<bbcode name="footnotecontent">
+			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
+			<allowedchildren>none</allowedchildren>
+			<attributes>
+				<attribute name="0">
+					<required>1</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+		</bbcode>
+		
+		
+		<bbcode name="fnc">
+			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
+			<wysiwygicon>footnote.png</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
+			<allowedchildren>none</allowedchildren>
+			<attributes>
+				<attribute name="0">
+					<required>1</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+		</bbcode>
+		
 		
 		<!-- heading and subheading bbcode -->
 		<bbcode name="heading">

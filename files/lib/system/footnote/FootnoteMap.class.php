@@ -41,7 +41,8 @@ class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 	 */
 	public function getFootnote($index) {
 		if (!isset($this->footnotes[$index])) {
-			throw new SystemException("No footnote found with index '".$index."'.");
+			return false;
+			// throw new SystemException("No footnote found with index '".$index."'.");
 		}
 		else {
 			return $this->footnotes[$index];
