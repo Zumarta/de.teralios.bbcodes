@@ -13,8 +13,14 @@ class BoxBBCode extends AbstractBBCode {
 		$title = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
 		$position = (isset($openingTag['attributes'][1])) ? StringUtil::toLowerCase($openingTag['attributes'][1]) : '';
 		$size = (isset($openingTag['attributes'][2])) ? $openingTag['attributes'][2] : 0;
-		if ($size == 0 && $position == 'left' || $position == 'right') $size = 2;
-		else $size = 4;
+		
+		// size settings.
+		if ($size == 0 && ($position == 'left' || $position == 'right')) {
+			$size = 2;
+		}
+		else if ($size == 0) {
+			$size = 4;
+		}
 		
 		if ($parser->getOutputType() == 'text/simplified-html') {
 			if (!empty($title)) {

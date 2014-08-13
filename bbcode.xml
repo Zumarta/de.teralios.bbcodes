@@ -62,8 +62,6 @@
 		
 		<bbcode name="fnc">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<wysiwygicon>footnote.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
 			<allowedchildren>none</allowedchildren>
 			<attributes>
 				<attribute name="0">

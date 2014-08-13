@@ -22,13 +22,13 @@ class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 		return ($this->count()) ? true : false;
 	}
 	
-	public function add($text = '', $allowHTML = true) {		
+	public function add($text = '', $contentType = Footnote::TYPE_NO_HTML) {	
 		if (isset($this->footnotes[$this->indexArray])) {
 			++$this->index;
 			++$this->indexArray;
 		}
 		
-		$this->footnotes[] = new Footnote($this->index, $text, (($allowHTML) ? Footnote::TYPE_HTML : Footnote::TYPE_NO_HTML));
+		$this->footnotes[] = new Footnote($this->index, $text, $contentType);
 		return $this->index;
 	}
 	
@@ -40,6 +40,7 @@ class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return \wcf\system\footnote\Footnote
 	 */
 	public function getFootnote($index) {
+		$index -= 1;
 		if (!isset($this->footnotes[$index])) {
 			return false;
 			// throw new SystemException("No footnote found with index '".$index."'.");

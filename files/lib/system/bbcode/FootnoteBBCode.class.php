@@ -15,7 +15,7 @@ class FootnoteBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
 		// footnote and fn parse.
-		if ($openingTag == 'fn' || $openingTag == 'footnote') {
+		if ($openingTag['name'] == 'fn' || $openingTag['name'] == 'footnote') {
 			// no content and no index for content tag: drop footnote.
 			$content = StringUtil::trim($content);
 			if (empty($content) && !isset($openingTag['attributes'][0])) {
@@ -27,7 +27,7 @@ class FootnoteBBCode extends AbstractBBCode {
 			
 			// check footnotes for existing content or 
 			if (!isset(static::$footnotes[$hash])) {
-				$footnoteIndex = FootnoteMap::getInstance()->add($content, true);
+				$footnoteIndex = FootnoteMap::getInstance()->add($content, Footnote::TYPE_BBCODE);
 				static::$footnotes[$hash] = $footnoteIndex;
 			}
 			else {
@@ -53,7 +53,7 @@ class FootnoteBBCode extends AbstractBBCode {
 				$index = static::$footnotes[$contentIndex];
 				$footnote = FootnoteMap::getInstance()->getFootnote($index);
 				if ($footnote != false) {
-					$footnote->setText(StringUtil::trim($content));
+					$footnote->setText(StringUtil::trim($content), Footnote::TYPE_BBCODE);
 				}
 			}
 			

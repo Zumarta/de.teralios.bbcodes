@@ -3,6 +3,7 @@ namespace wcf\system\footnote;
 
 // imports
 use wcf\util\StringUtil;
+use wcf\system\bbcode\MessageParser;
 
 class Footnote {
 	public $text = '';
@@ -11,6 +12,7 @@ class Footnote {
 	
 	const TYPE_HTML = 1;
 	const TYPE_NO_HTML = 2;
+	const TYPE_BBCODE = 3;
 	
 	public function __construct($index, $text, $type = self::TYPE_NO_HTML) {
 		$this->index = $index;
@@ -19,6 +21,7 @@ class Footnote {
 	}
 	
 	public function setText($text, $type = self::TYPE_NO_HTML) {
+		$this->type = $type;
 		$this->text = $text;
 	}
 	
@@ -33,6 +36,9 @@ class Footnote {
 	public function getText() {
 		if ($this->type == self::TYPE_HTML) {
 			return $this->text;
+		}
+		else if ($this->type == self::TYPE_BBCODE) {
+			return MessageParser::getInstance()->parse($this->text);
 		}
 		else {
 			return StringUtil::encodeHTML($this->text);
