@@ -26,6 +26,7 @@
 		<!-- footnote -->
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
+			<sourcecode>1</sourcecode>
 			<wysiwygicon>footnote.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
 			<allowedchildren>none</allowedchildren>
@@ -39,6 +40,7 @@
 		
 		<bbcode name="fn">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
+			<sourcecode>1</sourcecode>
 			<allowedchildren>none</allowedchildren>
 			<attributes>
 				<attribute name="0">
@@ -50,7 +52,7 @@
 		
 		<bbcode name="footnotecontent">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<allowedchildren>none</allowedchildren>
+			<sourcecode>1</sourcecode>
 			<attributes>
 				<attribute name="0">
 					<required>1</required>
@@ -62,7 +64,7 @@
 		
 		<bbcode name="fnc">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<allowedchildren>none</allowedchildren>
+			<sourcecode>1</sourcecode>
 			<attributes>
 				<attribute name="0">
 					<required>1</required>
