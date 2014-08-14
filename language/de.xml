@@ -29,6 +29,8 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.bbcodes_footnote_style"><![CDATA[Stil der Fußnoten]]></item>
 		<item name="wcf.acp.option.bbcodes_footnote_style.description"><![CDATA[Die Variante drei und vier (Asterisk und römische Zahlen )können bei vielen Fußnoten unschön aussehen.]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Seiten für Fußnoten]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Geben Sie an auf welchen Seiten die Fußnoten angezeigt werden soll. Den Namen der Seite finden Sie in der URL: <i>domain.tld</i>/<b>SeitenName</b>/.)]]></item>
 		<item name="wcf.acp.option.bbcodes_headline_automark"><![CDATA[Heading- und Subheading Sprungmarken erzeugen]]></item>
 		<item name="wcf.acp.option.bbcodes_xattach_freestyle"><![CDATA[Rahmenlose Darstellung des Ahnangs im Text]]></item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>

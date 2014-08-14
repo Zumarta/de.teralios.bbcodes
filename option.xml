@@ -26,7 +26,13 @@
 				<selectoptions><![CDATA[1:wcf.bbcode.footnote.variant.1
 2:wcf.bbcode.footnote.variant.2
 3:wcf.bbcode.footnote.variant.3
-3:wcf.bbcode.footnote.variant.4]]></selectoptions>
+4:wcf.bbcode.footnote.variant.4]]></selectoptions>
+			</option>
+			<option name="bbcodes_footnote_parse_page">
+				<categoryname>message.general.teraBBCodes</categoryname>
+				<optiontype>textarea</optiontype>
+				<defaultvalue><![CDATA[entry
+thread]]></defaultvalue>
 			</option>
 		</options>
 	</import>

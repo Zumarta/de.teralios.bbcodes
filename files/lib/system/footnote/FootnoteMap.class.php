@@ -7,21 +7,58 @@ use wcf\system\exception\SystemException;
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
 
+/**
+ * List of all footnotes.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
+ * @package de.teralios.bbcodes
+ */
 class FootnoteMap extends SingletonFactory implements \Iterator, \Countable {
+	/**
+	 * Index counter for footnotes.
+	 * @var	integer
+	 */
 	protected $index = 1;
+	
+	/**
+	 * Index counter for array.
+	 * @var	integer
+	 */
 	protected $indexArray = 0;
+	
+	/**
+	 * Array with footnotes.
+	 * @var	array<\wcf\system\footnote\Footnote>
+	 */
 	protected $footnotes = array();
 	
+	/**
+	 * @see \wcf\system\SingletonFactory::init()
+	 */
 	protected function init() {
 		WCF::getTPL()->assign('footnoteMap', $this);
 	}
 	
+	/**
+	 * Check footnote map for footnotes.
+	 *
+	 * @return boolean
+	 */
 	public function hasFootnotes() {
 		TeraliosBBCodesCopyright::callCopyright();
 		
 		return ($this->count()) ? true : false;
 	}
 	
+	/**
+	 * Add a footnotenote.
+	 *
+	 * @param string $text
+	 * @param integer $contentType
+	 * @return integer
+	 */
 	public function add($text = '', $contentType = Footnote::TYPE_NO_HTML) {	
 		if (isset($this->footnotes[$this->indexArray])) {
 			++$this->index;
