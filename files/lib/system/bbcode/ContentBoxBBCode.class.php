@@ -13,7 +13,7 @@ use wcf\system\WCF;
  * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
  * @package de.teralios.bbcodes
  */
-class BoxBBCode extends AbstractBBCode {
+class ContentBoxBBCode extends AbstractBBCode {
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
