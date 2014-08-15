@@ -105,7 +105,7 @@
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
-					<validationpattern>^.+$</validationpattern>
+					<validationpattern>^.*$</validationpattern>
 				</attribute>
 				<attribute name="1">
 					<required>0</required>

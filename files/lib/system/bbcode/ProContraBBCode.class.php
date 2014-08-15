@@ -21,7 +21,7 @@ class ProContraBBCode extends AbstractBBCode {
 	 * @see	\wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
-		$title = (isset($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
+		$title = (isset($openingTag['attributes'][0]) && !empty($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
 		if (isset($openingTag['attributes'][1])) {
 			$position = StringUtil::firstCharToUpperCase($openingTag['attributes'][1]);
 		}
