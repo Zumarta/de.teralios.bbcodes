@@ -14,10 +14,13 @@
 		img {
 			max-width: 98%;
 		}
+		
+		border-bottom-left-radius: @wcfContainerBorderRadius - 1;
+    	border-bottom-right-radius: @wcfContainerBorderRadius - 1;
 	}
 	
-	.tabularBox {
-		.content {
+	& > .tabularBox {
+		 & > .content {
 			padding: @wcfGapSmall;
 			background-color: @wcfContainerBackgroundColor;
 		}
