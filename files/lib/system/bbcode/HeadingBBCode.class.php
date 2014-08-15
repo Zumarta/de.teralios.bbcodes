@@ -65,9 +65,9 @@ class HeadingBBCode extends AbstractBBCode {
 			}
 			
 			WCF::getTPL()->assign(array(
-				'tag' => $tag,
-				'jumpMark' => $jumpMark,
-				'heading' => $content
+				'hstag' => $tag,
+				'hsJumpMark' => $jumpMark,
+				'hsHeading' => $content
 			));
 			
 			$return = WCF::getTPL()->fetch('headingBBCode');
