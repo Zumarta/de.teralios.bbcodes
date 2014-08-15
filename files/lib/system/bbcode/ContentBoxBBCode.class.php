@@ -48,7 +48,7 @@ class BoxBBCode extends AbstractBBCode {
 				'boxContent' => $content
 			));
 			
-			$return = WCF::getTPL()->fetch('boxBBCode', 'wcf');
+			$return = WCF::getTPL()->fetch('contentBoxBBCode', 'wcf');
 		}
 		
 		return $return;

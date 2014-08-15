@@ -2,8 +2,29 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/bbcode.xsd">
 	<import>
 		<!-- box bbcode -->
-		<bbcode name="box">
-			<classname><![CDATA[wcf\system\bbcode\BoxBBCode]]></classname>
+		<bbcode name="contentbox">
+			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^.*$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(left|right)+$</validationpattern>
+				</attribute>
+				<attribute name="2">
+					<required>0</required>
+					<validationpattern>^(1|2|3|4)$</validationpattern>
+				</attribute>
+			</attributes>
+			<wysiwygicon>box.png</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
+			<allowedchildren>all</allowedchildren>
+		</bbcode>
+		
+		<bbcode name="cbox">
+			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
