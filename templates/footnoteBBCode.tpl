@@ -1,4 +1,4 @@
-<a href="{@$__wcf->getAnchor($footnoteTagID)}" title="{$footnoteTooltip}" class="jsTooltip">
+<a href="{@$__wcf->getAnchor($footnoteTagID)}" title="{if $footnoteTooltip != ''}{$footnoteTooltip}{else}{lang}wcf.bbcode.footnote.tooltip{/lang}{/if}" class="jsTooltip">
 	{if BBCODES_FOOTNOTE_STYLE == 1}
 		<sup><small>{$footnoteIndex}</small></sup>
 	{elseif BBCODES_FOOTNOTE_STYLE == 2}

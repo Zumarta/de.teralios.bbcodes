@@ -29,7 +29,7 @@
 			<sourcecode>1</sourcecode>
 			<wysiwygicon>footnote.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
-			<allowedchildren>all</allowedchildren>
+			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
@@ -42,7 +42,7 @@
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<sourcecode>1</sourcecode>
 			<wysiwygicon>footnote.png</wysiwygicon>
-			<allowedchildren>all</allowedchildren>
+			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
@@ -53,7 +53,7 @@
 		
 		<bbcode name="footnotecontent">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<allowedchildren>all</allowedchildren>
+			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
 					<required>1</required>
@@ -64,7 +64,7 @@
 		
 		<bbcode name="fnc">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<allowedchildren>all</allowedchildren>
+			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
 					<required>1</required>

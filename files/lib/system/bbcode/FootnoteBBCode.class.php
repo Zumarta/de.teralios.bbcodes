@@ -70,7 +70,7 @@ class FootnoteBBCode extends AbstractBBCode {
 			}
 			
 			// get a short preview from content (if is set)
-			$tooltipContent = StringUtil::truncate(StringUtil::stripHTML($content), 100);
+			$tooltipContent = StringUtil::trim(StringUtil::truncate(StringUtil::stripHTML($content), 100));
 			$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
 			
 			WCF::getTPL()->assign(array(
