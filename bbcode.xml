@@ -39,8 +39,6 @@
 					<validationpattern>^(1|2|3|4)$</validationpattern>
 				</attribute>
 			</attributes>
-			<wysiwygicon>box.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
 			<allowedchildren>all</allowedchildren>
 		</bbcode>
 		

@@ -11,6 +11,8 @@
 	margin-bottom: @wcfGapSmall;
 	
 	.content {
+		padding: @wcfGapSmall;
+	
 		img {
 			max-width: 98%;
 		}
@@ -21,7 +23,6 @@
 	
 	& > .tabularBox {
 		 & > .content {
-			padding: @wcfGapSmall;
 			background-color: @wcfContainerBackgroundColor;
 		}
 	}
@@ -165,6 +166,9 @@
 		}
 		
 		& > div {
+			border-bottom-left-radius: @wcfContainerBorderRadius - 1;
+   			border-bottom-right-radius: @wcfContainerBorderRadius - 1;
+			
 			&:nth-child(odd) {
 				background-color: @wcfContainerBackgroundColor;
 			}
