@@ -62,12 +62,7 @@
 		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 	
-	<instructions type="update" fromversion="1.4.0 Beta 2">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.4.0 Beta 3">
+	<instructions type="update" fromversion="1.4.0">
 		<instruction type="file">files.tar</instruction>
 	</instructions>
 </package>

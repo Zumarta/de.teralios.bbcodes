@@ -36,6 +36,8 @@ class FootnoteBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
+	    $content = StringUtil::trim($content);
+	    
 		// check controller for parsing foot notes.
 		if (static::$parse == null) {
 			static::parseFootnotes();
@@ -70,7 +72,7 @@ class FootnoteBBCode extends AbstractBBCode {
 			}
 			
 			// get a short preview from content (if is set)
-			$tooltipContent = StringUtil::trim(StringUtil::truncate(StringUtil::stripHTML($content), 100));
+			$tooltipContent = StringUtil::truncate(StringUtil::stripHTML($content), 100);
 			$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
 			
 			WCF::getTPL()->assign(array(
