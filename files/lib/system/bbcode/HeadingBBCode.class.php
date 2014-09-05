@@ -76,10 +76,10 @@ class HeadingBBCode extends AbstractBBCode {
 		else if ($parser->getOutputType('text/simplified-html')) {
 			switch ($openingTag['name']) {
 				case 'heading':
-					$return = '--- '.$content." ---\n";
+					$return = '--- '.$content." ---<br />";
 					break;
 				default:
-					$return = '-- '.$content." --\n";
+					$return = '-- '.$content." --<br />";
 					break;
 			}
 		}

@@ -19,7 +19,7 @@
 				</attribute>
 			</attributes>
 			<wysiwygicon>box.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.box</buttonlabel>
+			<buttonlabel>wcf.bbcode.button.contentBox</buttonlabel>
 			<allowedchildren>all</allowedchildren>
 		</bbcode>
 		

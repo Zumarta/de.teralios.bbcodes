@@ -32,13 +32,13 @@ class ContentBoxBBCode extends AbstractBBCode {
 		
 		if ($parser->getOutputType() == 'text/simplified-html') {
 			if (!empty($title)) {
-				$return = '----( '.$title." )----\n";
+				$return = '----( '.$title." )----";
 			}
 			else {
 				$return = '--------<br />';
 			}
 			$return .= $content;
-			$return .= "\n--------\n";
+			$return .= "<br />--------<br />";
 		}
 		else if ($parser->getOutputType() == 'text/html') {
 			WCF::getTPL()->assign(array(
