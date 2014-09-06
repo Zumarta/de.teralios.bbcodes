@@ -13,6 +13,11 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
+			<option name="bbcodes_xattach_editor">
+				<categoryname>message.general.teraBBCodes</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
 			<option name="bbcodes_xattach_freestyle">
 				<categoryname>message.general.teraBBCodes</categoryname>
 				<optiontype>boolean</optiontype>
