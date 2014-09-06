@@ -1,6 +1,7 @@
 {if MODULE_ATTACHMENT && $attachmentHandler !== null && $attachmentHandler->canUpload()}
 	{if $xAttachButton|isset && $xAttachButton == true}
-		<script data-relocate="true" src="{@$__wcf->getPath()}js/Tera.xAttachment{if !ENABLE_DEBUG_MODE}.min{/if}.js"></script>
+		{include file='__bbcodeVersion' application='wcf'}
+		<script data-relocate="true" src="{@$__wcf->getPath()}js/Tera.xAttachment{if !ENABLE_DEBUG_MODE}.min{/if}.js?v={@$teraBBCodeVersion}"></script>
 		<script data-relocate="true">
 			//<![CDATA[
 			$(function() {
