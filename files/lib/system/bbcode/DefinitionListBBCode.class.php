@@ -19,26 +19,54 @@ class DefinitionListBBCode extends AbstractBBCode {
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
 		$content = StringUtil::trim($text);
 		if (!empty($content) || (mb_strpos($content, '[*]') !== false && mb_strpos($content, '[:]') !== false)) {
-			$listContent = preg_split('#\[\*\]#', $content, -1, PREG_SPLIT_NO_EMPTY);
-			foreach ($listContent AS $key => $value) {
-				$value = StringUtil::trim($value);
-				if (empty($value) || $value == '<br />') {
-					unset($listContent[$key]);
+			// build main list elements
+			$listElements = preg_split('#\[\*\]#', $content, -1, PREG_SPLIT_NO_EMPTY);
+			foreach ($listElements AS $key => $val) {
+				$val = StringUtil::trim($val);
+				if (empty($val) || $val == '<br />') {
+					unset($listElements[$key]);
 				}
 				else {
-					$listContent[$key] = $value;
+					$listElements[$key] = $val;
 				}
 			}
 			
-			if (!empty($listContent)) {
+			// build list
+			if (!empty($listElements)) {
+				$listContent = '';
+				foreach ($listElements AS $point) {
+					if (mb_substr_count($content, '[:]') == 1) {
+						// reset key and value.
+						$key = $value = '';
+						
+						// split list element on [:] in key and definition of key.
+						list($key, $value) = preg_split('#\[:\]#', $content, -1);
+						$key = StringUtil::trim($key);
+						$value = StringUtil::trim($value);
+						
+						// key is not empty.
+						if (!empty($key)) {
+							if ($parser->getOutputType() == 'text/html') {
+								$listContent .= '<dt>'.$key.'</dt><dd>'.$value.'</dd>';
+							}
+							elseif ($parser->getOutputType() == 'text/simplified-html') {
+								$listContent .= $key.': '.$value."\n";
+							}
+						}
+					}
+				}
 				
-			
+				if (!empty($listContent)) {
+					if ($parser->getOutputType() == 'text/html') {
+						return '<dl class="dlistBBCode">'.$listContent.'</dl>';
+					}
+					elseif ($parser->getOutputType() == 'text/simplified-html') {
+						return $listContent;
+					}
+				}
 			}
 		}
-		else {
-			$return = '[dlist]'.$content.'[/dlist]';
-		}
 		
-		return $return;
+		return '[dlist]'.$content.'[/dlist]';
 	}
 }

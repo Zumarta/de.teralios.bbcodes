@@ -71,7 +71,7 @@ class HeadingBBCode extends AbstractBBCode {
 				'hsDataLink' => StringUtil::stripHTML($content)
 			));
 			
-			$return = WCF::getTPL()->fetch('headingBBCode');
+			return WCF::getTPL()->fetch('headingBBCode');
 		}
 		// heading and subheading in simpleified-html.
 		else if ($parser->getOutputType('text/simplified-html')) {
@@ -83,10 +83,9 @@ class HeadingBBCode extends AbstractBBCode {
 					$return = '-- '.$content." --<br />";
 					break;
 			}
-		}
 			
-		// return
-		return $return;
+			return $return;
+		}
 	}
 
 	/**

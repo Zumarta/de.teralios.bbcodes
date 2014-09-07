@@ -18,7 +18,7 @@
 	{/if}
 	{if $pcPoints['neutral']|isset && $pcPoints['neutral']|count}
 		{foreach from=$pcPoints['neutral'] item=$pcPoints}
-				* {@$pcPoint}
+			* {@$pcPoint}
 		{/foreach}
 	{/if}
 {/if}

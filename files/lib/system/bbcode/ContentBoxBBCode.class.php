@@ -39,6 +39,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 			}
 			$return .= $content;
 			$return .= "<br />--------<br />";
+			return $return;
 		}
 		else if ($parser->getOutputType() == 'text/html') {
 			WCF::getTPL()->assign(array(
@@ -48,9 +49,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 				'boxContent' => $content
 			));
 			
-			$return = WCF::getTPL()->fetch('contentBoxBBCode', 'wcf');
+			return WCF::getTPL()->fetch('contentBoxBBCode', 'wcf');
 		}
-		
-		return $return;
 	}
 }

@@ -43,13 +43,11 @@ class XAttachBBCode extends AttachmentBBCode {
 				'float' => $float,
 				'description' => $description,
 			));
-			$xAttach = WCF::getTPL()->fetch('xAttachBBCodeTag');
+			return WCF::getTPL()->fetch('xAttachBBCodeTag');
 		}
 		else {
 			// simple description.
-			$xAttach = $attachmentLink.' ('.$description.')';
+			return $attachmentLink.' ('.$description.')';
 		}
-		
-		return $xAttach;
 	}
 }
