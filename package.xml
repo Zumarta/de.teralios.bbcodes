@@ -4,7 +4,7 @@
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>1.4.1</version><!-- For my father/Für meinen Vater! -->
-		<date>2014-09-06</date>
+		<date>2014-09-07</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -23,26 +23,6 @@
 	</excludedPackages>
 
 	<instructions type="install">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
-		<instruction type="bbcode">bbcode.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
-		<instruction type="option">option.xml</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction>
-		<instruction type="eventListener">eventListener.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.3.1">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
-		<instruction type="bbcode">bbcode.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
-		<instruction type="option">option.xml</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction>
-		<instruction type="eventListener">eventListener.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.3.1 PL 1">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="bbcode">bbcode.xml</instruction>
@@ -73,5 +53,7 @@
 	<instructions type="update" fromversion="1.4.1">
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="option">option.xml</instruction>
+		<instruction type="bbcode">bbcode.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
