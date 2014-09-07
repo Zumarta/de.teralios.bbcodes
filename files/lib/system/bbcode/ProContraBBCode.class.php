@@ -89,7 +89,7 @@ class ProContraBBCode extends AbstractBBCode {
 			return	WCF::getTPL()->fetch('proContraBBCodeTag');
 		}
 		else if ($parser->getOutputType() == 'text/simplified-html') {
-			return WCF::getTPL()->fetch('proContraBBCodeTagSimple');
+			return WCF::getLanguage()->get('wcf.bbcode.proContra.list');
 		}
 	}
 }
