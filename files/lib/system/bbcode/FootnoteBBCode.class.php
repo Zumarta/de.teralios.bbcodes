@@ -72,7 +72,7 @@ class FootnoteBBCode extends AbstractBBCode {
     					$content = static::$footnoteContent[$hash];
     				}
     		
-    				$footnoteIndex = FootnoteMap::getInstance()->add($content, Footnote::TYPE_HTML);
+    				$footnoteIndex = FootnoteMap::getInstance()->add($content, Footnote::TYPE_BBCODE);
     				static::$footnotes[$hash] = $footnoteIndex;
     			}
     			else {

@@ -29,6 +29,8 @@ The syntax has change. For every new point in the list, use the prefix [+][-] or
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Pages for footnotes]]></item>
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Defines pages where footnotes are parsed. The name of a page you will find in the URL: <i>domain.tld</i>/<b>PageName</b>/.)]]></item>
 		<item name="wcf.acp.option.bbcodes_headline_automark">Heading and Subheading creates jumpmarks</item>
+		<item name="wcf.acp.option.bbcodes_xattach_editor"><![CDATA[Activate xAttach in extended Editor.]]></item>
+		<item name="wcf.acp.option.bbcodes_xattach_editor.description"><![CDATA[xAttach-BBCode override the insert button for attachments in the extended editor. This option can deactivate this.]]></item>
 		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Borderless style for attachments in messages</item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>
