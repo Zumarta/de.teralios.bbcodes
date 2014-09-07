@@ -79,7 +79,7 @@ class FootnoteBBCode extends AbstractBBCode {
     				$footnoteIndex = static::$footnotes[$hash];
     			}
     			
-    			// get a short preview from content (if is set)
+    			// get index for tag attribute.
     			$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
 		    }
 		    else {
