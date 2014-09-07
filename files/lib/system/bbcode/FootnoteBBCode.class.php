@@ -46,8 +46,8 @@ class FootnoteBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
-	    $content = StringUtil::trim($content);
-	    
+		$content = StringUtil::trim($content);
+		
 		// check controller for parsing foot notes.
 		if (static::$parse == null) {
 			static::parseFootnotes();
@@ -56,37 +56,37 @@ class FootnoteBBCode extends AbstractBBCode {
 		// footnote and fn parse.
 		if ($openingTag['name'] == 'footnote' || $openingTag['name'] == 'fn') {
 		    if (self::$parse == true) {
-    			// no content and no index for content tag: drop footnote.
-    			$content = StringUtil::trim($content);
-    			if (empty($content) && !isset($openingTag['attributes'][0])) {
-    				return '';
-    			}
-    			
-    			// build hash from content or use index for content attribute
-    			$hash = (!empty($content)) ? StringUtil::getHash($content) : StringUtil::getHash($openingTag['attributes'][0]);
-    			
-    			// check footnotes for existing.
-    			if (!isset(static::$footnotes[$hash])) {
-    				// check for buffred content.
-    				if (empty($content) && isset(static::$footnoteContent[$hash])) {
-    					$content = static::$footnoteContent[$hash];
-    				}
-    		
-    				$footnoteIndex = FootnoteMap::getInstance()->add($content, Footnote::TYPE_BBCODE);
-    				static::$footnotes[$hash] = $footnoteIndex;
-    			}
-    			else {
-    				$footnoteIndex = static::$footnotes[$hash];
-    			}
-    			
-    			// get index for tag attribute.
-    			$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
-		    }
-		    else {
-		        $footnoteTagIndex = '';
-		        $footnoteIndex = static::$indexNoParse;
-		        ++static::$indexNoParse;
-		    }
+				// no content and no index for content tag: drop footnote.
+				$content = StringUtil::trim($content);
+				if (empty($content) && !isset($openingTag['attributes'][0])) {
+					return '';
+				}
+				
+				// build hash from content or use index for content attribute
+				$hash = (!empty($content)) ? StringUtil::getHash($content) : StringUtil::getHash($openingTag['attributes'][0]);
+				
+				// check footnotes for existing.
+				if (!isset(static::$footnotes[$hash])) {
+					// check for buffred content.
+					if (empty($content) && isset(static::$footnoteContent[$hash])) {
+						$content = static::$footnoteContent[$hash];
+					}
+			
+					$footnoteIndex = FootnoteMap::getInstance()->add($content, Footnote::TYPE_BBCODE);
+					static::$footnotes[$hash] = $footnoteIndex;
+				}
+				else {
+					$footnoteIndex = static::$footnotes[$hash];
+				}
+				
+				// get index for tag attribute.
+				$footnoteTagIndex = Footnote::getTagIndex($footnoteIndex);
+			}
+			else {
+				$footnoteTagIndex = '';
+				$footnoteIndex = static::$indexNoParse;
+				++static::$indexNoParse;
+			}
 			
 			WCF::getTPL()->assign(array(
 				'footnoteTagID' => $footnoteTagIndex,
@@ -97,10 +97,10 @@ class FootnoteBBCode extends AbstractBBCode {
 		}
 		// footnotecontent and fnc.
 		else if ($openingTag['name'] == 'footnotecontent' || $openingTag['name'] == 'fnc') {
-		    if (static::$parse == false) {
-		        return '';
-		    }
-		    
+			if (static::$parse == false) {
+				return '';
+			}
+
 			$contentIndex = StringUtil::getHash($openingTag['attributes'][0]);
 			
 			// set content or buffered.

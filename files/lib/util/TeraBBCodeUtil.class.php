@@ -1,6 +1,14 @@
 <?php
 namespace wcf\util;
 
+/**
+ * Use full functions for bbcodes.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
+ * @package de.teralios.bbcodes
+ */
 class TeraBBCodeUtil {
 	public static $romanIntegers = array(
 		'I' => 1,
@@ -19,6 +27,12 @@ class TeraBBCodeUtil {
 			
 	);
 	
+	/**
+	 * Romaninze a intenger.
+	 *
+	 * @para	integer		$integer
+	 * @return	Ambigous	string
+	 */
 	public static function romanizeInteger($integer) {
 		$romanInteger = '';
 		if (is_int($integer)) {
@@ -29,6 +43,9 @@ class TeraBBCodeUtil {
 					$integer = $integer - $number;
 				}
 			}
+		}
+		else {
+			$romantInteger = $integer;
 		}
 		
 		return $romanInteger;

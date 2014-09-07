@@ -42,6 +42,12 @@
 			<allowedchildren>all</allowedchildren>
 		</bbcode>
 		
+		<!-- Definition list -->
+		<bbcode name="dlist">
+			<classname><![CDATA[wcf\system\bbcode\DefinitionListBBCode]]></classname>
+			<allowedchildren>all</allowedchildren>
+		</bbcode>
+		
 		<!-- footnote -->
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
