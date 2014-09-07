@@ -45,7 +45,6 @@
 		<!-- footnote -->
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<sourcecode>1</sourcecode>
 			<wysiwygicon>footnote.png</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
 			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
@@ -59,7 +58,6 @@
 		
 		<bbcode name="fn">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<sourcecode>1</sourcecode>
 			<wysiwygicon>footnote.png</wysiwygicon>
 			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
