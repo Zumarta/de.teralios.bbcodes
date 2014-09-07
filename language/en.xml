@@ -8,6 +8,7 @@
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Subheading]]></item>
 		<item name="wcf.bbcode.footnote"><![CDATA[Footnotes]]></item>
 		<item name="wcf.bbcode.footnote.tooltip"><![CDATA[Footnote {#$footnoteIndex}]]></item>
+		<item name="wcf.bbcode.dlist.noDefinition"><![CDATA[No definition]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pros & cons]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[No points]]></item>
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & contra list]]></item>

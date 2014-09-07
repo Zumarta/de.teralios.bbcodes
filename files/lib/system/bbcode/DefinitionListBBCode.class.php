@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 /**
@@ -43,6 +44,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 						list($key, $value) = preg_split('#\[:\]#', $content, -1);
 						$key = StringUtil::trim($key);
 						$value = StringUtil::trim($value);
+						if (empty($value)) $value = WCF::getLanguage()->get('wcf.bbcode.dlist.noDefinition');
 						
 						// key is not empty.
 						if (!empty($key)) {

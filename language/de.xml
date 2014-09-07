@@ -6,6 +6,7 @@
 		<item name="wcf.bbcode.button.heading"><![CDATA[Überschrift 1]]></item>
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Contras]]></item>
 		<item name="wcf.bbcode.button.subheading"><![CDATA[Überschrift 2]]></item>
+		<item name="wcf.bbcode.dlist.noDefinition"><![CDATA[Keine Definition]]></item>
 		<item name="wcf.bbcode.footnote"><![CDATA[Fußnoten]]></item>
 		<item name="wcf.bbcode.footnote.tooltip"><![CDATA[Fußnote {#$footnoteIndex}]]></item>
 		<item name="wcf.bbcode.footnote.variant.1"><![CDATA[<sup>1</sup>]]></item>
