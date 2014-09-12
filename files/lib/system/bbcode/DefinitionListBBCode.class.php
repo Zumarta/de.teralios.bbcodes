@@ -18,7 +18,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
-		$content = StringUtil::trim($text);
+		$content = StringUtil::trim($content);
 		if (!empty($content) || (mb_strpos($content, '[*]') !== false && mb_strpos($content, '[:]') !== false)) {
 			// build main list elements
 			$listElements = preg_split('#\[\*\]#', $content, -1, PREG_SPLIT_NO_EMPTY);
@@ -36,12 +36,12 @@ class DefinitionListBBCode extends AbstractBBCode {
 			if (!empty($listElements)) {
 				$listContent = '';
 				foreach ($listElements AS $point) {
-					if (mb_substr_count($content, '[:]') == 1) {
+					if (mb_substr_count($point, '[:]') == 1) {
 						// reset key and value.
 						$key = $value = '';
 						
 						// split list element on [:] in key and definition of key.
-						list($key, $value) = preg_split('#\[:\]#', $content, -1);
+						list($key, $value) = preg_split('#\[:\]#', $point, -1);
 						$key = StringUtil::trim($key);
 						$value = StringUtil::trim($value);
 						if (empty($value)) $value = WCF::getLanguage()->get('wcf.bbcode.dlist.noDefinition');
