@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>1.5.0</version>
-		<date>2014-09-13</date>
+		<version>2.0.0 Beta 1</version>
+		<date>2014-10-04</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -13,12 +13,11 @@
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="2.0.7">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="2.1.0 Beta 1">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="1.0.4" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
 	</requiredpackages>
 	
 	<excludedPackages>
-		<excludedpackage version="2.1.0 Alpha 1">com.woltlab.wcf</excludedpackage>
 		<excludedpackage version="*">de.teralios.tjs.bbcodes</excludedpackage>
 	</excludedPackages>
 
@@ -29,22 +28,14 @@
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="option">option.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.5.0">
+		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
+		<instruction type="option">option.xml</instruction>
+		<instruction type="bbcode">bbcode.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 		<instruction type="eventListener">eventListener.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.4.0">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
-		<instruction type="option">option.xml</instruction>
-		<instruction type="bbcode">bbcode.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.4.1">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
-		<instruction type="option">option.xml</instruction>
-		<instruction type="bbcode">bbcode.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>

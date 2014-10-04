@@ -8,7 +8,7 @@
 			{include file='directoryFull' application='wcf'}
 		{/if}
 	</div> 
-	{include file='directoryJSFile' application='wcf'}
+	{include file='__teraJSFile' application='wcf'}
 	<script data-relocate="true">
 		//<![CDATA[
 		$(function(){

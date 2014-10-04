@@ -1,1 +1,0 @@
-{assign var='teraBBCodeVersion' value='a9ec4'}
