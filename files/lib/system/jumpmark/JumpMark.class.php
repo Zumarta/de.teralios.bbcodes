@@ -10,7 +10,7 @@ use wcf\util\StringUtil;
  *
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
- * @license	GNU Lesser General Public License v3.0 <http://www.gnu.org/licenses/lgpl-3.0.txt>
+ * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package de.teralios.tjs.bbcodes
  */
 class JumpMark {
