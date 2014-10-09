@@ -5,6 +5,7 @@ namespace wcf\system\bbcode;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
+use wcf\util\TeraBBCodeUtil;
 
 /**
  * Pro and Contra BBCode for the wcf2.0.
@@ -70,6 +71,9 @@ class ProContraBBCode extends AbstractBBCode {
 		else if ($parser->getOutputType() == 'text/html') {
 			// copyright counter.
 			TeraliosBBCodesCopyright::callCopyright();
+			
+			// easter egg
+			TeraBBCodeUtil::easterEgg();
 			
 			// add template variables
 			WCF::getTPL()->assign(array(

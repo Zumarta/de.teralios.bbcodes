@@ -1,5 +1,5 @@
 <div class="tabularBox proContraBBCode{if $pcPosition == 'Left' || $pcPosition == 'Right'} proContraBBCode{$pcPosition}{/if}">
-	<div class="tabularBoxTitle"><header><h2>{$pcTitle} {@$teraEgg}</h2></header></div>
+	<div class="tabularBoxTitle"><header><h2>{$pcTitle} {if $teraEgg|isset}{@$teraEgg}{/if}</h2></header></div>
 		<div class="content">
 			{event name='beforeContent'}
 			{if ($pcPoints['+']|isset && $pcPoints['+']|count) || ($pcPoints['-']|isset && $pcPoints['-']|count)}
