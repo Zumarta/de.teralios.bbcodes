@@ -2,8 +2,8 @@
 namespace wcf\system\bbcode;
 
 // imports
-use wcf\system\WCF;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
+use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 /**
@@ -32,7 +32,7 @@ class ProContraBBCode extends AbstractBBCode {
 			$position = 0;
 		}
 		
-		// Build array
+		// build array
 		if (preg_match(self::SPLIT_PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();

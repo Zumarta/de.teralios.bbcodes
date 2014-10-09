@@ -3,7 +3,6 @@ namespace wcf\system\bbcode;
 
 // imports
 use wcf\system\WCF;
-use wcf\system\style\StyleHandler;
 
 /**
  * Parste the [xattach] BBCode.

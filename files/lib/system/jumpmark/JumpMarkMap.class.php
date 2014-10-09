@@ -2,9 +2,9 @@
 namespace wcf\system\jumpmark;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
-use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\util\JSON;
 
 /**

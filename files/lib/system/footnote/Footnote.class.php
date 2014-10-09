@@ -2,8 +2,8 @@
 namespace wcf\system\footnote;
 
 // imports
-use wcf\util\StringUtil;
 use wcf\system\bbcode\MessageParser;
+use wcf\util\StringUtil;
 
 /**
  * Represent a footnote.

@@ -2,8 +2,8 @@
 namespace wcf\system\bbcode;
 
 // imports
-use wcf\util\StringUtil;
 use wcf\system\WCF;
+use wcf\util\StringUtil;
 
 /**
  * Parse box bbcode.
