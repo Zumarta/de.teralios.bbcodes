@@ -47,7 +47,7 @@ class TeraBBCodeUtil {
 			}
 		}
 		else {
-			$romantInteger = $integer;
+			$romanInteger = $integer;
 		}
 		
 		return $romanInteger;
