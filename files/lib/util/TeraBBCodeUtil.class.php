@@ -61,7 +61,7 @@ class TeraBBCodeUtil {
 		$dateTime = DateUtil::getDateTimeByTimestamp(TIME_NOW);
 		$date = Dateutil::format($dateTime, 'd-m');
 		if ($date == '17-08' || $date == '16-04') {
-			WCF::getTPL()->assign('teraEgg', '<a href="http://www.patentbuddy.com/Inventor/Achterrath-Wolf-R/5519409"'.((EXTERNAL_LINK_TARGET_BLANK) ? ' target="_blank"' : '').'><span class="icon32 fa fa-ra"></span></a>');
+			WCF::getTPL()->assign('teraEgg', '<a href="http://www.biomedexperts.com/Profile.bme/5665/Wolf_Achterrath"'.((EXTERNAL_LINK_TARGET_BLANK) ? ' target="_blank"' : '').'><span class="icon32 fa fa-ra"></span></a>');
 		}
 	}
 }
