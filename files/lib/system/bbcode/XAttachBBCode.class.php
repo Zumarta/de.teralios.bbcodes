@@ -32,12 +32,6 @@ class XAttachBBCode extends AttachmentBBCode {
 		$attachmentLink = parent::getParsedTag($openingTag, '', $closingTag, $parser);
 
 		if ($parser->getOutputType() == 'text/html') {
-			// new size
-			if (ATTACHMENT_THUMBNAIL_WIDTH != 280) {
-				$width = ATTACHMENT_THUMBNAIL_WIDTH + (str_replace('px', '', StyleHandler::getInstance()->getStyle()->getVariable('wcfGapTiny')) * 2);
-				WCF::getTPL()->assign('xAttachSize', $width);
-			}
-			
 			WCF::getTPL()->assign(array(
 				'attachmentLink' => $attachmentLink,
 				'float' => $float,

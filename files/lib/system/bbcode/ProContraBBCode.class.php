@@ -22,6 +22,9 @@ class ProContraBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$title = (isset($openingTag['attributes'][0]) && !empty($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
+		$points = array();
+		
+		// position of the pro contra list.
 		if (isset($openingTag['attributes'][1])) {
 			$position = StringUtil::firstCharToUpperCase($openingTag['attributes'][1]);
 		}
@@ -29,6 +32,7 @@ class ProContraBBCode extends AbstractBBCode {
 			$position = 0;
 		}
 		
+		// Build array
 		if (preg_match(self::SPLIT_PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();
@@ -37,54 +41,42 @@ class ProContraBBCode extends AbstractBBCode {
 			// remove first element.
 			unset($elements[0]);
 			
-			// build pairs
-			$pairs = array();
+			// build array for points.
 			if (!empty($elements)) {
 				$i = 1;
 				$count = count($elements);
 				while ($i < $count) {
+					$sign = $elements[$i];
 					$value = StringUtil::trim($elements[($i + 1)]);
+					
+					// check value, when is not empty, add.
 					if (!empty($value) && $value != '<br />') {
-						$pairs[] = array('sign' => $elements[$i], 'value' => $value);
+						if (!isset($points[$sign])) {
+							$points[$sign] = array();
+						}
+						$points[$sign][] = $value;
 					}
+					
+					// current index + 2
 					$i =  $i+2;
 				}
 			}
+		}
+		
+		// output
+		if (empty($points)) {
+			return '[procontra]'.$content.'[/procontra]';
+		}
+		else if ($parser->getOutputType() == 'text/html') {
+			// copyright counter.
+			TeraliosBBCodesCopyright::callCopyright();
 			
-			// build list array
-			$points = array('pro' => array(), 'contra' => array(), 'neutral' => array());
-			foreach ($pairs as $pair) {
-				switch ($pair['sign']) {
-					case '+':
-						$points['pro'][] = $pair['value'];
-						break;
-					case '-':
-						$points['contra'][] = $pair['value'];
-						break;
-					case '*':
-						$points['neutral'][] = $pair['value'];
-						break;
-				}
-			}
+			// add template variables
 			WCF::getTPL()->assign(array(
 				'pcTitle' => $title,
 				'pcPoints' => $points,
 				'pcPosition' => $position
 			));
-		}
-		else {
-			WCF::getTPL()->assign(array(
-				'pcTitle' => $title,
-				'pcPoints' => array(),
-				'pcContent' => $content,
-				'pcPosition' => $position
-			));
-		}
-	
-		// out put
-		if ($parser->getOutputType() == 'text/html') {
-			// copyright counter.
-			TeraliosBBCodesCopyright::callCopyright();
 			
 			return	WCF::getTPL()->fetch('proContraBBCodeTag');
 		}
@@ -92,20 +84,9 @@ class ProContraBBCode extends AbstractBBCode {
 			// no supports simplified html.
 			$return = $title."\n";
 			$return .= str_repeat('-', mb_strlen($title))."\n";
-			foreach ($points AS $prefix => $values) {
+			foreach ($points AS $sign => $values) {
 				$length = count($values);
 				if ($length > 0) {
-					// add sight
-					switch ($prefix) {
-						case 'pro':
-							$sign = '+';
-							break;
-						case 'contra':
-							$sign = '-';
-							break;
-						default:
-							$sign = '*';
-					}
 					$length--;
 					for ($i = 0; $i <= $length; $i++) {
 						$return .= $sign." ".$values[$i]."\n";

@@ -44,6 +44,8 @@ class HeadingBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$tag = mb_strtolower($openingTag['name']);
+		
+		// switch short tags to long tags.
 		switch ($tag) {
 			case 'h1':
 				$tag = 'heading';
