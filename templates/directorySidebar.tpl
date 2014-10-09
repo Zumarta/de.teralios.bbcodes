@@ -1,7 +1,7 @@
 {if $directory|isset && $directory->hasJumpMarks()}
 	<!-- sidebar directory is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 	<fieldset class="dashboardBox">
-		<legend>{lang}wcf.directory.title{/lang}</legend>
+		<legend>{lang}wcf.directory.title{/lang} {@$teraEgg}</legend>
 		<div>
 			<ol class="sidebarNestedCategoryList">
 				{foreach from=$directory item=$jumpMark}

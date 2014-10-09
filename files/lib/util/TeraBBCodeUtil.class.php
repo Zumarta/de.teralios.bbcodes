@@ -1,6 +1,9 @@
 <?php
 namespace wcf\util;
 
+// imports
+use wcf\system\WCF;
+
 /**
  * Use full functions for bbcodes.
  *
@@ -48,5 +51,17 @@ class TeraBBCodeUtil {
 		}
 		
 		return $romanInteger;
+	}
+	
+	/**
+	 * Yes i know, its not really a secret, but i will add some thing for my dead father.
+	 */
+	public static function easterEgg() {
+		// easter egg to birthday of my father and his date of death.
+		$dateTime = DateUtil::getDateTimeByTimestamp(TIME_NOW);
+		$date = Dateutil::format($dateTime, 'd-m');
+		if ($date == '17-08' || $date == '16-04') {
+			WCF::getTPL()->assign('teraEgg', '<a href="http://www.patentbuddy.com/Inventor/Achterrath-Wolf-R/5519409"'.((EXTERNAL_LINK_TARGET_BLANK) ? ' target="_blank"' : '').'><span class="icon32 fa fa-ra"></span></a>');
+		}
 	}
 }
