@@ -44,6 +44,14 @@ class HeadingBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$tag = mb_strtolower($openingTag['name']);
+		switch ($tag) {
+			case 'h1':
+				$tag = 'heading';
+				break;
+			case 'h2':
+				$tag = 'subheading';
+				break;
+		}
 		
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {

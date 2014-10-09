@@ -2,6 +2,6 @@
 	{@$hsHeading}
 	{if $hsJumpMark|empty == false}
 		{event name='jumpMark'}
-		<span class="jsOnly"><a href="{$hsJumpMark->getLink()}" class="jsTooltip jsButtonShare" title="{lang}wcf.directory.share{/lang}" data-link-title="{@$hsDataLink}"><span class="icon icon16 icon-link"></span></a></span>
+		<span class="jsOnly"><a href="{$hsJumpMark->getLink()}" class="jsTooltip jsButtonShare" title="{lang}wcf.directory.share{/lang}" data-link-title="{@$hsDataLink}"><span class="icon16 fa fa-link"></span></a></span>
 	{/if}
 </{if $hsTag == 'heading'}h2{else}h3{/if}>

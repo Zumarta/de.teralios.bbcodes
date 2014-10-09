@@ -13,14 +13,14 @@
 					{if $pcPoints['pro']|isset && $pcPoints['pro']|count}
 						<ul class="pro">
 							{foreach from=$pcPoints['pro'] item=$pcPoint}
-								<li><div><span class="icon icon16 icon-plus-sign"></span> {@$pcPoint}</div></li>
+								<li><div><span class="icon16 fa fa-plus-circle"></span> {@$pcPoint}</div></li>
 							{/foreach}
 						</ul>
 					{/if}
 					{if $pcPoints['contra']|isset && $pcPoints['contra']|count}
 						<ul class="contra">
 							{foreach from=$pcPoints['contra'] item=$pcPoint}
-								<li><div><span class="icon icon16 icon-minus-sign"></span> {@$pcPoint}</div></li>
+								<li><div><span class="icon16 fa fa-minus-circle"></span> {@$pcPoint}</div></li>
 							{/foreach}
 						</ul>
 					{/if}
@@ -31,7 +31,7 @@
 				<div>
 					<ul class="neutral">
 						{foreach from=$pcPoints['neutral'] item=$pcPoint}
-							<li><div><span class="icon icon16 icon-play-sign"></span> {@$pcPoint}</div></li>
+							<li><div><span class="icon16 fa fa-circle"></span> {@$pcPoint}</div></li>
 						{/foreach}
 					</ul>
 				</div>

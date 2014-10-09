@@ -18,8 +18,6 @@
 					<validationpattern>^(1|2|3|4)$</validationpattern>
 				</attribute>
 			</attributes>
-			<wysiwygicon>box.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.contentBox</buttonlabel>
 			<allowedchildren>all</allowedchildren>
 		</bbcode>
 		
@@ -40,6 +38,8 @@
 				</attribute>
 			</attributes>
 			<allowedchildren>all</allowedchildren>
+			<wysiwygicon>fa-th-large</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.contentBox</buttonlabel>
 		</bbcode>
 		
 		<!-- Definition list -->
@@ -52,8 +52,6 @@
 		<bbcode name="footnote">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<sourcecode>1</sourcecode>
-			<wysiwygicon>footnote.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
 			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
@@ -66,7 +64,6 @@
 		<bbcode name="fn">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<sourcecode>1</sourcecode>
-			<wysiwygicon>footnote.png</wysiwygicon>
 			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
@@ -74,6 +71,8 @@
 					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
 				</attribute>
 			</attributes>
+			<wysiwygicon>fa-paperclip</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
 		</bbcode>
 		
 		<bbcode name="footnotecontent">
@@ -109,10 +108,22 @@
 					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
 				</attribute>
 			</attributes>
-			<wysiwygicon>heading.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.heading</buttonlabel>
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
+		
+		<bbcode name="h1">
+			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
+			<allowedchildren>none</allowedchildren>
+			<wysiwygicon>fa-header</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.heading</buttonlabel>
+		</bbcode>
+		
 		<bbcode name="subheading">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
@@ -121,7 +132,17 @@
 					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
 				</attribute>
 			</attributes>
-			<wysiwygicon>subheading.png</wysiwygicon>
+			<allowedchildren>none</allowedchildren>
+		</bbcode>
+		
+		<bbcode name="h2">
+			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+				</attribute>
+			</attributes>
 			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
@@ -139,9 +160,24 @@
 					<validationpattern>^(left|right)$</validationpattern>
 				</attribute>
 			</attributes>
-			<wysiwygicon>procontra.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
 			<allowedchildren>none^b,i,u,s,color,font,url,lexicon</allowedchildren>
+		</bbcode>
+		
+		<bbcode name="pclist">
+			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+					<validationpattern>^.*$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(left|right)$</validationpattern>
+				</attribute>
+			</attributes>
+			<allowedchildren>none^b,i,u,s,color,font,url,lexicon</allowedchildren>
+			<wysiwygicon>fa-thumbs-up</wysiwygicon>
+			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
 		</bbcode>
 		
 		<!-- xattach bbcode -->

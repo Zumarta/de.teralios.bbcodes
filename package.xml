@@ -4,7 +4,7 @@
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>2.0.0 Beta 1</version>
-		<date>2014-10-04</date>
+		<date>2014-10-09</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -14,7 +14,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="2.1.0 Beta 1">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.0.4" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
+		<requiredpackage minversion="1.0.5" file="required/de.teralios.copyright.tar">de.teralios.copyright</requiredpackage>
 	</requiredpackages>
 	
 	<excludedPackages>
