@@ -89,7 +89,31 @@ class ProContraBBCode extends AbstractBBCode {
 			return	WCF::getTPL()->fetch('proContraBBCodeTag');
 		}
 		else if ($parser->getOutputType() == 'text/simplified-html') {
-			return WCF::getLanguage()->get('wcf.bbcode.proContra.list');
+			// no supports simplified html.
+			$return = $title."\n";
+			$return .= str_repeat('-', mb_strlen($title))."\n";
+			foreach ($points AS $prefix => $values) {
+				$length = count($values);
+				if ($length > 0) {
+					// add sight
+					switch ($prefix) {
+						case 'pro':
+							$sign = '+';
+							break;
+						case 'contra':
+							$sign = '-';
+							break;
+						default:
+							$sign = '*';
+					}
+					$length--;
+					for ($i = 0; $i <= $length; $i++) {
+						$return .= $sign." ".$values[$i]."\n";
+					}
+				}
+			}
+			
+			return $return;
 		}
 	}
 }
