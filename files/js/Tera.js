@@ -44,11 +44,24 @@ Tera.Directory =  Class.extend({
  */
 Tera.xAttachment = Class.extend({
 		_editorID: '',
+		_replaceUrl: '',
+		_attachmentIDs: [ ],
 		
 		init: function(editorID) {
+			// editor id
 			this._editorID = editorID;
 			
+			// register events
 			WCF.DOMNodeInsertedHandler.addCallback('Tera.xAttachment', $.proxy(this._catchButton, this));
+			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'afterConvertToHtml', $.proxy(this._bbcode2html, this));
+			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'afterConvertFromHtml', $.proxy(this._html2bbcode, this));
+			
+			// get important data
+			if ($.browser.redactor) {
+				this._replaceUrl = $('#' + this._editorID).redactor('wutil.getOption', 'woltlab.attachmentUrl');
+				this._attachmentIDs = $('#' + this._editorID).redactor('wbbcode._getImageAttachmentIDs');
+			}
+			
 			this._catchButton();
 		},
 		
@@ -61,9 +74,18 @@ Tera.xAttachment = Class.extend({
 			var $attachmentID = (event === null) ? attachmentID : $(event.currentTarget).data('objectID');
 			var bbcode = '[xattach=' + $attachmentID + '][/xattach]';
 			
-			// TODO: Add a overlay to ask the position.
+			// TODO: Add a overlay to ask the position. Add HTML-View
+			// TODO: build html code.
 			if ($.browser.redactor) {
-				$('#' + this._editorID).redactor('insert.text', bbcode);
+				$('#' + this._editorID).redactor('wutil.insertDynamic', bbcode);
 			}
+		},
+		
+		_bbcode2html: function(eventData) {
+			
+		},
+		
+		_html2bbcode: function(eventData) {
+			
 		}
 });
