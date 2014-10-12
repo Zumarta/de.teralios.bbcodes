@@ -40,7 +40,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		}
 		else {
 			// simple description.
-			return $attachmentLink.' ('.$description.')';
+			return $attachmentLink.((!empty($description)) ? ' ('.$description.')' : '');
 		}
 	}
 }

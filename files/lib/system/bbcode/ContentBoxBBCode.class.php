@@ -32,13 +32,13 @@ class ContentBoxBBCode extends AbstractBBCode {
 		
 		if ($parser->getOutputType() == 'text/simplified-html') {
 			if (!empty($title)) {
-				$return = '----( '.$title." )----\n";
+				$return = '<br />----( '.$title.' )----<br />';
 			}
 			else {
-				$return = "\n--------\n";
+				$return = '<br />--------<br />';
 			}
 			$return .= $content;
-			$return .= "\n--------\n";
+			$return .= '<br />--------<br />';
 			return $return;
 		}
 		else if ($parser->getOutputType() == 'text/html') {

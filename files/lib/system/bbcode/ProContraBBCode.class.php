@@ -86,14 +86,14 @@ class ProContraBBCode extends AbstractBBCode {
 		}
 		else if ($parser->getOutputType() == 'text/simplified-html') {
 			// no supports simplified html.
-			$return = $title."\n";
-			$return .= str_repeat('-', mb_strlen($title))."\n";
+			$return = $title.'<br />';
+			$return .= str_repeat('-', mb_strlen($title)).'<br />';
 			foreach ($points AS $sign => $values) {
 				$length = count($values);
 				if ($length > 0) {
 					$length--;
 					for ($i = 0; $i <= $length; $i++) {
-						$return .= $sign." ".$values[$i]."\n";
+						$return .= $sign.' '.$values[$i].'<br />';
 					}
 				}
 			}
