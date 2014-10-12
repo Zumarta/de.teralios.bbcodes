@@ -60,9 +60,9 @@ Tera.xAttachment = Class.extend({
 		_xAttachInsert: function(event, attachmentID) {
 			var $attachmentID = (event === null) ? attachmentID : $(event.currentTarget).data('objectID');
 			var bbcode = '[xattach=' + $attachmentID + '][/xattach]';
+			
+			// TODO: Add a overlay to ask the position.
 
-			if ($.browser.redactor) {
-				$('#' + this._editorID).redactor('insertDynamic', $bbcode);
-			}
+			$('#' + this._editorID).redactor('insert.text', bbcode);
 		}
 });
