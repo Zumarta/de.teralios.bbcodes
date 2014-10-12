@@ -62,7 +62,8 @@ Tera.xAttachment = Class.extend({
 			var bbcode = '[xattach=' + $attachmentID + '][/xattach]';
 			
 			// TODO: Add a overlay to ask the position.
-
-			$('#' + this._editorID).redactor('insert.text', bbcode);
+			if ($.browser.redactor) {
+				$('#' + this._editorID).redactor('insert.text', bbcode);
+			}
 		}
 });
