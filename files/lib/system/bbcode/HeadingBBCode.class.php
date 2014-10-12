@@ -22,18 +22,6 @@ class HeadingBBCode extends AbstractBBCode {
 	protected static $jumpMarks = array();
 	
 	/**
-	 * String for automatic generated jump marks.
-	 * @var	string
-	 */
-	protected static $autoMarkPrefix = 'autoMark_%s';
-	
-	/**
-	 * Index of automatic generated jump marks.
-	 * @var	integer
-	 */
-	protected static $autoMarkIndex = 1;
-	
-	/**
 	 * Prefix for jump marks.
 	 * @var	string
 	 */
@@ -61,8 +49,7 @@ class HeadingBBCode extends AbstractBBCode {
 				$jumpMark = $openingTag['attributes'][0];
 			}
 			else if (BBCODES_HEADLINE_AUTOMARK == 1) {
-				$jumpMark = sprintf(static::$autoMarkPrefix, static::$autoMarkIndex);
-				++static::$autoMarkIndex;
+				$jumpMark = substr(md5($content), 0, 10);
 			}
 			else {
 				$jumpMark = '';
@@ -85,7 +72,7 @@ class HeadingBBCode extends AbstractBBCode {
 		}
 		// heading and subheading in simpleified-html.
 		else if ($parser->getOutputType('text/simplified-html')) {
-			switch ($openingTag['name']) {
+			switch ($tag) {
 				case 'heading':
 					$return = '--- '.$content.' ---<br />';
 					break;
