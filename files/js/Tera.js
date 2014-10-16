@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Contains javascript for bbcode packatge.
  * 
