@@ -2,6 +2,8 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\message\embedded\object\MessageEmbeddedObjectManager;
+use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 
 /**
@@ -31,10 +33,24 @@ class XAttachBBCode extends AttachmentBBCode {
 		$attachmentLink = parent::getParsedTag($openingTag, '', $closingTag, $parser);
 
 		if ($parser->getOutputType() == 'text/html') {
+			$icon = false;
+			$title = false;
+			
+			// check attachment for embedded image or other file types
+			$attachment = MessageEmbeddedObjectManager::getInstance()->getObject('com.woltlab.wcf.attachment', $attachmentID);
+			if (!$attachment->showAsImage() || !$attachment->canViewPreview()) {
+				$attachmentLink = LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment));
+				$title = $attachment->filename;
+				$icon = ($attachment->isImage == true) ? 'fa-file-image-o' : 'fa-file-o';
+			}
+			
+			
 			WCF::getTPL()->assign(array(
-				'attachmentLink' => $attachmentLink,
-				'float' => $float,
-				'description' => $description,
+				'xIcon' => $icon,
+				'xTitle' => $icon,
+				'xAttachmentLink' => $attachmentLink,
+				'xFloat' => $float,
+				'xDescription' => $description,
 			));
 			return WCF::getTPL()->fetch('xAttachBBCodeTag');
 		}
