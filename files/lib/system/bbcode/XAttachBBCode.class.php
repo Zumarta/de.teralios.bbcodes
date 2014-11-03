@@ -15,6 +15,19 @@ use wcf\system\WCF;
  * @package de.teralios.tjs.bbcodes
  */
 class XAttachBBCode extends AttachmentBBCode {
+	protected static $icons = array(
+		'pdf' => 'fa-file-pdf-o',
+		'doc' => 'fa-file-word-o',
+		'docx' => 'fa-file-word-o',
+		'xls' => 'fa-file-excel-o',
+		'xlsx' => 'fa-file-excel-o',
+		'txt' => 'fa-file-text-o',
+		'rtf' => 'fa-file-text-o',
+		'mp3' => 'fa-file-audio-o',
+		'aac' => 'fa-file-audio-o',
+		'mp4' => 'fa-file-video-o',
+		'avi' => 'fa-file-video-o'
+	);
 	
 	/**
 	 * @see	\wcf\system\bbcode\IBBCode::getParsedTag()
@@ -41,7 +54,7 @@ class XAttachBBCode extends AttachmentBBCode {
 			if (!$attachment->showAsImage() || !$attachment->canViewPreview()) {
 				$attachmentLink = LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment));
 				$title = $attachment->filename;
-				$icon = ($attachment->isImage == true) ? 'fa-file-image-o' : 'fa-file-o';
+				$icon = ($attachment->isImage == true) ? 'fa-file-image-o' : static::getIcon($title);
 			}
 			
 			
@@ -58,5 +71,13 @@ class XAttachBBCode extends AttachmentBBCode {
 			// simple description.
 			return $attachmentLink.((!empty($description)) ? ' ('.$description.')' : '');
 		}
+	}
+	
+	public static function getIcon($fileName) {
+		$dotPosition = strrpos($fileName, '.') + 1;
+		$end = mb_strtolower(substr($fileName, $dotPosition));
+		$icon = 'fa-file-o';
+		if (isset(static::$icons[$end])) $icon = static::$icons[$end];
+		return $icon;
 	}
 }
