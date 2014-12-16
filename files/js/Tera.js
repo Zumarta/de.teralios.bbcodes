@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Contains javascript for bbcode packatge.
+ * Contains javascript for bbcode package.
  * 
  * @author		Karsten (Teralios) Achterrath
  * @copyright	2014 teralios.de
