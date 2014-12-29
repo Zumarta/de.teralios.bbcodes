@@ -179,21 +179,5 @@
 			<wysiwygicon>fa-thumbs-up</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.procontra</buttonlabel>
 		</bbcode>
-		
-		<!-- xattach bbcode -->
-		<bbcode name="xattach">
-			<classname><![CDATA[wcf\system\bbcode\XAttachBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>1</required>
-					<validationpattern>^[0-9]+$</validationpattern>
-				</attribute>
-				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(left|right|inline)$</validationpattern>
-				</attribute>
-			</attributes>
-			<allowedchildren>none^b,i,u,s,sub,sup,color,font,url,lexicon</allowedchildren>
-		</bbcode>
 	</import>
 </data>
