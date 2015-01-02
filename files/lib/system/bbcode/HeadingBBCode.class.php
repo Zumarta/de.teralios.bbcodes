@@ -32,17 +32,7 @@ class HeadingBBCode extends AbstractBBCode {
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		$tag = mb_strtolower($openingTag['name']);
-		
-		// switch short tags to long tags.
-		switch ($tag) {
-			case 'h1':
-				$tag = 'heading';
-				break;
-			case 'h2':
-				$tag = 'subheading';
-				break;
-		}
-		
+
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
 			if (!empty($openingTag['attributes'][0])) {
@@ -73,7 +63,7 @@ class HeadingBBCode extends AbstractBBCode {
 		// heading and subheading in simpleified-html.
 		else if ($parser->getOutputType('text/simplified-html')) {
 			switch ($tag) {
-				case 'heading':
+				case 'h1':
 					$return = '--- '.$content.' ---<br />';
 					break;
 				default:

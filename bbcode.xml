@@ -2,25 +2,6 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/bbcode.xsd">
 	<import>
 		<!-- box bbcode -->
-		<bbcode name="contentbox">
-			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^.*$</validationpattern>
-				</attribute>
-				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(left|right)+$</validationpattern>
-				</attribute>
-				<attribute name="2">
-					<required>0</required>
-					<validationpattern>^(1|2|3|4)$</validationpattern>
-				</attribute>
-			</attributes>
-			<allowedchildren>all</allowedchildren>
-		</bbcode>
-		
 		<bbcode name="cbox">
 			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
 			<attributes>
@@ -49,18 +30,6 @@
 		</bbcode>
 		
 		<!-- footnote -->
-		<bbcode name="footnote">
-			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<sourcecode>1</sourcecode>
-			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
-		</bbcode>
-		
 		<bbcode name="fn">
 			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
 			<sourcecode>1</sourcecode>
@@ -73,18 +42,6 @@
 			</attributes>
 			<wysiwygicon>fa-paperclip</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.footnote</buttonlabel>
-		</bbcode>
-		
-		<bbcode name="footnotecontent">
-			<sourcecode>1</sourcecode>
-			<classname><![CDATA[wcf\system\bbcode\FootnoteBBCode]]></classname>
-			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
-			<attributes>
-				<attribute name="0">
-					<required>1</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
 		</bbcode>
 		
 		<bbcode name="fnc">
@@ -100,17 +57,6 @@
 		</bbcode>
 		
 		<!-- heading and subheading bbcode -->
-		<bbcode name="heading">
-			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
-			<allowedchildren>none</allowedchildren>
-		</bbcode>
-		
 		<bbcode name="h1">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
@@ -123,18 +69,7 @@
 			<wysiwygicon>fa-header</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.heading</buttonlabel>
 		</bbcode>
-		
-		<bbcode name="subheading">
-			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
-				</attribute>
-			</attributes>
-			<allowedchildren>none</allowedchildren>
-		</bbcode>
-		
+
 		<bbcode name="h2">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
@@ -148,21 +83,6 @@
 		</bbcode>
 		
 		<!-- pro contra bbcode -->
-		<bbcode name="procontra">
-			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^.*$</validationpattern>
-				</attribute>
-				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(left|right)$</validationpattern>
-				</attribute>
-			</attributes>
-			<allowedchildren>none^b,i,u,s,color,font,url,lexicon</allowedchildren>
-		</bbcode>
-		
 		<bbcode name="pclist">
 			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
 			<attributes>

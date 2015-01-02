@@ -54,8 +54,8 @@ class FootnoteBBCode extends AbstractBBCode {
 		}
 		
 		// footnote and fn parse.
-		if ($openingTag['name'] == 'footnote' || $openingTag['name'] == 'fn') {
-		    if (self::$parse == true) {
+		if ($openingTag['name'] == 'fn') {
+			if (self::$parse == true) {
 				// no content and no index for content tag: drop footnote.
 				$content = StringUtil::trim($content);
 				if (empty($content) && !isset($openingTag['attributes'][0])) {
@@ -96,7 +96,7 @@ class FootnoteBBCode extends AbstractBBCode {
 			return WCF::getTPL()->fetch('footnoteBBCode');
 		}
 		// footnotecontent and fnc.
-		else if ($openingTag['name'] == 'footnotecontent' || $openingTag['name'] == 'fnc') {
+		else if ($openingTag['name'] == 'fnc') {
 			if (static::$parse == false) {
 				return '';
 			}
