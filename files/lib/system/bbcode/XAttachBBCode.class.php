@@ -13,11 +13,34 @@ class XAttachBBCode extends AttachmentBBCode {
 	protected static $icons = array(
 		'default' => 'fa-file-o',
 		'image' => 'fa-file-image-o',
-		'zip' => 'fa-file-archive-o',
+		'archiv' => 'fa-file-archive-o',
 		'word' => 'fa-file-word-o',
 		'pdf' => 'fa-file-pdf-o',
+		'text' => 'fa-file-text-o',
+		'excel' => 'fa-file-excel-o',
 		'video' => 'fa-file-video-o',
-		'audio' => 'fa-file-audio-o'
+		'audio' => 'fa-file-audio-o',
+		'code' => 'fa-file-code-o'
+	);
+	
+	protected static $fileTypes = array(
+		'pdf' => 'pdf',
+		'doc' => 'word',
+		'docx' => 'word',
+		'xls' => 'excel',
+		'xlsx' => 'excel',
+		'txt' => 'text',
+		'odt' => 'text',
+		'rtf' => 'text',
+		'zip' => 'archiv',
+		'rar' => 'archiv',
+		'gz' => 'archiv',
+		'tar' => 'archiv',
+		'tgz' => 'archiv',
+		'acc' => 'audio',
+		'mp3' => 'audio',
+		'mp4' => 'video',
+		'avi' => 'video'
 	);
 	
 	/**
@@ -102,6 +125,7 @@ class XAttachBBCode extends AttachmentBBCode {
 				'xaIsImage' => $isImage,
 				'xaText' => $text,
 				'xaFloat' => $float,
+				'xaNoBorder' => BBCODES_XATTACH_FREESTYLE
 			));
 			$result = WCF::getTPL()->fetch('xAttachBBCode');
 		}
@@ -113,7 +137,20 @@ class XAttachBBCode extends AttachmentBBCode {
 	}
 	
 	protected static function getType(\wcf\data\attachment\Attachment $attachment = null) {
-		return 'default';
+		if ($attachment !== null) {
+			$filename = $attachment->filename;
+			$dotPosition = strrpos($filename, '.') + 1;
+			$end = mb_strtolower(substr($filename, $dotPosition));
+			if (isset(self::$fileTypes[$end])) {
+				return self::$fileTypes[$end];
+			}
+			else {
+				return 'default';
+			}
+		}
+		else {
+			return 'default';
+		}
 	}
 	
 	protected static function choseIcon($type) {
