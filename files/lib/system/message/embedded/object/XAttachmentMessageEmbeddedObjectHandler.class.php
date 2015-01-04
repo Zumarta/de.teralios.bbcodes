@@ -15,6 +15,8 @@ use wcf\util\ArrayUtil;
  * @package de.teralios.bbcodes
  */
 class XAttachmentMessageEmbeddedObjectHandler extends AttachmentMessageEmbeddedObjectHandler {
+	static protected $attachmentIDs = array();
+
 	/**
 	 * @see \wcf\system\message\embedded\object\IMessageEmbeddedObjectHandler::parseMessage()
 	 */
@@ -41,5 +43,28 @@ class XAttachmentMessageEmbeddedObjectHandler extends AttachmentMessageEmbeddedO
 		}
 	
 		return $return;
+	}
+	
+	/**
+	 * @see \wcf\system\message\embedded\object\AttachmentMessageEmbeddedObjectHandler::loadObjects()
+	 */
+	public function loadObjects(array $objectIDs) {
+		$objects = parent::loadObjects($objectIDs);
+		
+		// set ids and object ids to mark attachments as embedded...
+		foreach ($objects AS $object) {
+			self::$attachmentIDs[$object->objectID][] = $object->attachmentID;
+		}
+
+		return $objects;
+	}
+	
+	/**
+	 * Return IDs.
+	 *
+	 * @return multitype:
+	 */
+	public static function getAttachmentIDs() {
+		return self::$attachmentIDs;
 	}
 }
