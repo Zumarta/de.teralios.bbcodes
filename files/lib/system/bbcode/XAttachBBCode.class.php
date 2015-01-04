@@ -9,7 +9,19 @@ use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 
+/**
+ * Parse xattach tag.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package de.teralios.bbcodes
+ */
 class XAttachBBCode extends AttachmentBBCode {
+	/**
+	 * Icons for a file type.
+	 * @var array<text>
+	 */
 	protected static $icons = array(
 		'default' => 'fa-file-o',
 		'image' => 'fa-file-image-o',
@@ -23,6 +35,10 @@ class XAttachBBCode extends AttachmentBBCode {
 		'code' => 'fa-file-code-o'
 	);
 	
+	/**
+	 * Supportet files for a special icon.
+	 * @var array<text>
+	 */
 	protected static $fileTypes = array(
 		'pdf' => 'pdf',
 		'doc' => 'word',
@@ -136,6 +152,12 @@ class XAttachBBCode extends AttachmentBBCode {
 		return $result;
 	}
 	
+	/**
+	 * Return type of a file.
+	 *
+	 * @param	\wcf\data\attachment\Attachment $attachment
+	 * @return	string
+	 */
 	protected static function getType(\wcf\data\attachment\Attachment $attachment = null) {
 		if ($attachment !== null) {
 			$filename = $attachment->filename;
@@ -153,6 +175,12 @@ class XAttachBBCode extends AttachmentBBCode {
 		}
 	}
 	
+	/**
+	 * Return icon for a type.
+	 *
+	 * @param	string		$type
+	 * @return	text
+	 */
 	protected static function choseIcon($type) {
 		if (isset(static::$icons[$type])) {
 			return static::$icons[$type];

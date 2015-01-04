@@ -6,6 +6,14 @@ namespace wcf\system\message\embedded\object;
 use wcf\data\attachment\AttachmentList;
 use wcf\util\ArrayUtil;
 
+/**
+ * Added attachment to embedded object manager.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package de.teralios.bbcodes
+ */
 class XAttachmentMessageEmbeddedObjectHandler extends AttachmentMessageEmbeddedObjectHandler {
 	/**
 	 * @see \wcf\system\message\embedded\object\IMessageEmbeddedObjectHandler::parseMessage()

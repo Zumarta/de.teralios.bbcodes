@@ -1,7 +1,21 @@
 <?php
 namespace wcf\util;
 
+/**
+ * Usefull functionts for bbcodes.
+ *
+ * @author	Karsten (Teralios) Achterrath
+ * @copyright	2014 Teralios.de
+ * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package de.teralios.bbcodes
+ */
 class TeraliosBBCodeUtil {
+	/**
+	 * Parse old bbcode-tags to the new.
+	 *
+	 * @param	string		$message
+	 * @return	mixed
+	 */
 	public static function parseToNew($message) {
 		// contentbox to cbox
 		$message = str_ireplace('[contentbox', '[cbox', $message);
