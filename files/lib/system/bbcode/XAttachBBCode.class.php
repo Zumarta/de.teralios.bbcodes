@@ -119,12 +119,12 @@ class XAttachBBCode extends AttachmentBBCode {
 			}
 			// is image, but can not view image.
 			else if ($attachment->showAsImage()) {
-				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array($linkParameters)));
+				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment)));
 				$type = 'image';
 			}
 			// is file
 			else {
-				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array($linkParameters)));
+				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment)));
 				$type = self::getType($attachment);
 			}
 		}
