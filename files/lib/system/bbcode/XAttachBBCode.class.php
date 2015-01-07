@@ -69,7 +69,6 @@ class XAttachBBCode extends AttachmentBBCode {
 		// default values
 		$attachmentID = 0;
 		$float = 'none';
-		$title = '';
 		$type = 'default';
 		$link = '';
 		$text = '';
@@ -87,6 +86,7 @@ class XAttachBBCode extends AttachmentBBCode {
 				$float = 'none';
 		}
 		$text = StringUtil::trim($content);
+		$title = WCF::getLanguage()->getDynamicVariable('wcf.bbcode.xattach.title', array('xaID' => $attachmentID));
 		
 		// get attachment
 		$attachment = MessageEmbeddedObjectManager::getInstance()->getObject('de.teralios.bbcodes.attachment', $attachmentID);
@@ -102,7 +102,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		
 		// Attachment
 		if ($attachment !== null) {
-			$title = StringUtil::encodeHTML($attachment->filename);
+			$title = (!empty($attachment->filename)) ? StringUtil::encodeHTML($attachment->filename) : $title;
 			$linkParameters = array(
 				'object' => $attachment
 			);
@@ -131,7 +131,6 @@ class XAttachBBCode extends AttachmentBBCode {
 		// fallback
 		else {
 			$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('id' => $attachmentID)));
-			$title = WCF::getLanguage()->getDynamicVariable('wcf.bbcode.xattach.title', array('xaID' => $attachmentID));
 		}
 		
 		if ($parser->getOutputType() == 'text/html') {
@@ -147,7 +146,7 @@ class XAttachBBCode extends AttachmentBBCode {
 			$result = WCF::getTPL()->fetch('xAttachBBCode');
 		}
 		else {
-			$result = StringUtil::getAnchorTag($link, $title).(!empty($text)) ? ' ('.$text.')' : '';
+			$result = StringUtil::getAnchorTag($link, $title).((!empty($text)) ? ' ('.$text.')' : '');
 		}
 		
 		return $result;
