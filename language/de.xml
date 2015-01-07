@@ -18,6 +18,7 @@
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra Liste]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Achtung, der BBCode wurde mit der alten Syntax aufgerufen.<br />
 Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der Pro-Contra-Liste muss diesem ein [+][-] oder [*] voran geststellt werden]]></item>
+		<item name="wcf.bbcode.xattach.title"><![CDATA[Anhang (ID: {$xaID})]]></item>
 	</category>
 	
 	<category name="wcf.directory">

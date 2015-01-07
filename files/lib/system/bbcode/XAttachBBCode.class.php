@@ -69,7 +69,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		// default values
 		$attachmentID = 0;
 		$float = 'none';
-		$title = WCF::getLanguage()->get('wcf.bbcode.xattach.title');
+		$title = '';
 		$type = 'default';
 		$link = '';
 		$text = '';
@@ -131,6 +131,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		// fallback
 		else {
 			$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('id' => $attachmentID)));
+			$title = WCF::getLanguage()->getDynamicVariable('wcf.bbcode.xattach.title', array('xaID' => $attachmentID));
 		}
 		
 		if ($parser->getOutputType() == 'text/html') {
@@ -146,7 +147,7 @@ class XAttachBBCode extends AttachmentBBCode {
 			$result = WCF::getTPL()->fetch('xAttachBBCode');
 		}
 		else {
-			$result = StringUtil::getAnchorTag($link, $title).' ('.$text.')';
+			$result = StringUtil::getAnchorTag($link, $title).(!empty($text)) ? ' ('.$text.')' : '';
 		}
 		
 		return $result;
