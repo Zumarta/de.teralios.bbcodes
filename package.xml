@@ -27,8 +27,8 @@
 		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
 	
-	<instruction type="update" fromversion="2.0.0 Beta 2">
+	<instructions type="update" fromversion="2.0.0 Beta 2">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="language">language/*.xml</instruction>
-	</instruction>
+	</instructions>
 </package>
