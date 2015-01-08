@@ -1,5 +1,9 @@
 <?php
+// namespace
 namespace wcf\system\copyright;
+
+// imports
+use wcf\util\TeraUtil;
 
 /**
  * Teralios BBCode Copyright class.
@@ -12,4 +16,11 @@ namespace wcf\system\copyright;
 final class TeraliosBBCodesCopyright extends AbstractCopyright {
 	protected $languageVariable = 'wcf.teralios.copyright.bbcodes';
 	protected $key = '1b0d911514cc24c30a65918a6d6573d45e6da006';
+	
+	protected function init() {
+		parent::init();
+		
+		// call easter egg. ;)
+		TeraUtil::easterEgg(16);
+	}
 }
