@@ -49,7 +49,7 @@ class HeadingBBCode extends AbstractBBCode {
 				$jumpMark = sprintf(static::$jumpMarkPrefix, static::jumpMarkExists($jumpMark, $jumpMark));
 				
 				if ($noIndex == false) {
-					$jumpMark = JumpMarkMap::getInstance()->addEntry($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+					$jumpMark = Directory::getInstance()->addEntry($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 				}
 				else {
 					$jumpMark = new Entry($jumpMark, StringUtil::decodeHTML($content));
@@ -58,9 +58,9 @@ class HeadingBBCode extends AbstractBBCode {
 			
 			WCF::getTPL()->assign(array(
 				'hsTag' => $tag,
-				'hsJumpMark' => $jumpMark,
+				'hsEntry' => $jumpMark,
 				'hsHeading' => $content,
-				'hsDataLink' => StringUtil::stripHTML($content)
+				'hsLinkTitle' => StringUtil::stripHTML($content)
 			));
 			
 			return WCF::getTPL()->fetch('headingBBCode');
