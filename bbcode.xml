@@ -62,7 +62,11 @@
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+					<validationpattern>^[a-zA-Z0-9_]*$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(true|false)$</validationpattern>
 				</attribute>
 			</attributes>
 			<allowedchildren>none</allowedchildren>
@@ -75,7 +79,11 @@
 			<attributes>
 				<attribute name="0">
 					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
+					<validationpattern>^[a-zA-Z0-9_]*$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(true|false)$</validationpattern>
 				</attribute>
 			</attributes>
 			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>

@@ -35,10 +35,9 @@ class HeadingBBCode extends AbstractBBCode {
 
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
-			if (!empty($openingTag['attributes'][0])) {
-				$jumpMark = $openingTag['attributes'][0];
-			}
-			else if (BBCODES_HEADLINE_AUTOMARK == 1) {
+			$jumpMark = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
+			$noIndex = (isset($openingTag['attributes'][1])) ? StringUtil::trim($openingTag['attributes'][0]) : false;
+			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($jumpMark)) {
 				$jumpMark = substr(md5($content), 0, 10);
 			}
 			else {
@@ -47,8 +46,10 @@ class HeadingBBCode extends AbstractBBCode {
 			
 			if (!empty($jumpMark)) {
 				$jumpMark = sprintf(static::$jumpMarkPrefix, static::jumpMarkExists($jumpMark, $jumpMark));
-				$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 				
+				if ($noIndex == false) {
+					$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+				}
 			}
 			
 			WCF::getTPL()->assign(array(
