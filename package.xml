@@ -4,7 +4,7 @@
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>2.0.0 Beta 4</version>
-		<date>2015-01-07</date>
+		<date>2015-01-17</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -30,15 +30,5 @@
 		<instruction type="option">option.xml</instruction>
 		<instruction type="objectType">objectType.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="2.0.0 Beta 2">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="language">language/*.xml</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="2.0.0 Beta 3">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
