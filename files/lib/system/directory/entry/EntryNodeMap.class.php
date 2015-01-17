@@ -1,5 +1,5 @@
 <?php
-namespace wcf\system\jumpmark;
+namespace wcf\system\directory\entry;
 
 // imports
 use wcf\system\copyright\TeraliosBBCodesCopyright;
@@ -13,15 +13,15 @@ use wcf\util\JSON;
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package
+ * @package de.teralios.bbcodes
  */
-class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
+class EntryNodeMap extends SingletonFactory implements \Iterator, \Countable {
 	
 	/**
 	 * Main jump marks. 
 	 * @var array<\wcf\system\jumpmarks\JumpMarkMainNode>
 	 */
-	protected $jumpMarks = array();
+	protected $entries = array();
 	
 	/**
 	 * Index for \Iterator.
@@ -62,35 +62,35 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @param	string		$title
 	 * @param	boolean		$isSubMark
 	 */
-	public function addJumpMark($jumpMark, $title, $isSubMark = false) {
-		$jumpMark = new JumpMark($jumpMark, $title);
+	public function addEntry($jumpMark, $title, $isSubMark = false) {
+		$entry = new Entry($jumpMark, $title);
 		
 		// sub jump mark is given and no main jumpmark exists.
-		if ($isSubMark == true && empty($this->jumpMarks)) {
-			$this->jumpMarks[$this->counter] = new JumpMarkMainNode(); // create a dummy jump mark.
-			$this->jumpMarks[$this->counter]->setSubJumpMark($jumpMark);
+		if ($isSubMark == true && empty($this->entries)) {
+			$this->entries[$this->counter] = new EntryMainNode(); // create a dummy jump mark.
+			$this->entries[$this->counter]->setSubEntry($entry);
 			$this->currentCounter = $this->counter;
 			$this->counter++;
 		}
 		// sub jump mark is given and a main jump mark exists.
 		else if ($isSubMark == true) {
-			$this->jumpMarks[$this->currentCounter]->setSubJumpMark($jumpMark);
+			$this->entries[$this->currentCounter]->setSubEntry($entry);
 		}
 		// main jumpmark is given.
 		else {
-			$this->jumpMarks[$this->counter] = new JumpMarkMainNode($jumpMark);
+			$this->entries[$this->counter] = new EntryMainNode($entry);
 			$this->currentCounter = $this->counter;
 			$this->counter++;
 		}
 		
-		return $jumpMark;
+		return $entry;
 	}
 	
 	/**
 	 * Clear jumpmark map.
 	 */
 	public function clearMap() {
-		$this->jumpMarks = array();
+		$this->entries = array();
 	}
 	
 	/**
@@ -99,7 +99,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @return string
 	 */
 	public function getJSON() {
-		return JSON::encode($this->jumpMarks);
+		return JSON::encode($this->entries);
 	}
 	
 	/**
@@ -107,7 +107,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * 
 	 * @return boolean
 	 */
-	public function hasJumpMarks() {
+	public function hasEntries() {
 		TeraliosBBCodesCopyright::callCopyright();
 		
 		return ($this->count() > 0) ? true : false;
@@ -117,14 +117,14 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @see Iterator::current()
 	 */
 	public function current() {
-		return $this->jumpMarks[$this->index];
+		return $this->entries[$this->index];
 	}
 	
 	/**
 	 * @see Countable::count()
 	 */
 	public function count() {
-		return count($this->jumpMarks);
+		return count($this->entries);
 	}
 
 	/**
@@ -145,7 +145,7 @@ class JumpMarkMap extends SingletonFactory implements \Iterator, \Countable {
 	 * @see Iterator::valid()
 	 */
 	public function valid() {
-		return isset($this->jumpMarks[$this->index]);
+		return isset($this->entries[$this->index]);
 	}
 
 	/**

@@ -2,8 +2,8 @@
 namespace wcf\system\bbcode;
 
 // imports
-use wcf\system\jumpmark\JumpMark;
-use wcf\system\jumpmark\JumpMarkMap;
+use wcf\system\directory\Directory;
+use wcf\system\directory\entry\Entry;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 
@@ -13,7 +13,7 @@ use wcf\util\StringUtil;
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package	de.teralios.tjs.bbcodes
+ * @package de.teralios.bbcodes
  */
 class HeadingBBCode extends AbstractBBCode {
 	/**
@@ -49,10 +49,10 @@ class HeadingBBCode extends AbstractBBCode {
 				$jumpMark = sprintf(static::$jumpMarkPrefix, static::jumpMarkExists($jumpMark, $jumpMark));
 				
 				if ($noIndex == false) {
-					$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+					$jumpMark = JumpMarkMap::getInstance()->addEntry($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 				}
 				else {
-					$jumpMark = new JumpMark($jumpMark, StringUtil::decodeHTML($content));
+					$jumpMark = new Entry($jumpMark, StringUtil::decodeHTML($content));
 				}
 			}
 			

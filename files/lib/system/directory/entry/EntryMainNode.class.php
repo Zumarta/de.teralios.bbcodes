@@ -1,5 +1,5 @@
 <?php
-namespace wcf\system\jumpmark;
+namespace wcf\system\directory\entry;
 
 /**
  * Jump mark main node.
@@ -7,14 +7,14 @@ namespace wcf\system\jumpmark;
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package de.teralios.tjs.bbcodes
+ * @package de.teralios.bbcodes
  */
-class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
+class EntryMainNode extends EntryNode implements \Iterator, \Countable {
 	/**
 	 * Sub jump marks.
 	 * @var array<\wcf\system\jumpmark\JumpMarkNode>
 	 */
-	protected $subMark = array();
+	protected $entries = array();
 	
 	/**
 	 * Index for \Iterator.
@@ -27,8 +27,8 @@ class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	 * 
 	 * @param \wcf\system\jumpmark\JumpMark $jumpMark
 	 */
-	public function setSubJumpMark(\wcf\system\jumpmark\JumpMark $jumpMark) {
-		$this->subMark[] = new JumpMarkNode($jumpMark);
+	public function setSubEntry(\wcf\system\directory\entry\Entry $jumpMark) {
+		$this->entries[] = new EntryNode($jumpMark);
 	}
 	
 	/**
@@ -36,7 +36,7 @@ class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	 * 
 	 * @return boolean
 	 */
-	public function hasJumpMarks() {
+	public function hasEntries() {
 		return ($this->count() > 0) ? true : false;
 	}
 	
@@ -44,7 +44,7 @@ class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	 * @see Iterator::current()
 	 */
 	public function current() {
-		return $this->subMark[$this->index];
+		return $this->entries[$this->index];
 	}
 
 	/**
@@ -65,7 +65,7 @@ class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	 * @see Iterator::valid()
 	 */
 	public function valid() {
-		return isset($this->subMark[$this->index]);
+		return isset($this->entries[$this->index]);
 	}
 
 	/**
@@ -79,6 +79,6 @@ class JumpMarkMainNode extends JumpMarkNode implements \Iterator, \Countable {
 	 * @see Countable::count()
 	 */
 	public function count() {
-		return count($this->subMark);
+		return count($this->entries);
 	}
 }

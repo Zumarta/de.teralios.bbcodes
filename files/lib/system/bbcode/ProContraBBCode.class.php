@@ -13,7 +13,7 @@ use wcf\util\TeraUtil;
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package de.teralios.tjs.bbcodes
+ * @package de.teralios.bbcodes
  */
 class ProContraBBCode extends AbstractBBCode {
 	const SPLIT_PATTERN = '#\[([+-\\\*])\]#';

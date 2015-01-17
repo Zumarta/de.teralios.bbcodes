@@ -1,19 +1,19 @@
-{if $directory|isset && $directory->hasJumpMarks()}
+{if $directory|isset && $directory->hasEntries()}
 	<!-- sidebar directory is part of de.teralios.tjs.bbcodes (http://www.teralios.de) -->
 	<fieldset class="dashboardBox">
 		<legend>{lang}wcf.directory.title{/lang}</legend>
 		<div>
 			<ol class="sidebarNestedCategoryList">
-				{foreach from=$directory item=$jumpMark}
-					{if $jumpMark->existJumpMark() || $jumpMark->hasJumpMarks()}
+				{foreach from=$directory item=$entry}
+					{if $entry->existEntry() || $entry->hasEntries()}
 						<li>
-							{if $jumpMark->existJumpMark()}
-								<a href="{$jumpMark->getJumpMark()->getAnchor()}">{$jumpMark->getJumpMark()->getTitle()}</a>
+							{if $entry->existJumpMark()}
+								<a href="{$entry->getEntry()->getAnchor()}">{$entry->getEntry()->getTitle()}</a>
 							{/if}
-							{if $jumpMark->hasJumpMarks()}
+							{if $entry->hasEntries()}
 								<ol>
-									{foreach from=$jumpMark item=$subJumpMark}
-										<li><a href="{$subJumpMark->getJumpMark()->getAnchor()}">{$subJumpMark->getJumpMark()->getTitle()}</a></li>
+									{foreach from=$entry item=$subEntry
+										<li><a href="{$subEntry->getEntry()->getAnchor()}">{$subEntry->getEntries()->getTitle()}</a></li>
 									{/foreach}
 								</ol>
 							{/if}

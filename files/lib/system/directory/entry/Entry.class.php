@@ -1,19 +1,19 @@
 <?php
-namespace wcf\system\jumpmark;
+namespace wcf\system\directory\entry;
 
 // imports
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 /**
- * Basic class for a jump mark.
+ * Basic class for a directory entry.
  *
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package de.teralios.tjs.bbcodes
+ * @package de.teralios.bbcodes
  */
-class JumpMark {
+class Entry {
 	/**
 	 * Jump mark element. (Used in id-Tags)
 	 * @var string

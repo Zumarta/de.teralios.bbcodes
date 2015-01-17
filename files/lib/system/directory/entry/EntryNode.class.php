@@ -1,5 +1,5 @@
 <?php
-namespace wcf\system\jumpmark;
+namespace wcf\system\directory\entry;
 
 /**
  * Jump mark node for jump mark map.
@@ -7,22 +7,22 @@ namespace wcf\system\jumpmark;
  * @author	Karsten (Teralios) Achterrath
  * @copyright	2014 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
- * @package
+ * @package de.teralios.bbcodes
  */
-class JumpMarkNode {
+class EntryNode {
 	/**
 	 * Jump mark object.
-	 * @var \wcf\system\jumpmark\JumpMark
+	 * @var\wcf\system\directory\entry\Entry
 	 */
-	protected $jumpMark = null;
+	protected $entry = null;
 	
 	/**
 	 * Create jump mark node.
 	 * 
-	 * @param \wcf\system\jumpmark\JumpMark $jumpMark
+	 * @param \wcf\system\directory\entry\Entry $jumpMark
 	 */
-	public function __construct(\wcf\system\jumpmark\JumpMark $jumpMark = null) {
-		$this->jumpMark = $jumpMark;
+	public function __construct(\wcf\system\directory\entry\Entry $entry = null) {
+		$this->enty = $entry;
 	}
 	
 	/**
@@ -30,8 +30,8 @@ class JumpMarkNode {
 	 * 
 	 * @return \wcf\system\jumpmark\JumpMark
 	 */
-	public function getJumpMark() {
-		return $this->jumpMark;
+	public function getEntry() {
+		return $this->entry;
 	}
 	
 	/**
@@ -39,7 +39,7 @@ class JumpMarkNode {
 	 * 
 	 * @return boolean
 	 */
-	public function existJumpMark() {
-		return ($this->jumpMark === null) ? false : true;
+	public function existEntry() {
+		return ($this->entry === null) ? false : true;
 	}
 }
