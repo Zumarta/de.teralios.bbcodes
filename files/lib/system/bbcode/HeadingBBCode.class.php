@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\jumpmark\JumpMark;
 use wcf\system\jumpmark\JumpMarkMap;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
@@ -49,6 +50,9 @@ class HeadingBBCode extends AbstractBBCode {
 				
 				if ($noIndex == false) {
 					$jumpMark = JumpMarkMap::getInstance()->addJumpMark($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+				}
+				else {
+					$jumpMark = new JumpMark($jumpMark, StringUtil::decodeHTML($content));
 				}
 			}
 			
