@@ -23,15 +23,15 @@ class TeraliosBBCodeUtil {
 		
 		// heading and subheading
 		$message = str_ireplace('[heading', '[h1', $message);
-		$message = str_ireplace('[/heading', '[/h1]', $message);
+		$message = str_ireplace('[/heading]', '[/h1]', $message);
 		$message = str_ireplace('[subheading', '[h2', $message);
 		$message = str_ireplace('[/subheading]', '[/h2]', $message);
 		
 		// footnotes
-		$message = str_ireplace('[footnote', '[fn', $message);
 		$message = str_ireplace('[footnotecontent', '[fnc', $message);
-		$message = str_ireplace('[/footnote]', '[/fn]', $message);
+		$message = str_ireplace('[footnote', '[fn', $message);
 		$message = str_ireplace('[/footnotecontent]', '[/fnc]', $message);
+		$message = str_ireplace('[/footnote]', '[/fn]', $message);
 		
 		// pro contra
 		$message = str_ireplace('[procontra', '[pclist', $message);
