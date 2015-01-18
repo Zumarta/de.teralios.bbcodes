@@ -7,13 +7,13 @@
 				{foreach from=$directory item=$entry}
 					{if $entry->existEntry() || $entry->hasEntries()}
 						<li>
-							{if $entry->existJumpMark()}
+							{if $entry->existEntry()}
 								<a href="{$entry->getEntry()->getAnchor()}">{$entry->getEntry()->getTitle()}</a>
 							{/if}
 							{if $entry->hasEntries()}
 								<ol>
 									{foreach from=$entry item=$subEntry}
-										<li><a href="{$subEntry->getEntry()->getAnchor()}">{$subEntry->getEntries()->getTitle()}</a></li>
+										<li><a href="{$subEntry->getEntry()->getAnchor()}">{$subEntry->getEntry()->getTitle()}</a></li>
 									{/foreach}
 								</ol>
 							{/if}
