@@ -17,10 +17,10 @@
 		<requiredpackage minversion="1.0.0 Beta 1" file="required/de.teralios.core.tar">de.teralios.core</requiredpackage>
 	</requiredpackages>
 	
-	<optionalpackage>
+	<optionalpackages>
 		<!-- <optionalpackage file="optionals/de.teralios.bbcodes.blog.tar">de.teralios.bbcodes.blog</optionalpackage> -->
 		<optionalpackage file="optionals/de.teralios.bbcodes.wbb.tar">de.teralios.bbcodes.wbb</optionalpackage>
-	</optionalpackage>
+	</optionalpackages>
 
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>

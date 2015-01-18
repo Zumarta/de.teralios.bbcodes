@@ -12,7 +12,7 @@
 							{/if}
 							{if $entry->hasEntries()}
 								<ol>
-									{foreach from=$entry item=$subEntry
+									{foreach from=$entry item=$subEntry}
 										<li><a href="{$subEntry->getEntry()->getAnchor()}">{$subEntry->getEntries()->getTitle()}</a></li>
 									{/foreach}
 								</ol>
