@@ -94,7 +94,7 @@ class FootnoteBBCode extends AbstractBBCode {
 			
 			WCF::getTPL()->assign(array(
 				'footnoteTagID' => $footnoteTagIndex,
-				'footnoteIndex' => $footnoteIndex,
+				'footnoteIndex' => $footnoteIndex
 			));
 			
 			return WCF::getTPL()->fetch('footnoteBBCode');
