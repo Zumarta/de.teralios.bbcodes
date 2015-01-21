@@ -34,5 +34,6 @@
 	
 	<instructions type="update" fromversion="2.0.0 Beta 4">
 		<instruction type="file">files.tar</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
