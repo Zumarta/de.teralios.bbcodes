@@ -163,12 +163,8 @@ class XAttachBBCode extends AttachmentBBCode {
 			$filename = $attachment->filename;
 			$dotPosition = strrpos($filename, '.') + 1;
 			$end = mb_strtolower(substr($filename, $dotPosition));
-			if (isset(self::$fileTypes[$end])) {
-				return self::$fileTypes[$end];
-			}
-			else {
-				return 'default';
-			}
+			
+			return (isset(self::$fileTypes[$end])) ? self::$fileTypes[$end] : 'default';
 		}
 		else {
 			return 'default';
@@ -182,11 +178,6 @@ class XAttachBBCode extends AttachmentBBCode {
 	 * @return	text
 	 */
 	protected static function choseIcon($type) {
-		if (isset(static::$icons[$type])) {
-			return static::$icons[$type];
-		}
-		else {
-			return static::$icons['default'];
-		}
+		return (isset(static::$icons[$type])) ? static::$icons[$type] : static::$icons['default'];
 	}
 }
