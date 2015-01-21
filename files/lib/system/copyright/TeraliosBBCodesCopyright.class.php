@@ -3,7 +3,7 @@
 namespace wcf\system\copyright;
 
 // imports
-use wcf\util\TeraUtil;
+use wcf\util\TeraliosUtil;
 
 /**
  * Teralios BBCode Copyright class.
@@ -21,6 +21,6 @@ final class TeraliosBBCodesCopyright extends AbstractCopyright {
 		parent::init();
 		
 		// call easter egg. ;)
-		TeraUtil::easterEgg(16);
+		TeraliosUtil::easterEgg(16);
 	}
 }
