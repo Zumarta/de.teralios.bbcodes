@@ -5,7 +5,6 @@ namespace wcf\system\bbcode;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
-use wcf\util\TeraUtil;
 
 /**
  * Pro and Contra BBCode for the wcf2.0.
