@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\directory\Directory;
 use wcf\system\directory\entry\Entry;
 use wcf\system\WCF;
@@ -32,6 +33,9 @@ class HeadingBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
+		// copyright
+		TeraliosBBCodesCopyright::callCopyright();
+		
 		$tag = mb_strtolower($openingTag['name']);
 
 		// heading and subheading tag html.

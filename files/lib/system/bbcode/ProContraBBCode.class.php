@@ -22,6 +22,9 @@ class ProContraBBCode extends AbstractBBCode {
 	 * @see	\wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
+		// copyright counter.
+		TeraliosBBCodesCopyright::callCopyright();
+		
 		$title = (isset($openingTag['attributes'][0]) && !empty($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
 		$points = array();
 		
@@ -69,11 +72,6 @@ class ProContraBBCode extends AbstractBBCode {
 			return '[procontra]'.$content.'[/procontra]';
 		}
 		else if ($parser->getOutputType() == 'text/html') {
-			// copyright counter.
-			TeraliosBBCodesCopyright::callCopyright();
-			
-			// easter egg
-			TeraUtil::easterEgg();
 			
 			// add template variables
 			WCF::getTPL()->assign(array(

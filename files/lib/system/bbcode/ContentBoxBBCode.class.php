@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 
@@ -18,6 +19,9 @@ class ContentBoxBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag,\wcf\system\bbcode\BBCodeParser $parser) {
+		//copyright
+		TeraliosBBCodesCopyright::callCopyright();
+		
 		$title = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
 		$position = (isset($openingTag['attributes'][1])) ? StringUtil::toLowerCase($openingTag['attributes'][1]) : '';
 		$size = (isset($openingTag['attributes'][2])) ? $openingTag['attributes'][2] : 0;

@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\footnote\Footnote;
 use wcf\system\footnote\FootnoteMap;
 use wcf\system\request\RequestHandler;
@@ -46,6 +47,9 @@ class FootnoteBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
+		// copyright
+		TeraliosBBCodesCopyright::callCopyright();
+		
 		$content = StringUtil::trim($content);
 		
 		// check controller for parsing foot notes.

@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 
@@ -18,6 +19,9 @@ class DefinitionListBBCode extends AbstractBBCode {
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
 	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
+		// copyright
+		TeraliosBBCodesCopyright::callCopyright();
+		
 		$content = StringUtil::trim($content);
 		if (!empty($content) || (mb_strpos($content, '[*]') !== false && mb_strpos($content, '[:]') !== false)) {
 			// build main list elements
