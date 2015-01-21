@@ -12,7 +12,7 @@
 		<item name="wcf.bbcode.footnote.variant.1"><![CDATA[<sup>1</sup>]]></item>
 		<item name="wcf.bbcode.footnote.variant.2"><![CDATA[[1]]]></item>
 		<item name="wcf.bbcode.footnote.variant.3"><![CDATA[*]]></item>
-		<item name="wcf.bbcode.footnote.variant.4"><![CDATA[XIV]]></item>
+		<item name="wcf.bbcode.footnote.variant.4"><![CDATA[<sup>XIV</sup>]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra Liste]]></item>
