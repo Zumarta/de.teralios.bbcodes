@@ -27,7 +27,8 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 	</category>
 	
 	<category name="wcf.teralios">
-		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Diese Seite nutzt <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}]]]></item>
+		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Diese Seite nutzt <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}
+		<!-- Ein dank geht an die Spender: Bibini, Route66, Jowina, Grafiksüchtig, T1N0, Flexless, PoooMukkel und Criba! -->]]></item>
 		<item name="wcf.teralios.footnotes"><![CDATA[Fußnoten]]></item>
 	</category>
 	

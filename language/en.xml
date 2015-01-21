@@ -23,7 +23,8 @@ The syntax has change. For every new point in the list, use the prefix [+][-] or
 	</category>
 	
 	<category name="wcf.teralios">
-		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>This site use <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}]]></item>
+		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>This site use <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}
+		<!-- Thanks to: Bibini, Route66, Jowina, Grafiksüchtig, T1N0, Flexless, PoooMukkel und Criba! -->]]></item>
 	</category>
 	
 	<category name="wcf.acp.option">
