@@ -32,7 +32,7 @@ class ProContraBBCode extends AbstractBBCode {
 			$position = StringUtil::firstCharToUpperCase($openingTag['attributes'][1]);
 		}
 		else {
-			$position = 'none';
+			$position = 'None';
 		}
 		
 		// build array

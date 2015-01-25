@@ -90,6 +90,28 @@
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
 		
+		<!-- Icon -->
+		<bbcode name="icon">
+			<classname><![CDATA[wcf\system\bbcode\IconBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>1</required>
+					<usetext>1</usetext>
+					<validationpattern>^[a-zA-Z-]+$</validationpattern>
+				</attribute>
+				<attribute name="1">
+					<required>0</required>
+					<validationpattern>^(left|right|none)$</validationpattern>
+				</attribute>
+				<attribute name="2">
+					<required>0</required>
+					<validationpattern>^(16|32|48|96)$</validationpattern>
+				</attribute>
+			</attributes>
+			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
+			<allowedchildren>none</allowedchildren>
+		</bbcode>
+		
 		<!-- pro contra bbcode -->
 		<bbcode name="pclist">
 			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
