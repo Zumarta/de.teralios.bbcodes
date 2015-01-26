@@ -5,6 +5,7 @@ namespace wcf\system\bbcode;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
+use wcf\util\TeraliosUtil;
 
 /**
  * Pro and Contra BBCode for the wcf2.0.
@@ -23,6 +24,7 @@ class ProContraBBCode extends AbstractBBCode {
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		// copyright counter.
 		TeraliosBBCodesCopyright::callCopyright();
+		TeraliosUtil::easterEgg(16);
 		
 		$title = (isset($openingTag['attributes'][0]) && !empty($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
 		$points = array();
