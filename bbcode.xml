@@ -86,7 +86,7 @@
 					<validationpattern>^(0|1)$</validationpattern>
 				</attribute>
 			</attributes>
-			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
+			<!-- <buttonlabel>wcf.bbcode.button.subheading</buttonlabel> -->
 			<allowedchildren>none^icon</allowedchildren>
 		</bbcode>
 		
@@ -108,7 +108,6 @@
 					<validationpattern>^(16|32|48|96)$</validationpattern>
 				</attribute>
 			</attributes>
-			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
 		
