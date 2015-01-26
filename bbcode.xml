@@ -69,7 +69,7 @@
 					<validationpattern>^(0|1)$</validationpattern>
 				</attribute>
 			</attributes>
-			<allowedchildren>none</allowedchildren>
+			<allowedchildren>none^icon</allowedchildren>
 			<wysiwygicon>fa-header</wysiwygicon>
 			<buttonlabel>wcf.bbcode.button.heading</buttonlabel>
 		</bbcode>
@@ -87,7 +87,7 @@
 				</attribute>
 			</attributes>
 			<buttonlabel>wcf.bbcode.button.subheading</buttonlabel>
-			<allowedchildren>none</allowedchildren>
+			<allowedchildren>none^icon</allowedchildren>
 		</bbcode>
 		
 		<!-- Icon -->

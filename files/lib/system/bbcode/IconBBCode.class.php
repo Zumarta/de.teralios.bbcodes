@@ -3,7 +3,6 @@
 namespace wcf\system\bbcode;
 
 // imports
-use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 class IconBBCode extends AbstractBBCode {
