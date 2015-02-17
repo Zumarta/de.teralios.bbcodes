@@ -1,6 +1,5 @@
 <?php
 namespace wcf\util;
-
 /**
  * Usefull functionts for bbcodes.
  *
@@ -37,6 +36,14 @@ class TeraliosBBCodeUtil {
 		$message = str_ireplace('[procontra', '[pclist', $message);
 		$message = str_ireplace('[/procontra]', '[/pclist]', $message);
 		
+		// replace [*] with [.] in dlist and pclist
+		$message = preg_replace_callback('#\[dlist\].*?\[/dlist\]#si', array('\wcf\util\TeraliosBBCodeUtil', 'replaceLists'), $message);
+		$message = preg_replace_callback('#\[pclist(=[^\]]+)?\].*?\[/pclist\]#si', array('\wcf\util\TeraliosBBCodeUtil', 'replaceLists'), $message);
+		
 		return $message;
+	}
+	
+	public static function replaceLists($listContent) {
+		return str_replace('[*]', '[.]', $listContent[0]);
 	}
 }
