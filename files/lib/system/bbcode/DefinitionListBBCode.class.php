@@ -23,7 +23,8 @@ class DefinitionListBBCode extends AbstractBBCode {
 		TeraliosBBCodesCopyright::callCopyright();
 		
 		$content = StringUtil::trim($content);
-		if (!empty($content) || (mb_strpos($content, '[*]') !== false && mb_strpos($content, '[:]') !== false)) {
+		if (!empty($content) || (mb_strpos($content, '[.]') !== false && mb_strpos($content, '[:]') !== false)) {
+			$content = str_replace('[.]', '[*]', $content);
 			// build main list elements
 			$listElements = preg_split('#\[\*\]#', $content, -1, PREG_SPLIT_NO_EMPTY);
 			foreach ($listElements AS $key => $val) {

@@ -38,6 +38,7 @@ class ProContraBBCode extends AbstractBBCode {
 		}
 		
 		// build array
+		$content = str_replace('[.]', '[*]', $content);
 		if (preg_match(self::SPLIT_PATTERN, $content)) {
 			// split on [+] [-] or [*]
 			$elements = array();
