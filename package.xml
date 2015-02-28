@@ -4,7 +4,7 @@
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>2.0.0</version>
-		<date>2015-02-26</date>
+		<date>2015-02-28</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -34,5 +34,6 @@
 	
 	<instructions type="update" fromversion="2.0.0 RC 4">
 		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
 	</instructions>
 </package>
