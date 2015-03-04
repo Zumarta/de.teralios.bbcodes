@@ -64,7 +64,7 @@ class Entry {
 			$link = static::$canocialUrl.$link;
 		}
 		else {
-			$link = WCF::getRequestURI().$link;
+			$link = static::getRequestURI().$link;
 		}
 		
 		return $link;
@@ -76,7 +76,7 @@ class Entry {
 	 * @return string
 	 */
 	public function getAnchorLink() {
-		return WCF::getRequestURI().'#'.$this->anchor;
+		return static::getRequestURI().'#'.$this->anchor;
 	}
 	
 	/**
@@ -113,6 +113,15 @@ class Entry {
 	 */
 	public static function setCanocialUrl($canocialUrl) {
 		static::$canocialUrl = StringUtil::trim($canocialUrl);
+	}
+	
+	public static function getRequestURI() {
+		if (URL_OMIT_INDEX_PHP) {
+			return str_replace('?', '', WCF::getRequestURI());
+		}
+		else {
+			WCF::getRequestURI();
+		}
 	}
 	
 	public function __toString() {

@@ -5,6 +5,7 @@ namespace wcf\system\directory;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\directory\entry\Entry;
 use wcf\system\directory\entry\EntryMainNode;
+use wcf\system\SingletonFactory;
 use wcf\system\WCF;
 
 /**
