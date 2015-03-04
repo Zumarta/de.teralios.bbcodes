@@ -9,16 +9,17 @@ use wcf\util\StringUtil;
  * Basic class for a directory entry.
  *
  * @author	Karsten (Teralios) Achterrath
- * @copyright	2014 Teralios.de
+ * @copyright	2014-2015 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package de.teralios.bbcodes
+ * @deprecated
  */
 class Entry {
 	/**
 	 * Jump mark element. (Used in id-Tags)
 	 * @var string
 	 */
-	protected $jumpMark = '';
+	protected $anchor = '';
 	
 	/**
 	 * Title 
@@ -30,7 +31,7 @@ class Entry {
 	 * Base link for jumpmark
 	 * @var	string
 	 */
-	protected $baseLink = '';
+	protected $shareLink = '';
 	
 	/**
 	 * Canocial URL.
@@ -44,8 +45,8 @@ class Entry {
 	 * @param	string	$jumpMark
 	 * @param	string	$title
 	 */
-	public function __construct($jumpMark, $title) {
-		$this->jumpMark = $jumpMark;
+	public function __construct($anchor, $title) {
+		$this->anchor = $anchor;
 		$this->title = $title;
 	}
 	
@@ -54,10 +55,10 @@ class Entry {
 	 * 
 	 * @return string
 	 */
-	public function getLink() {
-		$link = '#'.$this->jumpMark;
-		if (!empty($this->baseLink)) {
-			$link = $this->baseLink.$link;
+	public function getShareLink() {
+		$link = '#'.$this->anchor;
+		if (!empty($this->shareLink)) {
+			$link = $this->shareLink.$link;
 		}
 		else if (!empty(static::$canocialUrl)) {
 			$link = static::$canocialUrl.$link;
@@ -74,8 +75,8 @@ class Entry {
 	 *
 	 * @return string
 	 */
-	public function getAnchor() {
-		return WCF::getRequestURI().'#'.$this->jumpMark;
+	public function getAnchorLink() {
+		return WCF::getRequestURI().'#'.$this->anchor;
 	}
 	
 	/**
@@ -84,7 +85,7 @@ class Entry {
 	 * @return string
 	 */
 	public function getJumpMark() {
-		return $this->jumpMark;
+		return $this->anchor;
 	}
 	
 	/**
@@ -99,10 +100,10 @@ class Entry {
 	/**
 	 * Set base link.
 	 *
-	 * @param	string	$baseLink
+	 * @param	string	$shareLink
 	 */
-	public function setBaseLink($baseLink) {
-		$this->baseLink = StringUtil::trim($baseLink);
+	public function setShareLink($shareLink) {
+		$this->shareLink = StringUtil::trim($shareLink);
 	}
 	
 	/**
@@ -115,6 +116,6 @@ class Entry {
 	}
 	
 	public function __toString() {
-		return $this->jumpMark;
+		return $this->anchor;
 	}
 }

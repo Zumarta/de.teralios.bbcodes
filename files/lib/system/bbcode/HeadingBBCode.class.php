@@ -12,7 +12,7 @@ use wcf\util\StringUtil;
  * Parse heading and subheading tag.
  *
  * @author	Karsten (Teralios) Achterrath
- * @copyright	2014 Teralios.de
+ * @copyright	2014-2015 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package de.teralios.bbcodes
  */
@@ -21,13 +21,13 @@ class HeadingBBCode extends AbstractBBCode {
 	 * Array with jump marks for checking jump marks.
 	 * @var	array<string>
 	 */
-	protected static $jumpMarks = array();
+	protected static $anchors = array();
 	
 	/**
 	 * Prefix for jump marks.
 	 * @var	string
 	 */
-	protected static $jumpMarkPrefix = 'a-%s';
+	protected static $anchorPrefix = 'a-%s';
 
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
@@ -40,29 +40,29 @@ class HeadingBBCode extends AbstractBBCode {
 
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
-			$jumpMark = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
+			$anchor = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
 			$noIndex = (isset($openingTag['attributes'][1])) ? boolval($openingTag['attributes'][1]) : false;
-			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($jumpMark)) {
-				$jumpMark = substr(md5($content), 0, 10);
+			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($anchor)) {
+				$anchor = substr(md5($content), 0, 10);
 			}
 			else {
-				$jumpMark = '';
+				$anchor = '';
 			}
 			
-			if (!empty($jumpMark)) {
-				$jumpMark = sprintf(static::$jumpMarkPrefix, static::jumpMarkExists($jumpMark, $jumpMark));
+			if (!empty($anchor)) {
+				$anchor = sprintf(static::$anchorPrefix, static::anchorExists($anchor, $anchor));
 				
 				if ($noIndex != true) {
-					$jumpMark = Directory::getInstance()->addEntry($jumpMark, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+					$anchor = Directory::getInstance()->addEntry($anchor, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
 				}
 				else {
-					$jumpMark = new Entry($jumpMark, StringUtil::decodeHTML($content));
+					$anchor = new Entry($anchor, StringUtil::decodeHTML($content));
 				}
 			}
 			
 			WCF::getTPL()->assign(array(
 				'hsTag' => $tag,
-				'hsEntry' => $jumpMark,
+				'hsEntry' => $anchor,
 				'hsHeading' => $content,
 				'hsLinkTitle' => StringUtil::stripHTML($content)
 			));
@@ -87,19 +87,19 @@ class HeadingBBCode extends AbstractBBCode {
 	/**
 	 * Check given jumpmark and create a new, if jumpmark exists.
 	 * 
-	 * @param	string		$jumpMark
-	 * @param	string		$oldJumpMark
+	 * @param	string		$anchor
+	 * @param	string		$oldAnchor
 	 * @param	number		$counter
 	 * @return	string
 	 */
-	protected static function jumpMarkExists($jumpMark, $oldJumpMark, $counter = 1) {
-		if (isset(self::$jumpMarks[$jumpMark])) {
-			$newJumpMark = (($oldJumpMark == $jumpMark) ? $jumpMark : $oldJumpMark).'_'.$counter;
+	protected static function anchorExists($anchor, $oldAnchor, $counter = 1) {
+		if (isset(self::$anchors[$anchor])) {
+			$newJumpMark = (($oldAnchor == $anchor) ? $anchor : $oldAnchor).'_'.$counter;
 			$counter++;
-			return self::jumpMarkExists($newJumpMark, $oldJumpMark, $counter);
+			return self::anchorExists($newJumpMark, $oldAnchor, $counter);
 		}
 		
-		self::$jumpMarks[$jumpMark] = $jumpMark;
-		return $jumpMark;	
+		self::$anchors[$anchor] = $anchor;
+		return $anchor;	
 	}
 }

@@ -5,6 +5,31 @@
  * @author	Karsten (Teralios) Achterrath
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  */
+// CSS for box, pclist, icon, xattach
+.teraliosLeft {
+	float: left;
+	margin-right: @wcfGapSmall;
+	margin-bottom: @wcfGapSmall;
+}
+
+.teraliosRight {
+	float: right;
+	margin-left: @wcfGapSmall;
+	margin-bottom: @wcfGapSmall;
+}
+
+@media only screen and (max-width: 800px) {
+	.teraliosLeft, .teraliosRight {
+		float: none;
+		display: block;
+		margin: @wcfGapSmall;	
+	}
+	
+	.boxSize1, .boxSize2, .boxSize3 {
+		width: 99%;
+	}
+}
+ 
 // CSS for box bbcode
 .boxBBCode {
 	margin-top: @wcfGapSmall;
@@ -26,16 +51,6 @@
 			background-color: @wcfContainerBackgroundColor;
 		}
 	}
-}
-
-.boxLeft {
-	float: left;
-	margin-right: @wcfGapSmall;
-}
-
-.boxRight {
-	float: right;
-	margin-left: @wcfGapSmall;
 }
 
 .boxSize3 {
@@ -79,21 +94,12 @@
 @tjsNeutralColorHover: rgb(63,63,63);
 @tjsNeutralBackgroundColor: fadeout(@tjsNeutralColorHover, 90%);
 
-.proContraBBCodeLeft {
+.pcFloat {
 	display: inline-block;
 	width: 50%;
-	float: left;
-	margin-right: @wcfGapSmall;
 }
 
-.proContraBBCodeRight {
-	display: inline-block;
-	width: 50%;
-	float: right;
-	margin-left: @wcfGapSmall;
-}
-
-.proContraBBCode {
+.pcBBCode {
 	margin-top: @wcfGapSmall;
 	margin-bottom: @wcfGapSmall;
 	
@@ -260,27 +266,7 @@
 	}
 }
 
-.xAttachLeft {
-	float: left;
-	margin-right: @wcfGapSmall;
-	margin-bottom: @wcfGapSmall;	
-}
-
-.xAttachRight {
-	float: right;
-	margin-left: @wcfGapSmall;
-	margin-bottom: @wcfGapSmall;	
-}
-	
-.xAttachNone {
+.xAttachNoFloat {
 	display: inline-block;
 	margin: @wcfGapTiny;
-}
-
-@media only screen and (max-width: 800px) {
-	.xAttachLeft, .xAttachRight {
-		float: none;
-		display: block;
-		margin: @wcfGapSmall;	
-	}
 }

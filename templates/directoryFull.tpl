@@ -10,12 +10,12 @@
 						{if $entry->existEntry() || $entry->hasEntries()}
 							<li>
 								{if $entry->existEntry()}
-									<a href="{$entry->getEntry()->getAnchor()}">{$entry->getEntry()->getTitle()}</a>
+									<a href="{$entry->getEntry()->getAnchorLink()}">{$entry->getEntry()->getTitle()}</a>
 								{/if}
 								{if $entry->hasEntries()}
 									<ol>
 										{foreach from=$entry item=$subEntry}
-											<li><span class="icon16 fa fa-chevron-right"></span> <a href="{$subEntry->getEntry()->getAnchor()}">{$subEntry->getEntry()->getTitle()}</a></li>
+											<li><span class="icon16 fa fa-chevron-right"></span> <a href="{$subEntry->getEntry()->getAnchorLink()}">{$subEntry->getEntry()->getTitle()}</a></li>
 										{/foreach}
 									</ol>
 								{/if}

@@ -10,7 +10,7 @@ use wcf\util\StringUtil;
  * Parse box bbcode.
  *
  * @author	Karsten (Teralios) Achterrath
- * @copyright	2014 Teralios.de
+ * @copyright	2014-2015 Teralios.de
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package de.teralios.bbcodes
  */
@@ -23,7 +23,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 		TeraliosBBCodesCopyright::callCopyright();
 		
 		$title = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
-		$position = (isset($openingTag['attributes'][1])) ? StringUtil::toLowerCase($openingTag['attributes'][1]) : '';
+		$position = (isset($openingTag['attributes'][1])) ? mb_strtolower($openingTag['attributes'][1]) : 'none';
 		$size = (isset($openingTag['attributes'][2])) ? $openingTag['attributes'][2] : 0;
 		
 		// size settings.

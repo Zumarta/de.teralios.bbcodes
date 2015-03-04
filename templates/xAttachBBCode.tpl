@@ -1,4 +1,4 @@
-<div class="{if $xaNoBorder}xAttachBBCode{else}xAttachBorderBBCode{/if} xAttach{$xaFloat|ucfirst}">
+<div class="{if $xaNoBorder}xAttachBBCode{else}xAttachBorderBBCode{/if} {if $xaFloat != 'none'}teralios{$xaFloat|ucfirst}{else}xAttachNoFloat{/if}">
 	<div>
 		{if $xaIsImage == false}
 			<a href="{@$xaLink}" title="{@$xaTitle}" class="jsTooltip"><span class="fa icon96 {$xaIcon}"></span></a>
