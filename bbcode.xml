@@ -111,6 +111,24 @@
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
 		
+		<!-- inline quote -->
+		<bbcode name="iquote">
+			<!-- for future
+			<classname><![CDATA[wcf\system\bbcode\InlineQuoteBBCode]]></classname>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+				</attribute>
+				<attribute name="2">
+					<required>0</required>
+				</attribute>
+			</attributes> -->
+			<allowedchildren>none^img,b,i,u,s,sub,sup,color,size,font</allowedchildren>
+			<!-- for 2.0.2, with 2.1.0 it get a own class. -->
+			<htmlopen>q</htmlopen>
+			<htmlclose>q</htmlclose>
+		</bbcode>
+		
 		<!-- pro contra bbcode -->
 		<bbcode name="pclist">
 			<classname><![CDATA[wcf\system\bbcode\ProContraBBCode]]></classname>
