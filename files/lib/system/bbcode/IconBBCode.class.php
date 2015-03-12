@@ -23,6 +23,6 @@ class IconBBCode extends AbstractBBCode {
 		$float = (isset($openingTag['attributes'][1])) ? mb_strtolower(StringUtil::trim($openingTag['attributes'][1])) : 'none';
 		$size = (isset($openingTag['attributes'][2])) ? $openingTag['attributes'][2] : 16;
 		
-		return '<span class="fa icon'.$size.' '.$icon.' '.(($float != 'none') ? 'teralios'.ucfirst($float) : '').'"></span>';
+		return '<span class="fa icon'.$size.' '.$icon.' '.(($float != 'none') ? 'iconBB'.ucfirst($float) : '').'"></span>';
 	}
 }

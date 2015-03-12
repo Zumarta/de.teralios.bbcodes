@@ -5,33 +5,33 @@
  * @author	Karsten (Teralios) Achterrath
  * @license	Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  */
-// CSS for box, pclist, icon, xattach
-.teraliosLeft {
+// Float CSS for bbcoides.
+.pcLeft, .iconBBLeft, .cboxLeft, .xattachLeft{
 	float: left;
 	margin-right: @wcfGapSmall;
 	margin-bottom: @wcfGapSmall;
 }
 
-.teraliosRight {
+.pcRight, .iconBBRight, .cboxRight, .xattachRight {
 	float: right;
 	margin-left: @wcfGapSmall;
 	margin-bottom: @wcfGapSmall;
 }
 
 @media only screen and (max-width: 800px) {
-	.teraliosLeft, .teraliosRight {
-		float: none;
-		display: block;
-		margin: @wcfGapSmall;	
+	.pcLeft, .pcRight, .cboxLeft, .cboxRight {
+		float: none !important;
+		display: block !important;
+		margin: @wcfGapSmall !important;	
 	}
 	
-	.boxSize1, .boxSize2, .boxSize3 {
+	.cboxSize1, .cboxSize2, .cboxSize3 {
 		width: 99%;
 	}
 }
  
 // CSS for box bbcode
-.boxBBCode {
+.cboxBBCode {
 	margin-top: @wcfGapSmall;
 	margin-bottom: @wcfGapSmall;
 	
@@ -53,15 +53,15 @@
 	}
 }
 
-.boxSize3 {
+.cboxSize3 {
 	width: 74%;
 }
 
-.boxSize2 {
+.cboxSize2 {
 	width: 49%;
 }
 
-.boxSize1 {
+.cboxSize1 {
 	width: 24%;
 }
 
@@ -229,7 +229,7 @@
 }
 
 /** CSS for xattach bbcode */
-.xAttachBorderBBCode {
+.xattachBorderBBCode {
 	border: 1px solid @wcfContainerBorderColor;
 	max-width: (280 + ((@wcfGapTiny) * 2));
 	text-align: center;
@@ -253,7 +253,7 @@
 	}
 }
 
-.xAttachBBCode {
+.xattachBBCode {
 	max-width: ((@wcf_option_attachment_thumbnail_width) + ((@wcfGapTiny) * 2));
 	text-align: center;
 	div {
@@ -266,7 +266,7 @@
 	}
 }
 
-.xAttachNoFloat {
+.xattachNoFloat {
 	display: inline-block;
 	margin: @wcfGapTiny;
 }

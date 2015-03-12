@@ -1,4 +1,4 @@
-<div class="tabularBox pcBBCode{if $pcPosition != 'none'} teralios{$pcPosition|ucfirst} pcFloat{/if}">
+<div class="tabularBox pcBBCode{if $pcPosition != 'none'} pc{$pcPosition|ucfirst} pcFloat{/if}">
 	<div class="tabularBoxTitle"><header><h2>{$pcTitle}{if $teraEgg|isset}{@$teraEgg}{/if}</h2></header></div>
 	<div class="pcContent">
 		{event name='beforeContent'}
