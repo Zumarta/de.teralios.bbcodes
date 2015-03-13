@@ -102,8 +102,12 @@ class Entry {
 	 *
 	 * @param	string	$shareLink
 	 */
-	public function setShareLink($shareLink) {
+	public function setShareLink($shareLink, $isHTMLEncoded = false) {
 		$this->shareLink = StringUtil::trim($shareLink);
+		
+		if ($isHTMLEncoded == true) {
+			$this->shareLink = StringUtil::decodeHTML($this->shareLink);
+		}
 	}
 	
 	/**
@@ -120,7 +124,7 @@ class Entry {
 			return str_replace('?', '', WCF::getRequestURI());
 		}
 		else {
-			WCF::getRequestURI();
+			return WCF::getRequestURI();
 		}
 	}
 	
