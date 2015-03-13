@@ -124,7 +124,7 @@ class Entry {
 			return str_replace('?', '', WCF::getRequestURI());
 		}
 		else {
-			return WCF::getRequestURI();
+			return str_replace(WCF::getTPL()->get('baseHref'), WCF::getTPL()->get('baseHref').'index.php', WCF::getRequestURI());
 		}
 	}
 	
