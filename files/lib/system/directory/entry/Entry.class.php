@@ -123,6 +123,9 @@ class Entry {
 		if (URL_OMIT_INDEX_PHP) {
 			return str_replace('?', '', WCF::getRequestURI());
 		}
+		else if (URL_LEGACY_MODE) {
+			return WCF::getREquestURI();
+		}
 		else {
 			return str_replace(WCF::getTPL()->get('baseHref'), WCF::getTPL()->get('baseHref').'index.php', WCF::getRequestURI());
 		}
