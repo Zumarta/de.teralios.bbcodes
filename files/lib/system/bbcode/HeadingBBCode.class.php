@@ -45,7 +45,7 @@ class HeadingBBCode extends AbstractBBCode {
 			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($anchor)) {
 				$anchor = substr(md5($content), 0, 10);
 			}
-			else {
+			else if (empty($anchor)) {
 				$anchor = '';
 			}
 			
