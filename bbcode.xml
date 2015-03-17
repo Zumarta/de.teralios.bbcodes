@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/bbcode.xsd">
 	<import>
+		<!--  aside bbcode -->
+		<bbcode name="aside">
+			
+		</bbcode>
+		
 		<!-- box bbcode -->
 		<bbcode name="cbox">
 			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
@@ -112,7 +117,7 @@
 		</bbcode>
 		
 		<!-- inline quote -->
-		<!-- <bbcode name="iquote">
+		<bbcode name="iquote">
 			<classname><![CDATA[wcf\system\bbcode\InlineQuoteBBCode]]></classname>
 			<attributes>
 				<attribute name="0">
@@ -123,7 +128,7 @@
 				</attribute>
 			</attributes>
 			<allowedchildren>none^b,i,u,s,sub,sup,color,size,font</allowedchildren>
-		</bbcode> -->
+		</bbcode>
 		
 		<!-- pro contra bbcode -->
 		<bbcode name="pclist">
