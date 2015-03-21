@@ -1,7 +1,7 @@
 {if $footnoteMap|isset && $footnoteMap->hasFootnotes()}
 	<div class="container containerPadding marginTop footnoteList">
 		<div class="containerHeadline">
-			<h3>{lang}wcf.teralios.footnotes{/lang}</h3>
+			<h3>{lang}wcf.bbcode.footnote{/lang}</h3>
 		</div>
 		{event name='beforeContent'}
 		<ul>
