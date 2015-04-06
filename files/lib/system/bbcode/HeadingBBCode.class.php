@@ -53,7 +53,7 @@ class HeadingBBCode extends AbstractBBCode {
 				$anchor = sprintf(static::$anchorPrefix, static::anchorExists($anchor, $anchor));
 				
 				if ($noIndex != true) {
-					$anchor = Directory::getInstance()->addEntry($anchor, StringUtil::decodeHTML($content), (($tag == 'heading') ? false : true));
+					$anchor = Directory::getInstance()->addEntry($anchor, StringUtil::decodeHTML($content), (($tag == 'h1') ? false : true));
 				}
 				else {
 					$anchor = new Entry($anchor, StringUtil::decodeHTML($content));
