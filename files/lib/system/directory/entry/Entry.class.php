@@ -119,12 +119,16 @@ class Entry {
 		static::$canocialUrl = StringUtil::trim($canocialUrl);
 	}
 	
+	/**
+	 * Returns specific request uri.
+	 * @return string
+	 */
 	public static function getRequestURI() {
 		if (URL_OMIT_INDEX_PHP) {
 			return str_replace('?', '', WCF::getRequestURI());
 		}
 		else if (URL_LEGACY_MODE) {
-			return WCF::getREquestURI();
+			return WCF::getRequestURI();
 		}
 		else if (!strstr(WCF::getRequestURI(), 'index.php')) {
 			return str_replace(WCF::getTPL()->get('baseHref'), WCF::getTPL()->get('baseHref').'index.php', WCF::getRequestURI());
@@ -134,6 +138,11 @@ class Entry {
 		}
 	}
 	
+	/**
+	 * Returns anchor.
+	 * 
+	 * @return string
+	 */
 	public function __toString() {
 		return $this->anchor;
 	}
