@@ -130,7 +130,7 @@ class Entry {
 		else if (URL_LEGACY_MODE) {
 			return WCF::getRequestURI();
 		}
-		else if (!strstr(WCF::getRequestURI(), 'index.php')) {
+		else if (!stristr(WCF::getRequestURI(), 'index.php')) {
 			return str_replace(WCF::getTPL()->get('baseHref'), WCF::getTPL()->get('baseHref').'index.php', WCF::getRequestURI());
 		}
 		else {
