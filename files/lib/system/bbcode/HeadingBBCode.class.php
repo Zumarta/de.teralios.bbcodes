@@ -41,7 +41,8 @@ class HeadingBBCode extends AbstractBBCode {
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
 			$anchor = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
-			$noIndex = (isset($openingTag['attributes'][1])) ? boolval($openingTag['attributes'][1]) : false;
+			$noIndex = (isset($openingTag['attributes'][1])) ? $openingTag['attributes'][1] : false; // boolval is php 5.5
+			$noIndex = ($noIndex == 1) ? true : false;
 			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($anchor)) {
 				$anchor = substr(md5($content), 0, 10);
 			}
