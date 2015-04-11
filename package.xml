@@ -42,6 +42,7 @@
 	</instructions>
 	
 	<instructions type="update" fromversion="2.0.3">
+		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
 	</instructions>
 	
