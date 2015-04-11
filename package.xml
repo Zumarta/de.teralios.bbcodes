@@ -3,7 +3,7 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>2.0.3 Pl 2</version>
+		<version>2.0.3 Pl 3</version>
 		<date>2015-04-11</date>
 	</packageinformation>
 	
@@ -19,6 +19,7 @@
 	
 	<excludedpackages>
 		<excludedpackage version="2.2.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+		<excludedpackage version="*">de.codequake.bbcode.icon</excludedpackage>
 	</excludedpackages>
 	
 	<optionalpackages>
@@ -47,6 +48,11 @@
 	</instructions>
 	
 	<instructions type="update" fromversion="2.0.3 Pl 1">
+		<instruction type="file">files.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="2.0.3 Pl 2">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
 	</instructions>
