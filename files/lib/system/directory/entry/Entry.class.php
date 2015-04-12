@@ -124,8 +124,12 @@ class Entry {
 	 * @return string
 	 */
 	public static function getRequestURI() {
-		if (URL_OMIT_INDEX_PHP) {
-			return str_replace('?', '', WCF::getRequestURI());
+		if (URL_OMIT_INDEX_PHP && !URL_LEGACY_MODE) {
+			$link = str_replace(WCF::getTPL()->get('baseHref').'?', WCF::getTPL()->get('baseHref'), WCF::getRequestURI());
+			$pos = strpos($link,'&');
+			if ($pos > 0) $link = substr_replace($link, '?', $pos, 1);
+			
+			return $link;
 		}
 		else if (URL_LEGACY_MODE) {
 			return WCF::getRequestURI();
