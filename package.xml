@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>2.0.3 Pl 3</version>
-		<date>2015-04-11</date>
+		<version>2.0.4</version>
+		<date>2015-04-16</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -35,25 +35,24 @@
 		<instruction type="option">option.xml</instruction>
 		<instruction type="objectType">objectType.xml</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="2.0.2">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="2.0.3">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 	
-	<instructions type="update" fromversion="2.0.3 Pl 1">
+	<instructions type="update" fromversion="2.0.3 Pl 3">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
-	</instructions>
-	
-	<instructions type="update" fromversion="2.0.3 Pl 2">
-		<instruction type="file">files.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 </package>
