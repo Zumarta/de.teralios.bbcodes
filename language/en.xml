@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en">
 	<category name="wcf.bbcode">
-		<item name="wcf.bbcode.button.contentBox"><![CDATA[Content box]]></item>
+		<item name="wcf.bbcode.button.contentBox"><![CDATA[Content Box]]></item>
 		<item name="wcf.bbcode.button.footnote"><![CDATA[Footnote]]></item>
 		<item name="wcf.bbcode.button.heading"><![CDATA[Heading]]></item>
 		<item name="wcf.bbcode.button.procontra"><![CDATA[Pros & Cons]]></item>
@@ -12,34 +12,34 @@
 		<item name="wcf.bbcode.footnote.variant.2"><![CDATA[[1]]]></item>
 		<item name="wcf.bbcode.footnote.variant.3"><![CDATA[*]]></item>
 		<item name="wcf.bbcode.footnote.variant.4"><![CDATA[<sup>XIV</sup>]]></item>
-		<item name="wcf.bbcode.dlist.noDefinition"><![CDATA[No definition]]></item>
-		<item name="wcf.bbcode.proContra"><![CDATA[Pros & cons]]></item>
-		<item name="wcf.bbcode.proContra.empty"><![CDATA[No points]]></item>
-		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & contra list]]></item>
-		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, the bbcode is use with the old syntax.<br />
-The syntax has change. For every new point in the list, use the prefix [+][-] or [*].]]></item>
+		<item name="wcf.bbcode.dlist.noDefinition"><![CDATA[No Definition]]></item>
+		<item name="wcf.bbcode.proContra"><![CDATA[Pros & Cons]]></item>
+		<item name="wcf.bbcode.proContra.empty"><![CDATA[No Points]]></item>
+		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra List]]></item>
+		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, you are using the old BBCode syntax.<br />
+The syntax has changed. For every new line in the list, use the prefix [+][-] or [*].]]></item>
 		<item name="wcf.bbcode.xattach.title"><![CDATA[Attachment (ID: {$xaID})]]></item>
 	</category>
 	
 	<category name="wcf.directory">
-		<item name="wcf.directory.share"><![CDATA[Share anchor]]></item>
+		<item name="wcf.directory.share"><![CDATA[Share Anchor]]></item>
 		<item name="wcf.directory.title"><![CDATA[Directory]]></item>
 	</category>
 	
 	<category name="wcf.teralios">
-		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>This site use <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}
+		<item name="wcf.teralios.copyright.bbcodes"><![CDATA[<a href="http://www.teralios.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>This site using <strong>Teralios' BBCodes</strong></a> {if $teraEgg|isset}{@$teraEgg}{/if}
 		<!-- Thanks to: Bibini, Route66, Jowina, Grafiksüchtig, T1N0, Flexless, PoooMukkel und Criba! -->]]></item>
 	</category>
 	
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.bbcodes_footnote_style"><![CDATA[Style of footnotes]]></item>
-		<item name="wcf.acp.option.bbcodes_footnote_style.description"><![CDATA[The variant 3 and 4 (asterisk and roman numbers) can be look poor.]]></item>
-		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Pages for footnotes]]></item>
-		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Defines pages where footnotes are parsed. The name of a page you will find usually in the URL: <i>domain.tld</i>/<b>PageName</b>/. Else use the name of the controller.]]></item>
-		<item name="wcf.acp.option.bbcodes_headline_automark">Heading and Subheading creates jumpmarks</item>
-		<!-- <item name="wcf.acp.option.bbcodes_xattach_editor"><![CDATA[Activate xAttach in extended Editor.]]></item>
-		<item name="wcf.acp.option.bbcodes_xattach_editor.description"><![CDATA[xAttach-BBCode override the insert button for attachments in the extended editor. This option can deactivate this.]]></item> -->
-		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Borderless style for attachments in messages</item>
+		<item name="wcf.acp.option.bbcodes_footnote_style"><![CDATA[Footnote Style]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_style.description"><![CDATA[Variant 3 or 4 (asterisk or roman numbers) can look poor in some cases.]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Footnote Pages]]></item>
+		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Defines pages where footnotes are parsed. The name of a page can usally be found in the URL: <i>domain.tld</i>/<b>PageName</b>/. Otherwise use the name of the controller.]]></item>
+		<item name="wcf.acp.option.bbcodes_headline_automark">Heading and Subheading Create a Jumpmark</item>
+		<!-- <item name="wcf.acp.option.bbcodes_xattach_editor"><![CDATA[Activate xAttach in Extended Editor.]]></item>
+		<item name="wcf.acp.option.bbcodes_xattach_editor.description"><![CDATA[Replace the standard insert button with xAttach-BBCode. You may deactivate this behaviour here.]]></item> -->
+		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Borderless Style for Attachments in Messages</item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>
 </language>
