@@ -15,6 +15,9 @@ use wcf\util\StringUtil;
  * @package de.teralios.bbcodes
  */
 class ContentBoxBBCode extends AbstractBBCode {
+	protected $title = '';
+	protected $position = '';
+	protected $size = 0;
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
@@ -22,9 +25,13 @@ class ContentBoxBBCode extends AbstractBBCode {
 		//copyright
 		TeraliosBBCodesCopyright::callCopyright();
 		
-		$title = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
-		$position = (isset($openingTag['attributes'][1])) ? mb_strtolower($openingTag['attributes'][1]) : 'none';
-		$size = (isset($openingTag['attributes'][2])) ? $openingTag['attributes'][2] : 0;
+		// map attributes
+		$this->mapAttributes($openingTag['attributes']);
+		
+		// assign vattributes
+		$title = $this->title;
+		$position = $this->position;
+		$size = $this->size;
 		
 		// size settings.
 		if ($size == 0 && ($position == 'left' || $position == 'right')) {
@@ -34,6 +41,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 			$size = 4;
 		}
 		
+		// parse box with out HTML
 		if ($parser->getOutputType() == 'text/simplified-html') {
 			if (!empty($title)) {
 				$return = '<br />----( '.$title.' )----<br />';
@@ -45,6 +53,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 			$return .= '<br />--------<br />';
 			return $return;
 		}
+		// parse box with HTML
 		else if ($parser->getOutputType() == 'text/html') {
 			WCF::getTPL()->assign(array(
 				'boxTitle' => $title,
@@ -55,5 +64,16 @@ class ContentBoxBBCode extends AbstractBBCode {
 			
 			return WCF::getTPL()->fetch('contentBoxBBCode', 'wcf');
 		}
+	}
+	
+	protected function mapAttributes($attributes) {
+		// reset attributes
+		$this->title = $this->position = '';
+		$this->size = 0;
+		
+		// map attributes
+		$this->title = (isset($attributes[0])) ? StringUtil::trim($attributes[0]) : '';
+		$this->position = (isset($attributes[1])) ? mb_strtolower($attributes[1]) : 'none';
+		$this->size = (isset($attributes[2])) ? $attributes[2] : 0;
 	}
 }

@@ -28,6 +28,9 @@ class HeadingBBCode extends AbstractBBCode {
 	 * @var	string
 	 */
 	protected static $anchorPrefix = 'a-%s';
+	
+	protected $anchor = '';
+	protected $noIndex = false;
 
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
@@ -40,9 +43,15 @@ class HeadingBBCode extends AbstractBBCode {
 
 		// heading and subheading tag html.
 		if ($parser->getOutputType() == 'text/html') {
-			$anchor = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : '';
-			$noIndex = (isset($openingTag['attributes'][1])) ? $openingTag['attributes'][1] : false; // boolval is php 5.5
-			$noIndex = ($noIndex == 1) ? true : false;
+			
+			// map attributes
+			$this->mapAttributes($openingTag['attributes']);
+			
+			// assign attributes
+			$anchor = $this->anchor;
+			$noIndex = $this->noIndex;
+			
+			// check anchor and set automark
 			if (BBCODES_HEADLINE_AUTOMARK == 1 && empty($anchor)) {
 				$anchor = substr(md5($content), 0, 10);
 			}
@@ -50,6 +59,7 @@ class HeadingBBCode extends AbstractBBCode {
 				$anchor = '';
 			}
 			
+			// check anchor
 			if (!empty($anchor)) {
 				$anchor = sprintf(static::$anchorPrefix, static::anchorExists($anchor, $anchor));
 				
@@ -61,6 +71,7 @@ class HeadingBBCode extends AbstractBBCode {
 				}
 			}
 			
+			// assign to template
 			WCF::getTPL()->assign(array(
 				'hsTag' => $tag,
 				'hsEntry' => $anchor,
@@ -83,6 +94,16 @@ class HeadingBBCode extends AbstractBBCode {
 			
 			return $return;
 		}
+	}
+	
+	protected function mapAttributes($attributes) {
+		// reset attributes
+		$this->anchor = '';
+		$this->noIndex = false;
+		
+		$this->anchor = (isset($attributes[0])) ? StringUtil::trim($attributes[0]) : '';
+		$noIndex = (isset($attributes[1])) ? $attributes[1] : false; // boolval is php 5.5
+		$this->noIndex = ($noIndex == 1) ? true : false;
 	}
 
 	/**

@@ -17,6 +17,9 @@ use wcf\util\TeraliosUtil;
  */
 class ProContraBBCode extends AbstractBBCode {
 	const SPLIT_PATTERN = '#\[([+-\\\*])\]#';
+	
+	protected $title = '';
+	protected $position = 'none';
 
 	/**
 	 * @see	\wcf\system\bbcode\IBBCode::getParsedTag()
@@ -26,16 +29,13 @@ class ProContraBBCode extends AbstractBBCode {
 		TeraliosBBCodesCopyright::callCopyright();
 		TeraliosUtil::easterEgg(16);
 		
-		$title = (isset($openingTag['attributes'][0]) && !empty($openingTag['attributes'][0])) ? $openingTag['attributes'][0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
-		$points = array();
+		// map attributes
+		$this->mapAttributes($openingTag['attributes']);
 		
-		// position of the pro contra list.
-		if (isset($openingTag['attributes'][1])) {
-			$position = mb_strtolower($openingTag['attributes'][1]);
-		}
-		else {
-			$position = 'none';
-		}
+		// assign values
+		$title = $this->title;
+		$position = $this->position;
+		$points = array();
 		
 		// build array
 		$content = str_replace('[.]', '[*]', $content);
@@ -75,7 +75,7 @@ class ProContraBBCode extends AbstractBBCode {
 		}
 		else if ($parser->getOutputType() == 'text/html') {
 			
-			// add template variables
+			// assign variables
 			WCF::getTPL()->assign(array(
 				'pcTitle' => $title,
 				'pcPoints' => $points,
@@ -100,5 +100,18 @@ class ProContraBBCode extends AbstractBBCode {
 			
 			return $return;
 		}
+	}
+	
+	protected function mapAttributes($attributes) {
+		// reset attributes
+		$this->title = '';
+		$this->position = 'none';
+		
+		// map attributes
+		$this->title = (isset($attributes[0]) && !empty($attributes[0])) ? $attributes[0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
+		if (isset($attributes[1])) {
+			$this->position = mb_strtolower($attributes[1]);
+		}
+		
 	}
 }
