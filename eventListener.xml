@@ -5,6 +5,7 @@
 			<eventclassname>wcf\system\bbcode\MessageParser</eventclassname>
 			<eventname>afterParsing</eventname>
 			<listenerclassname>wcf\system\event\listener\KillBRTagEventListener</listenerclassname>
+			<inherit>1</inherit>
 		</eventlistener>
 	</import>
 </data>
