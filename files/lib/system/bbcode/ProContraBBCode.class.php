@@ -30,7 +30,7 @@ class ProContraBBCode extends AbstractBBCode {
 		TeraliosUtil::easterEgg(16);
 		
 		// map attributes
-		$this->mapAttributes($openingTag['attributes']);
+		$this->mapAttributes($openingTag);
 		
 		// assign values
 		$title = $this->title;
@@ -102,16 +102,35 @@ class ProContraBBCode extends AbstractBBCode {
 		}
 	}
 	
-	protected function mapAttributes($attributes) {
+	protected function mapAttributes($openingTag) {
 		// reset attributes
 		$this->title = '';
 		$this->position = 'none';
 		
-		// map attributes
-		$this->title = (isset($attributes[0]) && !empty($attributes[0])) ? $attributes[0] : WCF::getLanguage()->get('wcf.bbcode.proContra');
-		if (isset($attributes[1])) {
-			$this->position = mb_strtolower($attributes[1]);
+		if (isset($openingTag['attributes'])) {
+			$attributes = $openingTag['attributes'];
+			
+			if (isset($attributes[0])) {
+				if (preg_match('#^(left|right)$#i', $attributes[0])) {
+					$this->position = mb_strtolower($attributes[0]);
+					
+					if (isset($attributes[1])) {
+						$this->title = $attributes[1];
+					}
+				}
+				else {
+					$this->title = $attributes[0];
+					
+					if (isset($attributes[1]) && preg_match('#^(left|right)$#i')) {
+						$this->position = mb_strtolower($attributes[1]);
+					}
+				}
+			}
 		}
 		
+		// map attributes
+		if (empty($this->title)) {
+			$this->title = WCF::getLanguage()->get('wcf.bbcode.proContra');
+		}
 	}
 }

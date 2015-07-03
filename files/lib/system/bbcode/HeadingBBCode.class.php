@@ -96,6 +96,10 @@ class HeadingBBCode extends AbstractBBCode {
 		}
 	}
 	
+	/**
+	 * Map attributes.
+	 * @param	array	$attributes
+	 */
 	protected function mapAttributes($attributes) {
 		// reset attributes
 		$this->anchor = '';

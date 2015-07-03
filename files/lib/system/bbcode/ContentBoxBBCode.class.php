@@ -75,7 +75,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 			$attributes = $openingTag['attributes'];
 			
 			// first ist position
-			if (preg_match('#^(left|right)$#si', $attributes[0])) {
+			if (preg_match('#^(left|right)$#i', $attributes[0])) {
 				$this->position = $attributes[0];
 				
 				// Attribute 2 and 3
@@ -120,7 +120,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 						$this->title = $attributes[1];
 				
 						// third must be size.
-						if (isset($attributes[2]) && preg_match('#^(left|right)$#si', $attributes[2])) {
+						if (isset($attributes[2]) && preg_match('#^(left|right)$#i', $attributes[2])) {
 							$this->position = $attributes[2];
 						}
 					}
@@ -146,12 +146,15 @@ class ContentBoxBBCode extends AbstractBBCode {
 						$this->size = $attributes[1];
 				
 						// third must be position
-						if (isset($attributes[2]) && preg_match('#^(left|right)$#si', $attributes[2])) {
+						if (isset($attributes[2]) && preg_match('#^(left|right)$#i', $attributes[2])) {
 							$this->position = $attributes[2];
 						}
 					}
 				}
 			}
 		}
+		
+		// position check
+		if (!empty($this->position)) $this->position = mb_strtolower($this->position);
 	}
 }
