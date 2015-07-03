@@ -26,7 +26,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 		TeraliosBBCodesCopyright::callCopyright();
 		
 		// map attributes
-		$this->mapAttributes($openingTag['attributes']);
+		$this->mapAttributes($openingTag);
 		
 		// assign vattributes
 		$title = $this->title;
@@ -66,14 +66,92 @@ class ContentBoxBBCode extends AbstractBBCode {
 		}
 	}
 	
-	protected function mapAttributes($attributes) {
+	protected function mapAttributes($openingTag) {
 		// reset attributes
 		$this->title = $this->position = '';
 		$this->size = 0;
 		
-		// map attributes
-		$this->title = (isset($attributes[0])) ? StringUtil::trim($attributes[0]) : '';
-		$this->position = (isset($attributes[1])) ? mb_strtolower($attributes[1]) : 'none';
-		$this->size = (isset($attributes[2])) ? $attributes[2] : 0;
+		if (isset($openingTag['attributes'])) {
+			$attributes = $openingTag['attributes'];
+			
+			// first ist position
+			if (preg_match('#^(left|right)$#si', $attributes[0])) {
+				$this->position = $attributes[0];
+				
+				// Attribute 2 and 3
+				if (isset($attributes[1])) {
+					// attribute is size
+					if (is_numeric($attributes[1])) {
+						$this->size = $attributes[1];
+						
+						// third is title.
+						if (isset($attributes[2])) {
+							$this->title = $attributes[2];
+						}
+					}
+					// attribbut is title
+					else {
+						$this->title = $attributes[1];
+						
+						// attribute 3 must be size.
+						if (isset($attributes[2]) && is_numeric($attributes[2])) {
+							$this->size = $attributes[2];
+						}
+					}
+				}
+			}
+			// first is size
+			else if (is_numeric($attributes[0])) {
+				$this->size = $attributes[0];
+				
+				// Attribute 2 and 3
+				if (isset($attributes[1])) {
+					// attribute is position
+					if (preg_match('#^(left|right)$#si', $attributes[1])) {
+						$this->position = $attributes[1];
+				
+						// third is title.
+						if (isset($attributes[2])) {
+							$this->title = $attributes[2];
+						}
+					}
+					else {
+						// second is title
+						$this->title = $attributes[1];
+				
+						// third must be size.
+						if (isset($attributes[2]) && preg_match('#^(left|right)$#si', $attributes[2])) {
+							$this->position = $attributes[2];
+						}
+					}
+				}
+			}
+			// first is title
+			else {
+				$this->title = $attributes[0];
+				
+				// Attribute 2 and 3
+				if (isset($attributes[1])) {
+					// second is position
+					if (preg_match('#^(left|right)$#si', $attributes[1])) {
+						$this->position = $attributes[1];
+				
+						// third must be size.
+						if (isset($attributes[2]) && is_numeric($attributes[2])) {
+							$this->size = $attributes[2];
+						}
+					}
+					// second is size.
+					else if (is_numeric($attributes[1])) {
+						$this->size = $attributes[1];
+				
+						// third must be position
+						if (isset($attributes[2]) && preg_match('#^(left|right)$#si', $attributes[2])) {
+							$this->position = $attributes[2];
+						}
+					}
+				}
+			}
+		}
 	}
 }

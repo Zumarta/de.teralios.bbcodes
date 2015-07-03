@@ -5,18 +5,9 @@
 		<bbcode name="cbox">
 			<classname><![CDATA[wcf\system\bbcode\ContentBoxBBCode]]></classname>
 			<attributes>
-				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^.*$</validationpattern>
-				</attribute>
-				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(left|right|1|2|3|4)+$</validationpattern>
-				</attribute>
-				<attribute name="2">
-					<required>0</required>
-					<validationpattern>^(1|2|3|4)$</validationpattern>
-				</attribute>
+				<attribute name="0"></attribute>
+				<attribute name="1"></attribute>
+				<attribute name="2"></attribute>
 			</attributes>
 			<allowedchildren>all</allowedchildren>
 			<wysiwygicon>fa-th-large</wysiwygicon>
@@ -110,20 +101,6 @@
 			</attributes>
 			<allowedchildren>none</allowedchildren>
 		</bbcode>
-		
-		<!-- inline quote -->
-		<!-- <bbcode name="iquote">
-			<classname><![CDATA[wcf\system\bbcode\InlineQuoteBBCode]]></classname>
-			<attributes>
-				<attribute name="0">
-					<required>0</required>
-				</attribute>
-				<attribute name="2">
-					<required>0</required>
-				</attribute>
-			</attributes>
-			<allowedchildren>none^b,i,u,s,sub,sup,color,size,font</allowedchildren>
-		</bbcode> -->
 		
 		<!-- pro contra bbcode -->
 		<bbcode name="pclist">
