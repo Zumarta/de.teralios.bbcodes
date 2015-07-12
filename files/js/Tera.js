@@ -81,7 +81,7 @@ Tera.xAttach = Class.extend({
 	
 	_insert: function(event) {
 		// get attachment id and build text
-		var attachmentID = (event === null) ? attachmentID : $(event.currentTarget).data('objectID');
+		var attachmentID = $(event.currentTarget).data('objectID');
 		var insertText = '[xattach=' + attachmentID + '][/xattach]';
 		
 		// if reactor, insert xattachment tag.
