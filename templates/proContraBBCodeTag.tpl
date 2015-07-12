@@ -32,4 +32,4 @@
 		{/if}
 		{event name='afterContent'}
 	</div>
-</div>
+</div><!-- removeBR -->
