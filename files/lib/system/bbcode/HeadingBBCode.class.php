@@ -110,7 +110,7 @@ class HeadingBBCode extends AbstractBBCode {
 			$attributes = ArrayUtil::trim($openingTag['attributes']);
 			
 			// first is no index
-			if (isset($attributes[0]) && is_integer($attributes[0])) {
+			if (isset($attributes[0]) && is_numeric($attributes[0])) {
 				$this->noIndex = $attributes[0];
 				
 				if (isset($attributes[1]) && preg_match('#^[a-zA-Z0-9_]$#', $attributes[1])) {
@@ -121,7 +121,7 @@ class HeadingBBCode extends AbstractBBCode {
 			else if (isset($attributes[0]) && preg_match('#^[a-zA-Z0-9_]$#', $attributes[0])) {
 				$this->anchor = $attributes[1];
 				
-				if (isset($attributes[0]) && is_integer($attributes[0])) {
+				if (isset($attributes[0]) && is_numeric($attributes[0])) {
 					$this->noIndex = $attributes[0];
 				}
 			}

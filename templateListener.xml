@@ -7,5 +7,19 @@
 			<templatecode><![CDATA[{include file='footnotes' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
+		
+		<templatelistener name="xattachButton">
+			<templatename>messageFormTabsInline</templatename>
+			<eventname>tabMenuContents</eventname>
+			<templatecode><![CDATA[{include file='_xAttachButton' application='wcf'}]]></templatecode>
+			<environment>user</environment>
+		</templatelistener>
+		
+		<templatelistener name="xattachButton">
+			<templatename>messageFormTabs</templatename>
+			<eventname>tabMenuContents</eventname>
+			<templatecode><![CDATA[{include file='_xAttachButton' application='wcf'}]]></templatecode>
+			<environment>user</environment>
+		</templatelistener>
 	</import>
 </data>

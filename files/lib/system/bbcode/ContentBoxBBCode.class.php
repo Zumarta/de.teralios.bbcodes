@@ -37,7 +37,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 		if ($size == 0 && ($position == 'left' || $position == 'right')) {
 			$size = 2;
 		}
-		else if ($size == 0) {
+		else {
 			$size = 4;
 		}
 		
@@ -86,7 +86,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 				// Attribute 2 and 3
 				if (isset($attributes[1])) {
 					// attribute is size
-					if (is_numeric($attributes[1])) {
+					if (preg_match('#^(1|2|3|4)$#', $attributes[1])) {
 						$this->size = $attributes[1];
 						
 						// third is title.
@@ -99,14 +99,14 @@ class ContentBoxBBCode extends AbstractBBCode {
 						$this->title = $attributes[1];
 						
 						// attribute 3 must be size.
-						if (isset($attributes[2]) && is_numeric($attributes[2])) {
+						if (isset($attributes[2]) && preg_match('#^(1|2|3|4)$#', $attributes[2])) {
 							$this->size = $attributes[2];
 						}
 					}
 				}
 			}
 			// first is size
-			else if (is_numeric($attributes[0])) {
+			else if (preg_match('#^(1|2|3|4)$#', $attributes[0])) {
 				$this->size = $attributes[0];
 				
 				// Attribute 2 and 3
@@ -142,12 +142,12 @@ class ContentBoxBBCode extends AbstractBBCode {
 						$this->position = $attributes[1];
 				
 						// third must be size.
-						if (isset($attributes[2]) && is_numeric($attributes[2])) {
+						if (isset($attributes[2]) && preg_match('#^(1|2|3|4)$#', $attributes[2])) {
 							$this->size = $attributes[2];
 						}
 					}
 					// second is size.
-					else if (is_numeric($attributes[1])) {
+					else if (preg_match('#^(1|2|3|4)$#', $attributes[1])) {
 						$this->size = $attributes[1];
 				
 						// third must be position
