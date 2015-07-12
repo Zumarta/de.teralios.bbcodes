@@ -27,7 +27,7 @@ class EntryMainNode extends EntryNode implements \Iterator, \Countable {
 	 * 
 	 * @param \wcf\system\jumpmark\JumpMark $jumpMark
 	 */
-	public function setSubEntry(\wcf\system\directory\entry\Entry $jumpMark) {
+	public function setSubEntry(Entry $jumpMark) {
 		$this->entries[] = new EntryNode($jumpMark);
 	}
 	

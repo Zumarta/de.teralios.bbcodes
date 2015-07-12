@@ -27,7 +27,7 @@ class XAttachmentMessageEmbeddedObjectHandler extends AttachmentMessageEmbeddedO
 		
 		if (!empty($parsedIDs)) {
 			$attachmentIDs = array();
-			foreach ($parsedIDs as  $attachmentID) {
+			foreach ($parsedIDs as $attachmentID) {
 				if ($attachmentID) {
 					$attachmentIDs[] = $attachmentID;
 				}
@@ -52,7 +52,7 @@ class XAttachmentMessageEmbeddedObjectHandler extends AttachmentMessageEmbeddedO
 		$objects = parent::loadObjects($objectIDs);
 		
 		// set ids and object ids to mark attachments as embedded...
-		foreach ($objects AS $object) {
+		foreach ($objects as $object) {
 			self::$attachmentIDs[$object->objectID][] = $object->attachmentID;
 		}
 

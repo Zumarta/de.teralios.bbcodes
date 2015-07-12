@@ -21,7 +21,7 @@ class EntryNode {
 	 * 
 	 * @param \wcf\system\directory\entry\Entry $jumpMark
 	 */
-	public function __construct(\wcf\system\directory\entry\Entry $entry = null) {
+	public function __construct(Entry $entry = null) {
 		$this->entry = $entry;
 	}
 	

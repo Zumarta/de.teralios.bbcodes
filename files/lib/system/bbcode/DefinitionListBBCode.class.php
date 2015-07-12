@@ -56,7 +56,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 							if ($parser->getOutputType() == 'text/html') {
 								$listContent .= '<dt>'.$key.'</dt><dd>'.$value.'</dd>';
 							}
-							elseif ($parser->getOutputType() == 'text/simplified-html') {
+							else if ($parser->getOutputType() == 'text/simplified-html') {
 								 $listContent .= '*'.$key.': '.$value."\n";
 							}
 						}
