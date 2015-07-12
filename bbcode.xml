@@ -50,10 +50,8 @@
 		<bbcode name="h1">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
-				<attribute name="0">
-				</attribute>
-				<attribute name="1">
-				</attribute>
+				<attribute name="0"></attribute>
+				<attribute name="1"></attribute>
 			</attributes>
 			<allowedchildren>none^icon</allowedchildren>
 			<wysiwygicon>fa-header</wysiwygicon>
@@ -63,10 +61,8 @@
 		<bbcode name="h2">
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
-				<attribute name="0">
-				</attribute>
-				<attribute name="1">
-				</attribute>
+				<attribute name="0"></attribute>
+				<attribute name="1"></attribute>
 			</attributes>
 			<!-- <buttonlabel>wcf.bbcode.button.subheading</buttonlabel> -->
 			<allowedchildren>none^icon</allowedchildren>
@@ -82,11 +78,9 @@
 					<validationpattern>^[a-zA-Z0-9-]+$</validationpattern>
 				</attribute>
 				<attribute name="1">
-					<required>0</required>
 					<validationpattern>^(left|right|none|16|32|48|96)$</validationpattern>
 				</attribute>
 				<attribute name="2">
-					<required>0</required>
 					<validationpattern>^(16|32|48|96)$</validationpattern>
 				</attribute>
 			</attributes>
