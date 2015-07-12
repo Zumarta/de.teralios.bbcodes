@@ -11,6 +11,9 @@ if (!Tera) {
 	var Tera = { };
 }
 
+/**
+ * Adds directory to place holder.
+ */
 Tera.Directory = Class.extend({
 	_id: '',
 	_addClass: '',
@@ -40,20 +43,50 @@ Tera.Directory = Class.extend({
 	}
 });
 
+// add xattach insert button to attachment list.
 Tera.xAttach = Class.extend({
 	_attachButtonClass: '',
 	_attachID: 0,
+	_wysiwygContainerID: '',
 	
-	init: function() {
-		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this.addButtons, this));
+	init: function(wysiwygContainerID) {
+		this._wysiwygContainerID = wysiwygContainerID;
+		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this._addButtons, this));
 	},
 
-	addButtons: function() {
-		$.each($('.jsDeleteButton'), $.proxy(this.addButton, this));
+	_addButtons: function() {
+		// add button to image attachments
+		if ($('.jsButtonAttachmentInsertThumbnail')) {
+			$('.jsButtonAttachmentInsertThumbnail').each($.proxy(this._addButton, this));
+		}
 		
+		// add buttons to normal attachments.
+		if ($('.jsButtonAttachmentInsertPlain')) {
+			$('.jsButtonAttachmentInsertPlain').each($.proxy(this._addButton, this));
+		}
 	},
 	
-	addButton: function(index, value) {
-		console.log(value);
+	_addButton: function(key, button) {
+		// get ul element
+		var $ul = $(button).parent().parent();
+		
+		// get attachment id
+		var attachmentID = $(button).data('objectID');
+		
+		// create button and insert button for xattach
+		var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
+		$button.children('span.button').click($.proxy(this._insert, this));
+		$button.appendTo($ul)
+	},
+	
+	_insert: function(event) {
+		// get attachment id and build text
+		var attachmentID = (event === null) ? attachmentID : $(event.currentTarget).data('objectID');
+		var insertText = '[xattach=' + attachmentID + '][/xattach]';
+		
+		// if reactor, insert xattachment tag.
+		if ($.browser.redactor) {
+			$('#' + this._wysiwygContainerID).redactor('wutil.insertDynamic', insertText);
+		}
 	}
 });

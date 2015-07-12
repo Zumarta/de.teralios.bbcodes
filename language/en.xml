@@ -17,7 +17,8 @@
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[No Points]]></item>
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra List]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, you are using the old BBCode syntax.<br />
-The syntax has changed. For every new line in the list, use the prefix [+][-] or [*].]]></item>
+The syntax has changed. For every new line in the list, use the prefix [+][-] or [.].]]></item>
+		<item name="wcf.bbcode.xattach.insert"><![CDATA[Insert with text]]></item>
 		<item name="wcf.bbcode.xattach.title"><![CDATA[Attachment (ID: {$xaID})]]></item>
 	</category>
 	
