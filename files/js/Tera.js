@@ -11,7 +11,7 @@ if (!Tera) {
 	var Tera = { };
 }
 
-Tera.Directory =  Class.extend({
+Tera.Directory = Class.extend({
 	_id: '',
 	_addClass: '',
 	
@@ -37,5 +37,23 @@ Tera.Directory =  Class.extend({
 			}
 			placeHolder.show();
 		}
+	}
+});
+
+Tera.xAttach = Class.extend({
+	_attachButtonClass: '',
+	_attachID: 0,
+	
+	init: function() {
+		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this.addButtons, this));
+	},
+
+	addButtons: function() {
+		$.each($('.jsDeleteButton'), $.proxy(this.addButton, this));
+		
+	},
+	
+	addButton: function(index, value) {
+		console.log(value);
 	}
 });
