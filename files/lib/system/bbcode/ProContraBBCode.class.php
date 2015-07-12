@@ -4,6 +4,7 @@ namespace wcf\system\bbcode;
 // imports
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
+use wcf\util\ArrayUtil;
 use wcf\util\StringUtil;
 use wcf\util\TeraliosUtil;
 
@@ -102,13 +103,18 @@ class ProContraBBCode extends AbstractBBCode {
 		}
 	}
 	
+	/**
+	 * Maps bbcode attributes to html/template attributes.
+	 * 
+	 * @param	array	$openingTag
+	 */
 	protected function mapAttributes($openingTag) {
 		// reset attributes
 		$this->title = '';
 		$this->position = 'none';
 		
 		if (isset($openingTag['attributes'])) {
-			$attributes = $openingTag['attributes'];
+			$attributes = ArrayUtil::trim($openingTag['attributes']);
 			
 			if (isset($attributes[0])) {
 				if (preg_match('#^(left|right)$#i', $attributes[0])) {

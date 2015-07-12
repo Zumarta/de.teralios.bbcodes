@@ -4,7 +4,7 @@ namespace wcf\system\bbcode;
 // imports
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
-use wcf\util\StringUtil;
+use wcf\util\ArrayUtil;
 
 /**
  * Parse box bbcode.
@@ -66,13 +66,18 @@ class ContentBoxBBCode extends AbstractBBCode {
 		}
 	}
 	
+	/**
+	 * Maps bbcode attributes to html/template attributes.
+	 * 
+	 * @param	array	$openingTag
+	 */
 	protected function mapAttributes($openingTag) {
 		// reset attributes
 		$this->title = $this->position = '';
 		$this->size = 0;
 		
 		if (isset($openingTag['attributes'])) {
-			$attributes = $openingTag['attributes'];
+			$attributes = ArrayUtil::trim($openingTag['attributes']);
 			
 			// first ist position
 			if (preg_match('#^(left|right)$#i', $attributes[0])) {

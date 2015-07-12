@@ -6,6 +6,7 @@ use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\directory\Directory;
 use wcf\system\directory\entry\Entry;
 use wcf\system\WCF;
+use wcf\util\ArrayUtil;
 use wcf\util\StringUtil;
 
 /**
@@ -45,7 +46,7 @@ class HeadingBBCode extends AbstractBBCode {
 		if ($parser->getOutputType() == 'text/html') {
 			
 			// map attributes
-			$this->mapAttributes($openingTag['attributes']);
+			$this->mapAttributes($openingTag);
 			
 			// assign attributes
 			$anchor = $this->anchor;
@@ -100,14 +101,33 @@ class HeadingBBCode extends AbstractBBCode {
 	 * Map attributes.
 	 * @param	array	$attributes
 	 */
-	protected function mapAttributes($attributes) {
+	protected function mapAttributes($openingTag) {
 		// reset attributes
 		$this->anchor = '';
 		$this->noIndex = false;
 		
-		$this->anchor = (isset($attributes[0])) ? StringUtil::trim($attributes[0]) : '';
-		$noIndex = (isset($attributes[1])) ? $attributes[1] : false; // boolval is php 5.5
-		$this->noIndex = ($noIndex == 1) ? true : false;
+		if (isset($openingTag['attributes'])) {
+			$attributes = ArrayUtil::trim($openingTag['attributes']);
+			
+			// first is no index
+			if (isset($attributes[0]) && is_integer($attributes[0])) {
+				$this->noIndex = $attributes[0];
+				
+				if (isset($attributes[1]) && preg_match('#^[a-zA-Z0-9_]$#', $attributes[1])) {
+					$this->anchor = $attributes[1];
+				}
+			}
+			// first is anchor
+			else if (isset($attributes[0]) && preg_match('#^[a-zA-Z0-9_]$#', $attributes[0])) {
+				$this->anchor = $attributes[1];
+				
+				if (isset($attributes[0]) && is_integer($attributes[0])) {
+					$this->noIndex = $attributes[0];
+				}
+			}
+			
+			$this->noIndex = ($this->noIndex == 1) ? true : false;
+		}
 	}
 
 	/**
