@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\bbcode\BBCodeParser;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\WCF;
 use wcf\util\ArrayUtil;
@@ -21,7 +22,7 @@ class ContentBoxBBCode extends AbstractBBCode {
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
-	public function getParsedTag(array $openingTag, $content, array $closingTag,\wcf\system\bbcode\BBCodeParser $parser) {
+	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		//copyright
 		TeraliosBBCodesCopyright::callCopyright();
 		
