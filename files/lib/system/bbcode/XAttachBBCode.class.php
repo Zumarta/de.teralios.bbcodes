@@ -62,7 +62,7 @@ class XAttachBBCode extends AttachmentBBCode {
 	/**
 	 * @see \wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
-	public function getParsedTag(array $openingTag, $content, array $closingTag, \wcf\system\bbcode\BBCodeParser $parser) {
+	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		// call copyright
 		TeraliosBBCodesCopyright::callCopyright();
 		

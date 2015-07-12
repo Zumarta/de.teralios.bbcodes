@@ -2,6 +2,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\system\bbcode\BBCodeParser;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\directory\Directory;
 use wcf\system\directory\entry\Entry;
