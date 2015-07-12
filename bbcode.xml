@@ -27,7 +27,6 @@
 			<allowedchildren>all^footnote,fn,footnotecontent,fnc</allowedchildren>
 			<attributes>
 				<attribute name="0">
-					<required>0</required>
 					<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
 				</attribute>
 			</attributes>
@@ -52,12 +51,8 @@
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
 				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]*$</validationpattern>
 				</attribute>
 				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(0|1)$</validationpattern>
 				</attribute>
 			</attributes>
 			<allowedchildren>none^icon</allowedchildren>
@@ -69,12 +64,8 @@
 			<classname><![CDATA[wcf\system\bbcode\HeadingBBCode]]></classname>
 			<attributes>
 				<attribute name="0">
-					<required>0</required>
-					<validationpattern>^[a-zA-Z0-9_]*$</validationpattern>
 				</attribute>
 				<attribute name="1">
-					<required>0</required>
-					<validationpattern>^(0|1)$</validationpattern>
 				</attribute>
 			</attributes>
 			<!-- <buttonlabel>wcf.bbcode.button.subheading</buttonlabel> -->
@@ -119,11 +110,10 @@
 			<classname><![CDATA[wcf\system\bbcode\XAttachBBCode]]></classname>
 			<attributes>
 				<attribute name="0">
-					<required>0</required>
+					<required>1</required>
 					<validationpattern>^[0-9]+$</validationpattern>
 				</attribute>
 				<attribute name="1">
-					<required>0</required>
 					<validationpattern>^(left|right|none)$</validationpattern>
 				</attribute>
 			</attributes>
