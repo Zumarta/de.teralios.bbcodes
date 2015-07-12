@@ -3,6 +3,7 @@
 namespace wcf\system\bbcode;
 
 // imports
+use wcf\data\attachment\Attachment;
 use wcf\system\copyright\TeraliosBBCodesCopyright;
 use wcf\system\message\embedded\object\MessageEmbeddedObjectManager;
 use wcf\system\request\LinkHandler;
@@ -158,7 +159,7 @@ class XAttachBBCode extends AttachmentBBCode {
 	 * @param	\wcf\data\attachment\Attachment $attachment
 	 * @return	string
 	 */
-	protected static function getType(\wcf\data\attachment\Attachment $attachment = null) {
+	protected static function getType(Attachment $attachment = null) {
 		if ($attachment !== null) {
 			$filename = $attachment->filename;
 			$dotPosition = strrpos($filename, '.') + 1;

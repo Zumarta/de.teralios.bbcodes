@@ -89,7 +89,7 @@ class ProContraBBCode extends AbstractBBCode {
 			// no supports simplified html.
 			$return = $title.'<br />';
 			$return .= str_repeat('-', mb_strlen($title)).'<br />';
-			foreach ($points AS $sign => $values) {
+			foreach ($points as $sign => $values) {
 				$length = count($values);
 				if ($length > 0) {
 					$length--;

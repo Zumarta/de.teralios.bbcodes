@@ -27,7 +27,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 			$content = str_replace('[.]', '[*]', $content);
 			// build main list elements
 			$listElements = preg_split('#\[\*\]#', $content, -1, PREG_SPLIT_NO_EMPTY);
-			foreach ($listElements AS $key => $val) {
+			foreach ($listElements as $key => $val) {
 				$val = StringUtil::trim($val);
 				if (empty($val) || $val == '<br />') {
 					unset($listElements[$key]);
@@ -40,7 +40,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 			// build list
 			if (!empty($listElements)) {
 				$listContent = '';
-				foreach ($listElements AS $point) {
+				foreach ($listElements as $point) {
 					if (mb_substr_count($point, '[:]') == 1) {
 						// reset key and value.
 						$key = $value = '';
@@ -57,7 +57,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 								$listContent .= '<dt>'.$key.'</dt><dd>'.$value.'</dd>';
 							}
 							elseif ($parser->getOutputType() == 'text/simplified-html') {
-								$listContent .= '*'.$key.': '.$value."\n";
+								 $listContent .= '*'.$key.': '.$value."\n";
 							}
 						}
 					}
@@ -67,7 +67,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 					if ($parser->getOutputType() == 'text/html') {
 						return '<dl class="dlistBBCode">'.$listContent.'</dl>';
 					}
-					elseif ($parser->getOutputType() == 'text/simplified-html') {
+					else if ($parser->getOutputType() == 'text/simplified-html') {
 						return $listContent;
 					}
 				}
