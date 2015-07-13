@@ -48,35 +48,34 @@ Tera.xAttach = Class.extend({
 	_attachButtonClass: '',
 	_attachID: 0,
 	_wysiwygContainerID: '',
+	_addedButton: [],
 	
 	init: function(wysiwygContainerID) {
 		this._wysiwygContainerID = wysiwygContainerID;
+		
+		this._addButtons();
 		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this._addButtons, this));
 	},
 
 	_addButtons: function() {
 		// add button to image attachments
-		if ($('.jsButtonAttachmentInsertThumbnail')) {
-			$('.jsButtonAttachmentInsertThumbnail').each($.proxy(this._addButton, this));
-		}
-		
-		// add buttons to normal attachments.
-		if ($('.jsButtonAttachmentInsertPlain')) {
-			$('.jsButtonAttachmentInsertPlain').each($.proxy(this._addButton, this));
+		if ($('.sortableAttachment')) {
+			$('.sortableAttachment').each($.proxy(this._addButton, this));
 		}
 	},
 	
-	_addButton: function(key, button) {
-		// get ul element
-		var $ul = $(button).parent().parent();
+	_addButton: function(key, attachmentElement) {
+		var attachmentID = $(attachmentElement).data('objectID');
+		var $ul = $(attachmentElement).find('.buttonGroup');
 		
-		// get attachment id
-		var attachmentID = $(button).data('objectID');
+		if ($.inArray(attachmentID, this._addedButton) == -1) {
+			//create button and insert button for xattach	
+			var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
+			$button.children('span.button').click($.proxy(this._insert, this));
+			$button.appendTo($ul);
+			this._addedButton[attachmentID] = attachmentID;
+		}
 		
-		// create button and insert button for xattach
-		var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
-		$button.children('span.button').click($.proxy(this._insert, this));
-		$button.appendTo($ul)
 	},
 	
 	_insert: function(event) {
