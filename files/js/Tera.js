@@ -75,7 +75,6 @@ Tera.xAttach = Class.extend({
 			$button.appendTo($ul);
 			this._addedButton[attachmentID] = attachmentID;
 		}
-		
 	},
 	
 	_insert: function(event) {
