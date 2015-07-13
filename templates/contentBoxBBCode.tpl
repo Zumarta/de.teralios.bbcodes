@@ -5,4 +5,4 @@
 			{@$boxContent}
 		</div>
 	</div>
-</div><!-- removeBR -->
+</div><span></span>
