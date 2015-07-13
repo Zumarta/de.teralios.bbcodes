@@ -34,11 +34,12 @@ class ContentBoxBBCode extends AbstractBBCode {
 		$size = $this->size;
 		
 		// size settings.
-		if ($size == 0 && ($position == 'left' || $position == 'right')) {
+		if ($size <= 0 && ($position == 'left' || $position == 'right')) {
 			$size = 2;
 		}
-		else {
-			$size = 4;
+		else if ($size >= 4) {
+			$size = 0;
+			$position = 'none';
 		}
 		
 		// parse box with out HTML
