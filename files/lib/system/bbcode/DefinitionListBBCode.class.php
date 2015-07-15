@@ -65,7 +65,7 @@ class DefinitionListBBCode extends AbstractBBCode {
 				
 				if (!empty($listContent)) {
 					if ($parser->getOutputType() == 'text/html') {
-						return '<dl class="dlistBBCode">'.$listContent.'</dl>';
+						return '<dl class="dlistBBCode">'.$listContent.'</dl><span></span>';
 					}
 					else if ($parser->getOutputType() == 'text/simplified-html') {
 						return $listContent;
