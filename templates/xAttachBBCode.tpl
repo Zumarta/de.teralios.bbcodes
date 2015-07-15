@@ -7,4 +7,4 @@
 		{/if}
 	</div>
 	{if $xaText|empty == false}<div>{@$xaText}</div>{/if}
-</div><!-- removeBR -->
+</div><span></span>
