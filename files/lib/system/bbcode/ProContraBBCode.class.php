@@ -127,7 +127,7 @@ class ProContraBBCode extends AbstractBBCode {
 				else {
 					$this->title = $attributes[0];
 					
-					if (isset($attributes[1]) && preg_match('#^(left|right)$#i')) {
+					if (isset($attributes[1]) && preg_match('#^(left|right)$#i', $attributes[0])) {
 						$this->position = mb_strtolower($attributes[1]);
 					}
 				}
