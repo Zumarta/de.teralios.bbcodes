@@ -15,7 +15,7 @@
 								{if $entry->hasEntries()}
 									<ol>
 										{foreach from=$entry item=$subEntry}
-											<li><span class="icon16 fa fa-chevron-right"></span> <a href="{$subEntry->getEntry()->getAnchorLink()}">{$subEntry->getEntry()->getTitle()}</a></li>
+											<li><span class="icon16 fa fa-caret-right"></span> <a href="{$subEntry->getEntry()->getAnchorLink()}">{$subEntry->getEntry()->getTitle()}</a></li>
 										{/foreach}
 									</ol>
 								{/if}
