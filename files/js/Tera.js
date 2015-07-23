@@ -46,7 +46,7 @@ Tera.IconBBCode = Class.extend({
 	_icons: null,
 	_template: '',
 	_redactor: null,
-	_size: [16,32,48,64],
+	_size: [16,32,48,96],
 	_currentSize: 32,
 	_position: ['left', 'right'],
 	_dialog: null,
