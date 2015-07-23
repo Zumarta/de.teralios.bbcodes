@@ -8,9 +8,9 @@
 		__REDACTOR_BUTTONS.push({ icon: 'fa-file-image-o', label: '{lang}wcf.bbcodes.iconBBCode{/lang}', name: 'teraliosIconBBCode' });
 		
 		(function() {
-			var $iconJSON = '';
+			var $iconJSON = '{include file='__iconJSON' application='wcf'}';
 			var $iconBBCode =  null;
-			var $iconTemplate = '';
+			var $iconTemplate = '{include file='iconBBCodeBrowser' application='wcf'}';
 						
 			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'insertBBCode_teraliosIconBBCode_' + $editorName, function(data) {
 				data.cancel = true;

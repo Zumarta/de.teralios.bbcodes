@@ -67,7 +67,7 @@ Tera.IconBBCode = Class.extend({
 		
 		// add icons and change events.
 		this._addIcons();
-		$('#iconSize').change($.proxy(this.changeSize, this));
+		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
 		
 		// dialog
 		this._dialog.wcfDialog({
@@ -101,13 +101,13 @@ Tera.IconBBCode = Class.extend({
 			var iconName = 'fa-' + value;
 			var $li = $('<li><span class="icon icon32 ' + iconName + ' iconButton" data-icon="' + iconName + '"></span> ' + iconName + '</li>');
 			$li.click($.proxy(this.insert, this));
-			$li.appendTo("#iconList");
+			$li.appendTo("#iconBBCodeList");
 		});
 	},
 	
 	// change size for dialog.
 	changeSize: function(event) {
-		var $size = $('#iconSize').val();
+		var $size = $('#iconBBCodeSize').val();
 		$('.iconButton').removeClass('icon' + this._currentSize);
 		$('.iconButton').addClass('icon' + $size);
 		this._currentSize = $size;
@@ -116,7 +116,7 @@ Tera.IconBBCode = Class.extend({
 	// insert icon to redactor.
 	insert: function(event) {
 		var $icon = $(event.currentTarget).data('icon');
-		var $position = $('#iconPosition').val();
+		var $position = $('#iconBBCodePosition').val();
 		var $attrList = this._currentSize;
 		if ($.inArray($position, ['left, right'])) {
 			$attrList += ",'" + $position + "'";

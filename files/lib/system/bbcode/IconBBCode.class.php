@@ -40,12 +40,12 @@ class IconBBCode extends AbstractBBCode {
 			if (preg_match('#^(left|right|none)$#i', $attributes[1])) {
 				$this->float = mb_strtolower($attributes[1]);
 				
-				if (isset($attributes[2]) && preg_match('#^(16|32|48|64)$#', $attributes[2])) {
+				if (isset($attributes[2]) && preg_match('#^(16|32|48|96)$#', $attributes[2])) {
 					$this->size = $attributes[2];
 				}
 			}
 			else {
-				if (preg_match('#^(16|32|48|64)$#', $attributes[1])) {
+				if (preg_match('#^(16|32|48|96)$#', $attributes[1])) {
 					$this->size = $attributes[1];
 				}
 				
