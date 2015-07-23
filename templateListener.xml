@@ -8,18 +8,39 @@
 			<environment>user</environment>
 		</templatelistener>
 		
-		<templatelistener name="xattachButton">
+		<templatelistener name="teraJSFile">
+			<environment>user</environment>
+			<templatename>headInclude</templatename>
+			<eventname>javascriptInclude</eventname>
+			<templatecode><![CDATA[{include file='__teraJSFile' application='wcf'}]]></templatecode>
+		</templatelistener>
+		
+		<templatelistener name="xattachButtonInline">
 			<templatename>messageFormTabsInline</templatename>
 			<eventname>tabMenuContents</eventname>
 			<templatecode><![CDATA[{include file='__xAttachButton' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
 		
-		<templatelistener name="xattachButton">
+		<templatelistener name="xattachButtonFull">
 			<templatename>messageFormTabs</templatename>
 			<eventname>tabMenuContents</eventname>
 			<templatecode><![CDATA[{include file='__xAttachButton' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
 	</import>
+	
+	<delete>
+		<templatelistener name="xattachButton">
+			<templatename>messageFormTabsInline</templatename>
+			<eventname>tabMenuContents</eventname>
+			<environment>user</environment>
+		</templatelistener>
+		
+		<templatelistener name="xattachButton">
+			<templatename>messageFormTabs</templatename>
+			<eventname>tabMenuContents</eventname>
+			<environment>user</environment>
+		</templatelistener>
+	</delete>
 </data>

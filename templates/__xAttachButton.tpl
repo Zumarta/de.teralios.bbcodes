@@ -1,6 +1,5 @@
 {if $xAttachJS|isset == false}
 	{if $wysiwygContainerID|isset}
-		{include file='__teraJSFile' application='wcf'}
 		<script data-relocated="true">
 		//<![CDATA[
 			$(function() {
