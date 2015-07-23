@@ -7,9 +7,7 @@
  * @license		Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package		de.teralios.tjs.bbcodes
  */
-if (!Tera) {
-	var Tera = { };
-}
+var Tera = { };
 
 /**
  * Adds directory to place holder.
@@ -40,6 +38,18 @@ Tera.Directory = Class.extend({
 			}
 			placeHolder.show();
 		}
+	}
+});
+
+Tera.IconBBCode = Class.extend({
+	_icons: null,
+	_template: '',
+	_redactor: null,
+	_size: [16,32,48,64],
+	_position: ['left', 'right'],
+	
+	init: function(_redactor, _iconsJSON, _template) {
+		
 	}
 });
 
