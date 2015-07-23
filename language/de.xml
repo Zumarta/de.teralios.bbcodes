@@ -18,6 +18,8 @@
 		<item name="wcf.bbcodes.iconBBCode.left"><![CDATA[Links]]></item>
 		<item name="wcf.bbcodes.iconBBCode.position"><![CDATA[Icon Position]]></item>
 		<item name="wcf.bbcodes.iconBBCode.right"><![CDATA[Rechts]]></item>
+		<item name="wcf.bbcode.icon.settings"><![CDATA[Einstellungen]]></item>
+		<item name="wcf.bbcode.icon.settings.description"><![CDATA[Um ein Icon einzufügen, klicken sie auf dieses.]]></item>
 		<item name="wcf.bbcodes.iconBBCode.size"><![CDATA[Icon Größe]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
