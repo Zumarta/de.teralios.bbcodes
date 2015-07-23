@@ -21,6 +21,6 @@
 				
 				$iconBBCode.open();
 			});
-		})();
+		});
 	}
 {/if}

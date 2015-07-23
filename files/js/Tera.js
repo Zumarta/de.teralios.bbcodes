@@ -41,19 +41,89 @@ Tera.Directory = Class.extend({
 	}
 });
 
+// icon bbcode insert
 Tera.IconBBCode = Class.extend({
 	_icons: null,
 	_template: '',
 	_redactor: null,
 	_size: [16,32,48,64],
+	_currentSize: 32,
 	_position: ['left', 'right'],
+	_dialog: null,
+	_isOpen: false,
 	
 	init: function(_redactor, _iconsJSON, _template) {
+		this._icons = $.parseJSON(_iconsJSON);
+		this._redactor = _redactor;
+		this._template = _template;
+	},
+	
+	// create icon dialog.
+	initDialog: function() {
+		// build dialog.
+		this._dialog('<div />').hide();
+		this._dialog.html(this._template);
+		this._dialog.appendTo(document.body);
 		
-	}
+		// add icons and change events.
+		this._addIcons();
+		$('#iconSize').change($.proxy(this.changeSize, this));
+		
+		// dialog
+		this._dialog.wcfDialog({
+			onClose: $.proxy(function() { this._isOpen = false; }, this),
+			title: WCF.Language.get('gallery.image.browser')
+		});
+		$(window).trigger('resize');
+		this._dialog.wcfDialog('render');
+	},
 
+	// open icon dialog.
 	open: function() {
+		if (this._isOpen == true) {
+			return false;
+		}
 		
+		this.isOpen = true;
+		
+		if (this._dialog === null) {
+			this.initDialog();
+		}
+		else {
+			this._dialog.wcfDialog('open');
+			$(window).trigger('resize');
+		}
+	},
+	
+	// add icons to dialog.
+	_addIcons: function() {
+		$.each(this.icons, function(index, value) {
+			var iconName = 'fa-' + value;
+			var $li = $('<li><span class="icon icon32 ' + iconName + ' iconButton" data-icon="' + iconName + '"></span> ' + iconName + '</li>');
+			$li.click($.proxy(this.insert, this));
+			$li.appendTo("#iconList");
+		});
+	},
+	
+	// change size for dialog.
+	changeSize: function(event) {
+		var $size = $('#iconSize').val();
+		$('.iconButton').removeClass('icon' + this._currentSize);
+		$('.iconButton').addClass('icon' + $size);
+		this._currentSize = $size;
+	},
+	
+	// insert icon to redactor.
+	insert: function(event) {
+		var $icon = $(event.currentTarget).data('icon');
+		var $position = $('#iconPosition').val();
+		var $attrList = this._currentSize;
+		if ($.inArray($position, ['left, right'])) {
+			$attrList += ",'" + $position + "'";
+		}
+		
+		var $bbCode = "[icon='" + $icon + "'," + $attrList + '][/icon]';
+		this._redactor.wutil.insertDynamic($bbCode);
 	}
 });
 
