@@ -51,6 +51,10 @@ Tera.IconBBCode = Class.extend({
 	init: function(_redactor, _iconsJSON, _template) {
 		
 	}
+
+	open: function() {
+		
+	}
 });
 
 // add xattach insert button to attachment list.

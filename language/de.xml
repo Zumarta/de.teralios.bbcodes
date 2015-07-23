@@ -13,6 +13,12 @@
 		<item name="wcf.bbcode.footnote.variant.3"><![CDATA[*]]></item>
 		<item name="wcf.bbcode.footnote.variant.4"><![CDATA[<sup>XIV</sup>]]></item>
 		<item name="wcf.bbcode.dlist.noDefinition"><![CDATA[Keine Definition]]></item>
+		<item name="wcf.bbcodes.iconBBCode"><![CDATA[Icon]]></item>
+		<item name="wcf.bbcodes.iconBBCode.insert"><![CDATA[Icon einfügen]]></item>
+		<item name="wcf.bbcodes.iconBBCode.left"><![CDATA[Links]]></item>
+		<item name="wcf.bbcodes.iconBBCode.position"><![CDATA[Icon Position]]></item>
+		<item name="wcf.bbcodes.iconBBCode.right"><![CDATA[Rechts]]></item>
+		<item name="wcf.bbcodes.iconBBCode.size"><![CDATA[Icon Größe]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra Liste]]></item>
