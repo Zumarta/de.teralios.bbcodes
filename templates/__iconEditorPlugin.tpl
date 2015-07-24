@@ -5,7 +5,7 @@
 	});
 	
 	if ($.browser.redactor) {
-		__REDACTOR_BUTTONS.push({ icon: 'fa-file-image-o', label: '{lang}wcf.bbcode.icon{/lang}', name: 'icon' });
+		__REDACTOR_BUTTONS.push({ icon: 'fa-rebel', label: '{lang}wcf.bbcode.icon{/lang}', name: 'icon' });
 			(function() {
 		
 			var $iconJSON = '{include file='__iconJSON' application='wcf'}';
