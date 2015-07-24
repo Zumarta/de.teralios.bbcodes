@@ -124,6 +124,14 @@ Tera.IconBBCode = Class.extend({
 		
 		var $bbCode = "[icon='" + $icon + "'," + $attrList + '][/icon]';
 		this._redactor.wutil.insertDynamic($bbCode);
+		this.reset();
+	},
+	
+	// reset information and close dialog
+	reset: function() {
+	 $('#iconBBCodePosition').val('none');
+	 $('#iconBBCodeSize').val(16);
+	 this._dialog.wcfDialog('close');
 	}
 });
 
