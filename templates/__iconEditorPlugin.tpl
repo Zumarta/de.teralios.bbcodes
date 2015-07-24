@@ -1,18 +1,18 @@
-{if $canUseIconBBCode}
+{if true}
 	WCF.Language.addObject({
-		'teralios.bbcode.icon': '{lang}wcf.bbcodes.iconBBCode{/lang}',
-		'teralios.bbcode.icon.insert': '{lang}wcf.bbcodes.iconBBCode.insert{/lang}'
+		'wcf.bbcode.icon': '{lang}wcf.bbcodes.icon{/lang}',
+		'wcf.bbcode.icon.insert': '{lang}wcf.bbcodes.icon.insert{/lang}'
 	});
 	
 	if ($.browser.redactor) {
-		__REDACTOR_BUTTONS.push({ icon: 'fa-file-image-o', label: '{lang}wcf.bbcodes.iconBBCode{/lang}', name: 'teraliosIconBBCode' });
+		__REDACTOR_BUTTONS.push({ icon: 'fa-file-image-o', label: '{lang}wcf.bbcode.icon{/lang}', name: 'icon' });
+			(function() {
 		
-		(function() {
 			var $iconJSON = '{include file='__iconJSON' application='wcf'}';
 			var $iconBBCode =  null;
 			var $iconTemplate = '{include file='iconBBCodeBrowser' application='wcf'}';
 						
-			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'insertBBCode_teraliosIconBBCode_' + $editorName, function(data) {
+			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'insertBBCode_icon_' + $editorName, function(data) {
 				data.cancel = true;
 				
 				if ($iconBBCode === null) {
@@ -20,7 +20,7 @@
 				}
 				
 				$iconBBCode.open();
-			})();
-		});
+			});
+		})();
 	}
 {/if}

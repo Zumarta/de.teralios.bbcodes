@@ -28,6 +28,13 @@
 			<templatecode><![CDATA[{include file='__xAttachButton' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
+		
+		<templatelistener name="iconBBCode">
+			<templatename>wysiwyg</templatename>
+			<eventname>javascriptInit</eventname>
+			<templatecode><![CDATA[{include file='__iconEditorPlugin' application='wcf'}]]></templatecode>
+			<environment>user</environment>
+		</templatelistener>
 	</import>
 	
 	<delete>

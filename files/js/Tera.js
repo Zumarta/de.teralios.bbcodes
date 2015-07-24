@@ -56,12 +56,13 @@ Tera.IconBBCode = Class.extend({
 		this._icons = $.parseJSON(_iconsJSON);
 		this._redactor = _redactor;
 		this._template = _template;
+		this.initDialog();
 	},
 	
 	// create icon dialog.
 	initDialog: function() {
 		// build dialog.
-		this._dialog('<div />').hide();
+		this._dialog = $('<div />').hide();
 		this._dialog.html(this._template);
 		this._dialog.appendTo(document.body);
 		
@@ -72,7 +73,7 @@ Tera.IconBBCode = Class.extend({
 		// dialog
 		this._dialog.wcfDialog({
 			onClose: $.proxy(function() { this._isOpen = false; }, this),
-			title: WCF.Language.get('gallery.image.browser')
+			title: WCF.Language.get('wcf.bbcode.icon')
 		});
 		$(window).trigger('resize');
 		this._dialog.wcfDialog('render');
@@ -97,10 +98,11 @@ Tera.IconBBCode = Class.extend({
 	
 	// add icons to dialog.
 	_addIcons: function() {
-		$.each(this.icons, function(index, value) {
+		var self = this;
+		$.each(this._icons, function(index, value) {
 			var iconName = 'fa-' + value;
-			var $li = $('<li><span class="icon icon32 ' + iconName + ' iconButton" data-icon="' + iconName + '"></span> ' + iconName + '</li>');
-			$li.click($.proxy(this.insert, this));
+			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton" data-name="' + iconName + '"></span></li>');
+			$li.click($.proxy(self.insert, self));
 			$li.appendTo("#iconBBCodeList");
 		});
 	},
@@ -115,8 +117,9 @@ Tera.IconBBCode = Class.extend({
 	
 	// insert icon to redactor.
 	insert: function(event) {
-		var $icon = $(event.currentTarget).data('icon');
+		var $icon = $(event.currentTarget).data('name');
 		var $position = $('#iconBBCodePosition').val();
+		console.log($position);
 		var $attrList = this._currentSize;
 		if ($.inArray($position, ['left, right'])) {
 			$attrList += ",'" + $position + "'";
@@ -129,8 +132,10 @@ Tera.IconBBCode = Class.extend({
 	
 	// reset information and close dialog
 	reset: function() {
-	 $('#iconBBCodePosition').val('none');
-	 $('#iconBBCodeSize').val(16);
+	 $('#iconBBCodePosition').val('');
+	 $('#iconBBCodeSize').val(32);
+	 this._curentSize = 32;
+	 this.changeSize(null);
 	 this._dialog.wcfDialog('close');
 	}
 });
