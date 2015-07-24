@@ -32,7 +32,7 @@
 		<templatelistener name="iconBBCode">
 			<templatename>wysiwyg</templatename>
 			<eventname>javascriptInit</eventname>
-			<templatecode><![CDATA[{include file='__iconEditorPlugin' application='wcf'}]]></templatecode>
+			<templatecode><![CDATA[{include file='__teraWYSIWYGPlugin' application='wcf'}]]></templatecode>
 			<environment>user</environment>
 		</templatelistener>
 	</import>

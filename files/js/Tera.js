@@ -44,7 +44,6 @@ Tera.Directory = Class.extend({
 // icon bbcode insert
 Tera.IconBBCode = Class.extend({
 	_icons: null,
-	_template: '',
 	_redactor: null,
 	_size: [16,32,48,96],
 	_currentSize: 32,
@@ -52,10 +51,9 @@ Tera.IconBBCode = Class.extend({
 	_dialog: null,
 	_isOpen: false,
 	
-	init: function(_redactor, _iconsJSON, _template) {
+	init: function(_redactor, _iconsJSON) {
 		this._icons = $.parseJSON(_iconsJSON);
 		this._redactor = _redactor;
-		this._template = _template;
 		this.initDialog();
 	},
 	
@@ -63,12 +61,12 @@ Tera.IconBBCode = Class.extend({
 	initDialog: function() {
 		// build dialog.
 		this._dialog = $('<div />').hide();
-		this._dialog.html(this._template);
+		this._dialog.html(this._getTemplate());
 		this._dialog.appendTo(document.body);
 		
 		// add icons and change events.
 		this._addIcons();
-		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
+		$('#iconBBCodeSize').change($.proxy(this._changeSize, this));
 		
 		// dialog
 		this._dialog.wcfDialog({
@@ -102,13 +100,13 @@ Tera.IconBBCode = Class.extend({
 		$.each(this._icons, function(index, value) {
 			var iconName = 'fa-' + value;
 			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton" data-name="' + iconName + '"></span></li>');
-			$li.click($.proxy(self.insert, self));
+			$li.click($.proxy(self._insert, self));
 			$li.appendTo("#iconBBCodeList");
 		});
 	},
 	
 	// change size for dialog.
-	changeSize: function(event) {
+	_changeSize: function(event) {
 		var $size = $('#iconBBCodeSize').val();
 		$('.iconButton').removeClass('icon' + this._currentSize);
 		$('.iconButton').addClass('icon' + $size);
@@ -116,27 +114,57 @@ Tera.IconBBCode = Class.extend({
 	},
 	
 	// insert icon to redactor.
-	insert: function(event) {
+	_insert: function(event) {
 		var $icon = $(event.currentTarget).data('name');
 		var $position = $('#iconBBCodePosition').val();
-		console.log($position);
 		var $attrList = this._currentSize;
-		if ($.inArray($position, ['left, right'])) {
+		if ($position == 'right' || $position == 'left') {
 			$attrList += ",'" + $position + "'";
 		}
 		
 		var $bbCode = "[icon='" + $icon + "'," + $attrList + '][/icon]';
 		this._redactor.wutil.insertDynamic($bbCode);
-		this.reset();
+		this._reset();
 	},
 	
 	// reset information and close dialog
-	reset: function() {
-	 $('#iconBBCodePosition').val('');
+	_reset: function() {
+	 $('#iconBBCodePosition').val('none');
 	 $('#iconBBCodeSize').val(32);
 	 this._curentSize = 32;
-	 this.changeSize(null);
+	 this._changeSize(null);
 	 this._dialog.wcfDialog('close');
+	},
+	
+	_getTemplate: function() {
+		var $template = '<div id="iconBBCodeBrowser">'
+		+ '<div class="dialogform">'
+		+ '<fieldset>'
+		+ '<legend>' + WCF.Language.get('wcf.bbcode.icon.settings') + '</legend>'
+		+ '<small>' + WCF.Language.get('wcf.bbcode.icon.settings.description') + '</small>'
+		+ '<dl>'
+		+ '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
+		+ '<dd>'
+		+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
+		+ '</dd>'
+		+ '<dt><label for="iconBBCodePosition">' + WCF.Language.get('wcf.bbcode.icon.position') + '</label></dt>'
+		+ '<dd>'
+		+ '<select id="iconBBCodePosition">'
+		+ '<option value="none" selected="selected">' + WCF.Language.get('wcf.bbcode.icon.position.none') + '</option>'
+		+ '<option value="left">' + WCF.Language.get('wcf.bbcode.icon.position.left') + '</option>'
+		+ '<option value="right">' + WCF.Language.get('wcf.bbcode.icon.position.right') + '</option>'
+		+ '</select>'
+		+ '</dd>'
+		+ '</dl>'
+		+ '</fieldset>'
+		+ '<fieldset>'
+		+ '<legend>' + WCF.Language.get('wcf.bbcode.icon') + '</legend>'
+		+ '<ul id="iconBBCodeList" class="clearfix"></ul>'
+		+ '</fieldset>'
+		+ '</div>'
+		+ '</div>';
+		
+		return $template;
 	}
 });
 
