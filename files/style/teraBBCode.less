@@ -271,8 +271,13 @@
 	margin: @wcfGapTiny;
 }
 
-// BBCode Dialogs
-#iconBBCodeList li {
-	width: 33%;
-	float: left;
+// BBCode Dialog
+#iconBBCodeList {
+	height: 40%;
+	overflow-y: scroll;
+	
+	li {
+		max-width: 33%;
+		float: left;
+	}
 }
