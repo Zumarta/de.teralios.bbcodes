@@ -19,7 +19,7 @@
 		<item name="wcf.bbcode.icon.position.left"><![CDATA[Links]]></item>
 		<item name="wcf.bbcode.icon.position.none"><![CDATA[Im Text]]></item>
 		<item name="wcf.bbcode.icon.position.right"><![CDATA[Rechts]]></item>
-		<item name="wcf.bbcode.icon.wcf.bbcode.icon.search"><![CDATA[Icon suchen]]></item>
+		<item name="wcf.bbcode.icon.search"><![CDATA[Icon suchen]]></item>
 		<item name="wcf.bbcode.icon.settings"><![CDATA[Einstellungen]]></item>
 		<item name="wcf.bbcode.icon.settings.description"><![CDATA[Um ein Icon einzufügen, klicken Sie auf dieses.]]></item>
 		<item name="wcf.bbcode.icon.size"><![CDATA[Icon Größe]]></item>
@@ -49,8 +49,6 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Seiten für Fußnoten]]></item>
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Geben Sie an auf welchen Seiten die Fußnoten angezeigt werden soll. Den Namen der Seite finden Sie in der Regel in der URL: <i>domain.tld</i>/<b>SeitenName</b>/. Ansonsten tragen sie den entsprechenden Controller ein.]]></item>
 		<item name="wcf.acp.option.bbcodes_headline_automark"><![CDATA[Heading- und Subheading Sprungmarken erzeugen]]></item>
-		<!-- <item name="wcf.acp.option.bbcodes_xattach_editor"><![CDATA[xAttach im erweiterten Editor aktivieren]]></item>
-		<item name="wcf.acp.option.bbcodes_xattach_editor.description"><![CDATA[xAttach übernimmt mit der Installation den Button zum Einfügen von Anhängen. Dieses Verhalten kann mit dieser Option deaktiviert werden.]]></item> -->
 		<item name="wcf.acp.option.bbcodes_xattach_freestyle"><![CDATA[Rahmenlose Darstellung des Ahnangs im Text]]></item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>

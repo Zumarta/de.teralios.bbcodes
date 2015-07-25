@@ -19,7 +19,7 @@
 		<item name="wcf.bbcode.icon.position.left"><![CDATA[Left]]></item>
 		<item name="wcf.bbcode.icon.position.none"><![CDATA[In Text]]></item>
 		<item name="wcf.bbcode.icon.position.right"><![CDATA[Right]]></item>
-		<item name="wcf.bbcode.icon.wcf.bbcode.icon.search"><![CDATA[Search Icon]]></item>
+		<item name="wcf.bbcode.icon.search"><![CDATA[Search Icon]]></item>
 		<item name="wcf.bbcode.icon.settings"><![CDATA[Settings]]></item>
 		<item name="wcf.bbcode.icon.settings.description"><![CDATA[To add a icon, click on it.]]></item>
 		<item name="wcf.bbcode.icon.size"><![CDATA[Icon Size]]></item>

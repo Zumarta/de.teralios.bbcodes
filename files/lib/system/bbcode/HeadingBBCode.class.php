@@ -120,10 +120,10 @@ class HeadingBBCode extends AbstractBBCode {
 			}
 			// first is anchor
 			else if (isset($attributes[0]) && preg_match('#^[a-zA-Z0-9_]$#', $attributes[0])) {
-				$this->anchor = $attributes[1];
+				$this->anchor = $attributes[0];
 				
-				if (isset($attributes[0]) && is_numeric($attributes[0])) {
-					$this->noIndex = $attributes[0];
+				if (isset($attributes[1]) && is_numeric($attributes[1])) {
+					$this->noIndex = $attributes[1];
 				}
 			}
 			
