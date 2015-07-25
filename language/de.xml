@@ -19,8 +19,9 @@
 		<item name="wcf.bbcode.icon.position.left"><![CDATA[Links]]></item>
 		<item name="wcf.bbcode.icon.position.none"><![CDATA[Im Text]]></item>
 		<item name="wcf.bbcode.icon.position.right"><![CDATA[Rechts]]></item>
+		<item name="wcf.bbcode.icon.wcf.bbcode.icon.search"><![CDATA[Icon suchen]]></item>
 		<item name="wcf.bbcode.icon.settings"><![CDATA[Einstellungen]]></item>
-		<item name="wcf.bbcode.icon.settings.description"><![CDATA[Um ein Icon einzufügen, klicken sie auf dieses.]]></item>
+		<item name="wcf.bbcode.icon.settings.description"><![CDATA[Um ein Icon einzufügen, klicken Sie auf dieses.]]></item>
 		<item name="wcf.bbcode.icon.size"><![CDATA[Icon Größe]]></item>
 		<item name="wcf.bbcode.proContra"><![CDATA[Pro & Contra]]></item>
 		<item name="wcf.bbcode.proContra.empty"><![CDATA[Keine Punkte vorhanden]]></item>

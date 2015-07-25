@@ -78,7 +78,7 @@ Tera.IconBBCode = Class.extend({
 		// add icons and change events.
 		this._addIcons(this._icons);
 		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
-		$('#iconBBCodeSearch').change($.proxy(this.search, this));
+		$('#iconBBCodeSearch').keyup($.proxy(this.search, this));
 		
 		// dialog
 		this._dialog.wcfDialog({
@@ -143,7 +143,7 @@ Tera.IconBBCode = Class.extend({
 				
 				// icon name have the same lenght or is longer as search string
 				if (iconName.length >= $searchString.length) {
-					if (iconName.substr(0, $searchString.length) == $searchString) {
+					if (iconName.indexOf($searchString) > -1) {
 						icons.push(iconName);
 					}
 				}
@@ -156,10 +156,10 @@ Tera.IconBBCode = Class.extend({
 	// add icons to dialog.
 	_addIcons: function(icons) {
 		var self = this;
+		$('#iconBBCodeList').empty();
 		$.each(icons, function(index, value) {
-			$('#iconBBCodeList').empty();
 			var iconName = 'fa-' + value;
-			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton" data-name="' + iconName + '"></span></li>');
+			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton jsTooltip" data-name="' + iconName + '" title="' + iconName +'"></span></li>');
 			$li.click($.proxy(self.insert, self));
 			$li.appendTo("#iconBBCodeList");
 		});
@@ -167,24 +167,24 @@ Tera.IconBBCode = Class.extend({
 	
 	// reset information and close dialog
 	_reset: function() {
-	 $('#iconBBCodePosition').val('none');
-	 $('#iconBBCodeSize').val(32);
-	 $('#iconBBCodeSearch').val('');
-	 this._addIcons(this._icons);
-	 this._curentSize = 32;
-	 this._changeSize(null);
-	 this._dialog.wcfDialog('close');
+		this._curentSize = 32;
+		$('#iconBBCodePosition').val('none');
+		$('#iconBBCodeSize').val(this._currentSize);
+		$('#iconBBCodeSearch').val('');
+		this._addIcons(this._icons);
+		this._dialog.wcfDialog('close');
 	},
 	
 	// icon dialog template
 	_getTemplate: function() {
 		var $template = '<div id="iconBBCodeBrowser">'
 		+ '<div class="dialogform">'
+		+ '<fieldset>'
 		+ '<legend>' + WCF.Language.get('wcf.bbcode.icon.settings') + '</legend>'
 		+ '<small>' + WCF.Language.get('wcf.bbcode.icon.settings.description') + '</small>'
 		+ '<dl>'
 		+ '<dt><laben for="iconBBCodeSearch">' + WCF.Language.get('wcf.bbcode.icon.search') + '</label></dt>'
-		+ '<dd><input type="text" id="iconBBCodeSearch /></dd>'
+		+ '<dd><input type="text" id="iconBBCodeSearch" value="" /></dd>'
 		+ '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
 		+ '<dd>'
 		+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
