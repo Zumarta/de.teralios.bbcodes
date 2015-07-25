@@ -231,7 +231,7 @@
 /** CSS for xattach bbcode */
 .xattachBorderBBCode {
 	border: 1px solid @wcfContainerBorderColor;
-	max-width: (210 + ((@wcfGapTiny) * 2));
+	max-width: @wcf_option_attachment_thumbnail_width;
 	text-align: center;
 	
 	div {
@@ -254,7 +254,7 @@
 }
 
 .xattachBBCode {
-	max-width: (210 + ((@wcfGapTiny) * 2));
+	max-width: @wcf_option_attachment_thumbnail_width;
 	text-align: center;
 	div {
 		padding: @wcfGapTiny;
