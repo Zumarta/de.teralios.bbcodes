@@ -1,13 +1,14 @@
 WCF.Language.addObject({
-	'wcf.bbcode.icon': '{lang}wcf.bbcodes.icon{/lang}',
-	'wcf.bbcode.icon.insert': '{lang}wcf.bbcodes.icon.insert{/lang}',
+	'wcf.bbcode.icon': '{lang}wcf.bbcode.icon{/lang}',
+	'wcf.bbcode.icon.insert': '{lang}wcf.bbcode.icon.insert{/lang}',
 	'wcf.bbcode.icon.settings': '{lang}wcf.bbcode.icon.settings{/lang}',
 	'wcf.bbcode.icon.settings.description': '{lang}wcf.bbcode.icon.settings.description{/lang}',
 	'wcf.bbcode.icon.size': '{lang}wcf.bbcode.icon.size{/lang}',
 	'wcf.bbcode.icon.position': '{lang}wcf.bbcode.icon.position{/lang}',
 	'wcf.bbcode.icon.position.none': '{lang}wcf.bbcode.icon.position.none{/lang}',
 	'wcf.bbcode.icon.position.left': '{lang}wcf.bbcode.icon.position.left{/lang}',
-	'wcf.bbcode.icon.position.right': '{lang}wcf.bbcode.icon.position.right{/lang}'
+	'wcf.bbcode.icon.position.right': '{lang}wcf.bbcode.icon.position.right{/lang}',
+	'wcf.bbcode.icon.search': '{lang}wcf.bbcode.icon.search{/lang}'
 });
 	
 if ($.browser.redactor) {

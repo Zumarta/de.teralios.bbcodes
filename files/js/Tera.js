@@ -43,14 +43,25 @@ Tera.Directory = Class.extend({
 
 // icon bbcode insert
 Tera.IconBBCode = Class.extend({
+	// contains icons for dialog.
 	_icons: null,
+	
+	// redactor
 	_redactor: null,
+	
+	// size of icons.
 	_size: [16,32,48,96],
+	
+	// current size.
 	_currentSize: 32,
-	_position: ['left', 'right'],
+	
+	// dialog
 	_dialog: null,
+	
+	// is dialog open
 	_isOpen: false,
 	
+	// initialize icon bbcode dialog.
 	init: function(_redactor, _iconsJSON) {
 		this._icons = $.parseJSON(_iconsJSON);
 		this._redactor = _redactor;
@@ -65,8 +76,9 @@ Tera.IconBBCode = Class.extend({
 		this._dialog.appendTo(document.body);
 		
 		// add icons and change events.
-		this._addIcons();
-		$('#iconBBCodeSize').change($.proxy(this._changeSize, this));
+		this._addIcons(this._icons);
+		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
+		$('#iconBBCodeSearch').change($.proxy(this.search, this));
 		
 		// dialog
 		this._dialog.wcfDialog({
@@ -94,19 +106,8 @@ Tera.IconBBCode = Class.extend({
 		}
 	},
 	
-	// add icons to dialog.
-	_addIcons: function() {
-		var self = this;
-		$.each(this._icons, function(index, value) {
-			var iconName = 'fa-' + value;
-			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton" data-name="' + iconName + '"></span></li>');
-			$li.click($.proxy(self._insert, self));
-			$li.appendTo("#iconBBCodeList");
-		});
-	},
-	
-	// change size for dialog.
-	_changeSize: function(event) {
+	// change size of icons.
+	changeSize: function(event) {
 		var $size = $('#iconBBCodeSize').val();
 		$('.iconButton').removeClass('icon' + this._currentSize);
 		$('.iconButton').addClass('icon' + $size);
@@ -114,7 +115,7 @@ Tera.IconBBCode = Class.extend({
 	},
 	
 	// insert icon to redactor.
-	_insert: function(event) {
+	insert: function(event) {
 		var $icon = $(event.currentTarget).data('name');
 		var $position = $('#iconBBCodePosition').val();
 		var $attrList = this._currentSize;
@@ -122,27 +123,68 @@ Tera.IconBBCode = Class.extend({
 			$attrList += ",'" + $position + "'";
 		}
 		
-		var $bbCode = "[icon='" + $icon + "'," + $attrList + '][/icon]';
-		this._redactor.wutil.insertDynamic($bbCode);
+		var bbCode = "[icon='" + $icon + "'," + $attrList + '][/icon]';
+		this._redactor.wutil.insertDynamic(bbCode);
 		this._reset();
+	},
+	
+	// search icons in icon array and replace old icons.
+	search: function(event) {
+		var icons = [];
+		var $searchString = $('#iconBBCodeSearch').val();
+		
+		// search string is empty
+		if ($searchString === null || $searchString == '') {
+			icons = this._icons;
+		}
+		else {
+			for (var index in this._icons) {
+				var iconName = this._icons[index];
+				
+				// icon name have the same lenght or is longer as search string
+				if (iconName.length >= $searchString.length) {
+					if (iconName.substr(0, $searchString.length) == $searchString) {
+						icons.push(iconName);
+					}
+				}
+			}
+		}
+		
+		this._addIcons(icons);
+	},
+	
+	// add icons to dialog.
+	_addIcons: function(icons) {
+		var self = this;
+		$.each(icons, function(index, value) {
+			$('#iconBBCodeList').empty();
+			var iconName = 'fa-' + value;
+			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton" data-name="' + iconName + '"></span></li>');
+			$li.click($.proxy(self.insert, self));
+			$li.appendTo("#iconBBCodeList");
+		});
 	},
 	
 	// reset information and close dialog
 	_reset: function() {
 	 $('#iconBBCodePosition').val('none');
 	 $('#iconBBCodeSize').val(32);
+	 $('#iconBBCodeSearch').val('');
+	 this._addIcons(this._icons);
 	 this._curentSize = 32;
 	 this._changeSize(null);
 	 this._dialog.wcfDialog('close');
 	},
 	
+	// icon dialog template
 	_getTemplate: function() {
 		var $template = '<div id="iconBBCodeBrowser">'
 		+ '<div class="dialogform">'
-		+ '<fieldset>'
 		+ '<legend>' + WCF.Language.get('wcf.bbcode.icon.settings') + '</legend>'
 		+ '<small>' + WCF.Language.get('wcf.bbcode.icon.settings.description') + '</small>'
 		+ '<dl>'
+		+ '<dt><laben for="iconBBCodeSearch">' + WCF.Language.get('wcf.bbcode.icon.search') + '</label></dt>'
+		+ '<dd><input type="text" id="iconBBCodeSearch /></dd>'
 		+ '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
 		+ '<dd>'
 		+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
@@ -175,34 +217,16 @@ Tera.xAttach = Class.extend({
 	_wysiwygContainerID: '',
 	_addedButton: [],
 	
+	// add insert event to NodeInserted Handler.
 	init: function(wysiwygContainerID) {
 		this._wysiwygContainerID = wysiwygContainerID;
 		
 		this._addButtons();
 		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this._addButtons, this));
 	},
-
-	_addButtons: function() {
-		// add button to image attachments
-		if ($('.sortableAttachment')) {
-			$('.sortableAttachment').each($.proxy(this._addButton, this));
-		}
-	},
 	
-	_addButton: function(key, attachmentElement) {
-		var attachmentID = $(attachmentElement).data('objectID');
-		var $ul = $(attachmentElement).find('.buttonGroup');
-		
-		if ($.inArray(attachmentID, this._addedButton) == -1) {
-			//create button and insert button for xattach	
-			var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
-			$button.children('span.button').click($.proxy(this._insert, this));
-			$button.appendTo($ul);
-			this._addedButton[attachmentID] = attachmentID;
-		}
-	},
-	
-	_insert: function(event) {
+	// insert attachment
+	insert: function(event) {
 		// get attachment id and build text
 		var attachmentID = $(event.currentTarget).data('objectID');
 		var insertText = '[xattach=' + attachmentID + '][/xattach]';
@@ -210,6 +234,28 @@ Tera.xAttach = Class.extend({
 		// if reactor, insert xattachment tag.
 		if ($.browser.redactor) {
 			$('#' + this._wysiwygContainerID).redactor('wutil.insertDynamic', insertText);
+		}
+	},
+
+	// adds buttons
+	_addButtons: function() {
+		// add button to image attachments
+		if ($('.sortableAttachment')) {
+			$('.sortableAttachment').each($.proxy(this._addButton, this));
+		}
+	},
+	
+	// add a button
+	_addButton: function(key, attachmentElement) {
+		var attachmentID = $(attachmentElement).data('objectID');
+		var $ul = $(attachmentElement).find('.buttonGroup');
+		
+		if ($.inArray(attachmentID, this._addedButton) == -1) {
+			//create button and insert button for xattach	
+			var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
+			$button.children('span.button').click($.proxy(this.insert, this));
+			$button.appendTo($ul);
+			this._addedButton.push(attachmentID);
 		}
 	}
 });
