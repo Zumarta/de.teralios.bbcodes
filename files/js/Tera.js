@@ -156,20 +156,23 @@ Tera.IconBBCode = Class.extend({
 	// add icons to dialog.
 	_addIcons: function(icons) {
 		var self = this;
+		var iconSize = 'icon' + this._currentSize;
 		$('#iconBBCodeList').empty();
 		$.each(icons, function(index, value) {
 			var iconName = 'fa-' + value;
-			var $li = $('<li data-name="' + iconName + '"><span class="icon icon32 ' + iconName + ' iconButton jsTooltip" data-name="' + iconName + '" title="' + iconName +'"></span></li>');
+			var $li = $('<li data-name="' + iconName + '"><span class="icon ' + iconSize + ' ' + iconName + ' iconButton jsTooltip" data-name="' + iconName + '" title="' + iconName +'"></span></li>');
 			$li.click($.proxy(self.insert, self));
 			$li.appendTo("#iconBBCodeList");
 		});
+		
+		WCF.DOMNodeInsertedHandler.execute();
 	},
 	
 	// reset information and close dialog
 	_reset: function() {
-		this._curentSize = 32;
+		this._currentSize = 32;
 		$('#iconBBCodePosition').val('none');
-		$('#iconBBCodeSize').val(this._currentSize);
+		$('#iconBBCodeSize').val(32);
 		$('#iconBBCodeSearch').val('');
 		this._addIcons(this._icons);
 		this._dialog.wcfDialog('close');
@@ -177,7 +180,7 @@ Tera.IconBBCode = Class.extend({
 	
 	// icon dialog template
 	_getTemplate: function() {
-		var $template = '<div id="iconBBCodeBrowser">'
+		var $template = '<div id="iconBBCodeDialog">'
 		+ '<div class="dialogform">'
 		+ '<fieldset>'
 		+ '<legend>' + WCF.Language.get('wcf.bbcode.icon.settings') + '</legend>'

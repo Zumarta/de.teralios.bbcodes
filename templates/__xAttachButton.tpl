@@ -1,5 +1,5 @@
 {if $xAttachJS|isset == false}
-	{if $wysiwygContainerID|isset}
+	{if $wysiwygContainerID|isset && "xattach"|allowedBBCode}
 		<script data-relocated="true">
 		//<![CDATA[
 			$(function() {
