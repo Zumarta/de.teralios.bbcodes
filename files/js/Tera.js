@@ -65,28 +65,7 @@ Tera.IconBBCode = Class.extend({
 	init: function(_redactor, _iconsJSON) {
 		this._icons = $.parseJSON(_iconsJSON);
 		this._redactor = _redactor;
-		this.initDialog();
-	},
-	
-	// create icon dialog.
-	initDialog: function() {
-		// build dialog.
-		this._dialog = $('<div />').hide();
-		this._dialog.html(this._getTemplate());
-		this._dialog.appendTo(document.body);
-		
-		// add icons and change events.
-		this._addIcons(this._icons);
-		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
-		$('#iconBBCodeSearch').keyup($.proxy(this.search, this));
-		
-		// dialog
-		this._dialog.wcfDialog({
-			onClose: $.proxy(function() { this._isOpen = false; }, this),
-			title: WCF.Language.get('wcf.bbcode.icon')
-		});
-		$(window).trigger('resize');
-		this._dialog.wcfDialog('render');
+		this._initDialog();
 	},
 
 	// open icon dialog.
@@ -153,6 +132,27 @@ Tera.IconBBCode = Class.extend({
 		this._addIcons(icons);
 	},
 	
+	// create icon dialog.
+	_initDialog: function() {
+		// build dialog.
+		this._dialog = $('<div />').hide();
+		this._dialog.html(this._getTemplate());
+		this._dialog.appendTo(document.body);
+		
+		// add icons and change events.
+		this._addIcons(this._icons);
+		$('#iconBBCodeSize').change($.proxy(this.changeSize, this));
+		$('#iconBBCodeSearch').keyup($.proxy(this.search, this));
+		
+		// dialog
+		this._dialog.wcfDialog({
+			onClose: $.proxy(function() { this._isOpen = false; }, this),
+			title: WCF.Language.get('wcf.bbcode.icon')
+		});
+		$(window).trigger('resize');
+		this._dialog.wcfDialog('render');
+	},
+	
 	// add icons to dialog.
 	_addIcons: function(icons) {
 		var self = this;
@@ -215,10 +215,11 @@ Tera.IconBBCode = Class.extend({
 
 // add xattach insert button to attachment list.
 Tera.xAttach = Class.extend({
-	_attachButtonClass: '',
 	_attachID: 0,
 	_wysiwygContainerID: '',
 	_addedButton: [],
+	_attachmentID: 0,
+	_dialog: null,
 	
 	// add insert event to NodeInserted Handler.
 	init: function(wysiwygContainerID) {
@@ -229,15 +230,19 @@ Tera.xAttach = Class.extend({
 	},
 	
 	// insert attachment
-	insert: function(event) {
+	open: function(event) {
 		// get attachment id and build text
-		var attachmentID = $(event.currentTarget).data('objectID');
+		this.attachmentID = $(event.currentTarget).data('objectID');
 		var insertText = '[xattach=' + attachmentID + '][/xattach]';
 		
 		// if reactor, insert xattachment tag.
 		if ($.browser.redactor) {
 			$('#' + this._wysiwygContainerID).redactor('wutil.insertDynamic', insertText);
 		}
+	},
+	
+	insert: function(event) {
+		
 	},
 
 	// adds buttons
@@ -256,9 +261,17 @@ Tera.xAttach = Class.extend({
 		if ($.inArray(attachmentID, this._addedButton) == -1) {
 			//create button and insert button for xattach	
 			var $button = $('<li><span class="button small jsButtonXAttachmentInsert" data-object-id="' + attachmentID + '">' + WCF.Language.get('wcf.bbcode.xattach.insert') + '</span></li>');
-			$button.children('span.button').click($.proxy(this.insert, this));
+			$button.children('span.button').click($.proxy(this.open, this));
 			$button.appendTo($ul);
 			this._addedButton.push(attachmentID);
 		}
+	},
+	
+	_initDialog: function() {
+		
+	},
+	
+	_getTemplate: function() {
+		
 	}
 });
