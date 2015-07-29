@@ -81,7 +81,7 @@
 					<validationpattern>^(left|right|none|16|32|48|96)$</validationpattern>
 				</attribute>
 				<attribute name="2">
-					<validationpattern>^(16|32|48|96|left|right|none)$</validationpattern>
+					<validationpattern>^(left|right|none|16|32|48|96)$</validationpattern>
 				</attribute>
 			</attributes>
 			<allowedchildren>none</allowedchildren>
