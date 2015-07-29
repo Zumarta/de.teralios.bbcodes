@@ -50,7 +50,7 @@ Tera.IconBBCode = Class.extend({
 	_redactor: null,
 	
 	// size of icons.
-	_size: [16,32,48,96],
+	_size: [16,24,32,48,96],
 	
 	// current size.
 	_currentSize: 32,
@@ -190,7 +190,7 @@ Tera.IconBBCode = Class.extend({
 		+ '<dd><input type="text" id="iconBBCodeSearch" value="" /></dd>'
 		+ '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
 		+ '<dd>'
-		+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
+		+ '<select id="iconBBCodeSize"><option value="16">16</option><option="24"></option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
 		+ '</dd>'
 		+ '<dt><label for="iconBBCodePosition">' + WCF.Language.get('wcf.bbcode.icon.position') + '</label></dt>'
 		+ '<dd>'

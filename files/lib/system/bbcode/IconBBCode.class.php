@@ -17,7 +17,7 @@ use wcf\util\StringUtil;
  */
 class IconBBCode extends AbstractBBCode {
 	protected $float = 'none';
-	protected $size = 0;
+	protected $size = 16;
 	
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		// copyright
@@ -36,19 +36,19 @@ class IconBBCode extends AbstractBBCode {
 	 * @param array $attributes
 	 */
 	protected function mapAttributes($attributes) {
-		$this->size = 0;
+		$this->size = 16;
 		$this->float = 'none';
 		
 		if (isset($attributes[1])) {
 			if (preg_match('#^(left|right|none)$#i', $attributes[1])) {
 				$this->float = mb_strtolower($attributes[1]);
 				
-				if (isset($attributes[2]) && preg_match('#^(16|32|48|96)$#', $attributes[2])) {
+				if (isset($attributes[2]) && preg_match('#^(0|16|24|32|48|96)$#', $attributes[2])) {
 					$this->size = $attributes[2];
 				}
 			}
 			else {
-				if (preg_match('#^(16|32|48|96)$#', $attributes[1])) {
+				if (preg_match('#^(0|16|24|32|48|96)$#', $attributes[1])) {
 					$this->size = $attributes[1];
 				}
 				
