@@ -241,7 +241,7 @@ Tera.xAttach = Class.extend({
 		}
 	},
 	
-	insert: function(event) {
+	insert: function() {
 		
 	},
 

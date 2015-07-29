@@ -17,7 +17,7 @@ use wcf\util\StringUtil;
  */
 class IconBBCode extends AbstractBBCode {
 	protected $float = 'none';
-	protected $size = 16;
+	protected $size = 0;
 	
 	public function getParsedTag(array $openingTag, $content, array $closingTag, BBCodeParser $parser) {
 		// copyright
@@ -27,7 +27,7 @@ class IconBBCode extends AbstractBBCode {
 		$icon = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : 'fa-rebel'; // Yes, Rebel icon as default icon! ;)
 		$this->mapAttributes(ArrayUtil::trim($openingTag['attributes']));
 		
-		return '<span class="fa icon'.$this->size.' '.$icon.' '.(($this->float != 'none') ? 'iconBB'.ucfirst($this->float) : '').'"></span>';
+		return '<span class="teraIcon'.(($this->size > 0) ? ' icon'.$this->size : '').' '.$icon.(($this->float != 'none') ? ' iconBB'.ucfirst($this->float) : '').'"></span>';
 	}
 	
 	/**
@@ -36,6 +36,9 @@ class IconBBCode extends AbstractBBCode {
 	 * @param array $attributes
 	 */
 	protected function mapAttributes($attributes) {
+		$this->size = 0;
+		$this->float = 'none';
+		
 		if (isset($attributes[1])) {
 			if (preg_match('#^(left|right|none)$#i', $attributes[1])) {
 				$this->float = mb_strtolower($attributes[1]);
