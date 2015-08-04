@@ -224,7 +224,6 @@ Tera.xAttach = Class.extend({
 	// add insert event to NodeInserted Handler.
 	init: function(wysiwygContainerID) {
 		this._wysiwygContainerID = wysiwygContainerID;
-		
 		this._addButtons();
 		WCF.DOMNodeInsertedHandler.addCallback('de.teralios.xattach', $.proxy(this._addButtons, this));
 	},
