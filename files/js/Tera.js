@@ -276,6 +276,6 @@ Tera.xAttach = Class.extend({
 				+ '<legend>' + WCF.Language.get('wcf.bbcode.xAttach.settings') + '</legend>'
 				+ '<dl>'
 				+ '</dl>'
-			+ '</fieldset>'
+			+ '</fieldset>';
 	}
 });
