@@ -61,8 +61,11 @@ Tera.IconBBCode = Class.extend({
 	// is dialog open
 	_isOpen: false,
 	
+	_color: false,
+	
 	// initialize icon bbcode dialog.
-	init: function(_redactor, _iconsJSON) {
+	init: function(_redactor, _iconsJSON, color) {
+		//this._color = color;
 		this._icons = $.parseJSON(_iconsJSON);
 		this._redactor = _redactor;
 		this._initDialog();
@@ -187,8 +190,15 @@ Tera.IconBBCode = Class.extend({
 					+ '<small>' + WCF.Language.get('wcf.bbcode.icon.settings.description') + '</small>'
 					+ '<dl>'
 						+ '<dt><laben for="iconBBCodeSearch">' + WCF.Language.get('wcf.bbcode.icon.search') + '</label></dt>'
-						+ '<dd><input type="text" id="iconBBCodeSearch" value="" /></dd>'
-						+ '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
+						+ '<dd><input type="text" id="iconBBCodeSearch" value="" /></dd>';
+						
+						// color!
+						if (this._color == true) {
+							$template += '<dt><laben for="iconBBCodeColor">' + WCF.Language.get('wcf.bbcode.icon.color') + '</label></dt>'
+							+ '<dd><input type="text" id="iconBBCodeColor" value="" /></dd>';
+						}
+						
+						$template += '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
 						+ '<dd>'
 							+ '<select id="iconBBCodeSize"><option value="16">16</option><option="24"></option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
 						+ '</dd>'
