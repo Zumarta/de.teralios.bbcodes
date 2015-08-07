@@ -249,7 +249,14 @@ Tera.xAttach = Class.extend({
 	},
 	
 	insert: function() {
-		var insertText = '[xattach=' + attachmentID + '][/xattach]';
+		var text = $('#xAttachDescription').val();
+		var position = $('#xAttachPosition').val();
+		var insertText = '[xattach=' + this.attachmentID;
+		if (position == 'left' || position == 'right') {
+			insertText += ",'" + position + "'";
+		}
+		
+		insertText += ']' + text + '[/xattach]';
 		
 		// if reactor, insert xattachment tag.
 		if ($.browser.redactor) {
@@ -257,6 +264,8 @@ Tera.xAttach = Class.extend({
 		}
 		
 		this._dialog.wcfDialog('close');
+		$('#xAttachDescription').val('');
+		$('#xAttachPosition').val('none');
 	},
 
 	// adds buttons
