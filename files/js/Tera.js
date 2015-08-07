@@ -220,6 +220,7 @@ Tera.xAttach = Class.extend({
 	_addedButton: [],
 	_attachmentID: 0,
 	_dialog: null,
+	_isOpen: false,
 	
 	// add insert event to NodeInserted Handler.
 	init: function(wysiwygContainerID) {
@@ -230,18 +231,32 @@ Tera.xAttach = Class.extend({
 	
 	// insert attachment
 	open: function(event) {
-		// get attachment id and build text
+		if (this._isOpen == true) {
+			return false;
+		}
+		
+		this._isOpen = true;
+		
+		// get attachment id and open dialog.
 		this.attachmentID = $(event.currentTarget).data('objectID');
+		if (this._dialog === null) {
+			this._initDialog();
+		}
+		else {
+			this._dialog.wcfDialog('open');
+			$(window).trigger('resize');
+		}
+	},
+	
+	insert: function() {
 		var insertText = '[xattach=' + attachmentID + '][/xattach]';
 		
 		// if reactor, insert xattachment tag.
 		if ($.browser.redactor) {
 			$('#' + this._wysiwygContainerID).redactor('wutil.insertDynamic', insertText);
 		}
-	},
-	
-	insert: function() {
 		
+		this._dialog.wcfDialog('close');
 	},
 
 	// adds buttons
@@ -267,7 +282,26 @@ Tera.xAttach = Class.extend({
 	},
 	
 	_initDialog: function() {
+		this._dialog = $('<div />').hide();
+		this._dialog.html(this._getTemplate());
+		this._dialog.appendTo(document.body);
 		
+		// set values
+		$('#xAttachPosition').val('none');
+		$('#xAttachDescription').val('');
+		
+		// add click event
+		this._dialog.find('input[type=submit]').click($.proxy(this.insert, this));
+		
+		// dialog
+		this._dialog.wcfDialog({
+			onClose: $.proxy(function() { this._isOpen = false; }, this),
+			title: WCF.Language.get('wcf.bbcode.xattach')
+		});
+		
+		// open dialog
+		$(window).trigger('resize');
+		this._dialog.wcfDialog('render');
 	},
 	
 	_getTemplate: function() {
@@ -275,7 +309,23 @@ Tera.xAttach = Class.extend({
 			+ '<fieldset>'
 				+ '<legend>' + WCF.Language.get('wcf.bbcode.xAttach.settings') + '</legend>'
 				+ '<dl>'
+					+ '<dt><label for="xAttachPosition">' + WCF.Language.get('wcf.bbcode.xattach.position') + '</label></dt>'
+					+ '<dd>'
+						+ '<select id="xAttachPosition">'
+							+ '<option value="none">' + WCF.Language.get('wcf.bbcode.xattach.position.none') + '</option>'
+							+ '<option value="left">' + WCF.Language.get('wcf.bbcode.xattach.position.left') + '</option>'
+							+ '<option value="right'> + WCF.Language.get('wcf.bbcode.xattach.position.right') + '</option>'
+						+ '</select>'
+					+ '</dd>'
+					+ '<dt><label for="xAttachDescription">' + WCF.language.get('wcf.bbcode.xattach.description') + '</label></dt>'
+					+ '<dd><input type="text" id="xAttachDescription /></dd>'
 				+ '</dl>'
 			+ '</fieldset>';
+			+ '<div class="formSubmit">'
+				+ '<input type="submit" value="' + WCF.Language.get('wcf.global.button.submit') + '" accesskey="s" />'
+			+ '</div>'
+		+ '</div>';
+			
+		return $template;
 	}
 });
