@@ -103,7 +103,7 @@ class XAttachBBCode extends AttachmentBBCode {
 		
 		// Attachment
 		if ($attachment !== null) {
-			$title = (!empty($attachment->filename)) ? StringUtil::encodeHTML($attachment->filename) : $title;
+			$title = (!empty($attachment->filename)) ? WCF::getLanguage()->getDynamicVariable('wcf.bbcode.xattach.title.full', array('xaFilename' => $attachment->filename, 'xaDownloads' => $attachment->downloads)) : $title;
 			$linkParameters = array(
 				'object' => $attachment
 			);
@@ -127,6 +127,7 @@ class XAttachBBCode extends AttachmentBBCode {
 			else {
 				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment)));
 				$type = self::getType($attachment);
+				$title .= ' Downloads:'.StringUtil::formatInteger($attachment->downloads);
 			}
 		}
 		// fallback

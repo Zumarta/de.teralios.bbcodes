@@ -37,6 +37,7 @@ Die Syntax hat sich mit der aktuellen Version geändert. Für einen Punkt in der
 		<item name="wcf.bbcode.xattach.position.right"><![CDATA[Rechts]]></item>
 		<item name="wcf.bbcode.xAttach.settings"><![CDATA[Einstellung]]></item>
 		<item name="wcf.bbcode.xattach.title"><![CDATA[Anhang (ID: {$xaID})]]></item>
+		<item name="wcf.bbcode.xattach.title.full"><![CDATA[{$xaFilename} | Downloads: {#$xaDownloads}]]></item>
 	</category>
 	
 	<category name="wcf.directory">

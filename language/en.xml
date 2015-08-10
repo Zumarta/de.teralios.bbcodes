@@ -37,6 +37,7 @@ The syntax has changed. For every new line in the list, use the prefix [+][-] or
 		<item name="wcf.bbcode.xattach.position.right"><![CDATA[Right]]></item>
 		<item name="wcf.bbcode.xAttach.settings"><![CDATA[Settings]]></item>
 		<item name="wcf.bbcode.xattach.title"><![CDATA[Attachment (ID: {$xaID})]]></item>
+		<item name="wcf.bbcode.xattach.title.full"><![CDATA[{$xaFilename} | Downloads: {#$xaDownloads}]]></item>
 	</category>
 	
 	<category name="wcf.directory">
@@ -55,8 +56,6 @@ The syntax has changed. For every new line in the list, use the prefix [+][-] or
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page"><![CDATA[Footnote Pages]]></item>
 		<item name="wcf.acp.option.bbcodes_footnote_parse_page.description"><![CDATA[Defines pages where footnotes are parsed. The name of a page can usally be found in the URL: <i>domain.tld</i>/<b>PageName</b>/. Otherwise use the name of the controller.]]></item>
 		<item name="wcf.acp.option.bbcodes_headline_automark">Heading and Subheading Create a Jumpmark</item>
-		<!-- <item name="wcf.acp.option.bbcodes_xattach_editor"><![CDATA[Activate xAttach in Extended Editor.]]></item>
-		<item name="wcf.acp.option.bbcodes_xattach_editor.description"><![CDATA[Replace the standard insert button with xAttach-BBCode. You may deactivate this behaviour here.]]></item> -->
 		<item name="wcf.acp.option.bbcodes_xattach_freestyle">Borderless Style for Attachments in Messages</item>
 		<item name="wcf.acp.option.category.message.general.teraBBCodes"><![CDATA[Teralios' BBCodes]]></item>
 	</category>
