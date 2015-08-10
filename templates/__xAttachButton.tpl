@@ -10,7 +10,8 @@
 					'wcf.bbcode.xattach.position': '{lang}wcf.bbcode.xattach.position{/lang}',
 					'wcf.bbcode.xattach.position.left': '{lang}wcf.bbcode.xattach.position.left{/lang}',
 					'wcf.bbcode.xattach.position.none': '{lang}wcf.bbcode.xattach.position.none{/lang}',
-					'wcf.bbcode.xattach.position.right': '{lang}wcf.bbcode.xattach.position.right{/lang}'
+					'wcf.bbcode.xattach.position.right': '{lang}wcf.bbcode.xattach.position.right{/lang}',
+					'wcf.bbcode.xAttach.settings': '{lang}wcf.bbcode.xAttach.settings{/lang}'
 				});
 				new Tera.xAttach('{@$wysiwygContainerID}');
 			});
