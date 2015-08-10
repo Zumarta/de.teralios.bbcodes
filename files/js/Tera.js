@@ -333,18 +333,18 @@ Tera.xAttach = Class.extend({
 						+ '<select id="xAttachPosition">'
 							+ '<option value="none">' + WCF.Language.get('wcf.bbcode.xattach.position.none') + '</option>'
 							+ '<option value="left">' + WCF.Language.get('wcf.bbcode.xattach.position.left') + '</option>'
-							+ '<option value="right'> + WCF.Language.get('wcf.bbcode.xattach.position.right') + '</option>'
+							+ '<option value="right">' + WCF.Language.get('wcf.bbcode.xattach.position.right') + '</option>'
 						+ '</select>'
 					+ '</dd>'
-					+ '<dt><label for="xAttachDescription">' + WCF.language.get('wcf.bbcode.xattach.description') + '</label></dt>'
-					+ '<dd><input type="text" id="xAttachDescription /></dd>'
+					+ '<dt><label for="xAttachDescription">' + WCF.Language.get('wcf.bbcode.xattach.description') + '</label></dt>'
+					+ '<dd><input type="text" id="xAttachDescription" value="" /></dd>'
 				+ '</dl>'
-			+ '</fieldset>';
+			+ '</fieldset>'
 			+ '<div class="formSubmit">'
-				+ '<input type="submit" value="' + WCF.Language.get('wcf.global.button.submit') + '" accesskey="s" />'
+				+ '<input type="submit" value="' + WCF.Language.get('wcf.bbcode.xattach.insert') + '" accesskey="s" />'
 			+ '</div>'
 		+ '</div>';
-			
+
 		return $template;
 	}
 });

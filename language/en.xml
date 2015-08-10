@@ -28,7 +28,14 @@
 		<item name="wcf.bbcode.proContra.list"><![CDATA[Pro & Contra List]]></item>
 		<item name="wcf.bbcode.proContra.oldSyntax"><![CDATA[Attention, you are using the old BBCode syntax.<br />
 The syntax has changed. For every new line in the list, use the prefix [+][-] or [.].]]></item>
+		<item name="wcf.bbcode.xattach"><![CDATA[Attachment with description]]></item>
+		<item name="wcf.bbcode.xattach.description"><![CDATA[Description]]></item>
 		<item name="wcf.bbcode.xattach.insert"><![CDATA[Insert with text]]></item>
+		<item name="wcf.bbcode.xattach.position"><![CDATA[Position]]></item>
+		<item name="wcf.bbcode.xattach.position.left"><![CDATA[Left]]></item>
+		<item name="wcf.bbcode.xattach.position.none"><![CDATA[None]]></item>
+		<item name="wcf.bbcode.xattach.position.right"><![CDATA[Right]]></item>
+		<item name="wcf.bbcode.xAttach.settings"><![CDATA[Settings]]></item>
 		<item name="wcf.bbcode.xattach.title"><![CDATA[Attachment (ID: {$xaID})]]></item>
 	</category>
 	
