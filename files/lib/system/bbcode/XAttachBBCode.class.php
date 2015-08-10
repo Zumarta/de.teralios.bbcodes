@@ -127,7 +127,6 @@ class XAttachBBCode extends AttachmentBBCode {
 			else {
 				$link = StringUtil::encodeHTML(LinkHandler::getInstance()->getLink('Attachment', array('object' => $attachment)));
 				$type = self::getType($attachment);
-				$title .= ' Downloads:'.StringUtil::formatInteger($attachment->downloads);
 			}
 		}
 		// fallback
