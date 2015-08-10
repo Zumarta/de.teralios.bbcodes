@@ -113,7 +113,7 @@ Tera.IconBBCode = Class.extend({
 	// search icons in icon array and replace old icons.
 	search: function(event) {
 		var icons = [];
-		var $searchString = $('#iconBBCodeSearch').val();
+		var $searchString = $('#iconBBCodeSearch').val().toLowerCase();
 		
 		// search string is empty
 		if ($searchString === null || $searchString == '') {
@@ -121,7 +121,7 @@ Tera.IconBBCode = Class.extend({
 		}
 		else {
 			for (var index in this._icons) {
-				var iconName = this._icons[index];
+				var iconName = this._icons[index].toLowerCase();
 				
 				// icon name have the same lenght or is longer as search string
 				if (iconName.length >= $searchString.length) {
