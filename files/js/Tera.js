@@ -200,7 +200,7 @@ Tera.IconBBCode = Class.extend({
 						
 						$template += '<dt><label for="iconBBCodeSize">' + WCF.Language.get('wcf.bbcode.icon.size') + '</label></dt>'
 						+ '<dd>'
-							+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="24"></option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
+							+ '<select id="iconBBCodeSize"><option value="16">16</option><option value="24">24</option><option value="32" selected="selected">32</option><option value="48">48</option><option value="96">96</option></select>'
 						+ '</dd>'
 						+ '<dt><label for="iconBBCodePosition">' + WCF.Language.get('wcf.bbcode.icon.position') + '</label></dt>'
 						+ '<dd>'
