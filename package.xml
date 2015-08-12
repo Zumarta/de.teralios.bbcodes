@@ -22,10 +22,10 @@
 		<excludedpackage version="*">de.codequake.bbcode.icon</excludedpackage>
 	</excludedpackages>
 	
-	<!-- <optionalpackages>
+	<optionalpackages>
 		<optionalpackage file="optionals/de.teralios.bbcodes.blog.tar">de.teralios.bbcodes.blog</optionalpackage>
 		<optionalpackage file="optionals/de.teralios.bbcodes.wbb.tar">de.teralios.bbcodes.wbb</optionalpackage>
-	</optionalpackages> -->
+	</optionalpackages>
 
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>
