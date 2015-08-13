@@ -341,7 +341,7 @@ Tera.xAttach = Class.extend({
 				+ '</dl>'
 			+ '</fieldset>'
 			+ '<div class="formSubmit">'
-				+ '<input type="submit" value="' + WCF.Language.get('wcf.bbcode.xattach.insert') + '" accesskey="s" />'
+				+ '<input type="submit" value="' + WCF.Language.get('wcf.bbcode.xattach.insert') + '" />'
 			+ '</div>'
 		+ '</div>';
 

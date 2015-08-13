@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
-		<version>2.2.0</version>
-		<date>2015-08-10</date>
+		<version>2.2.1</version>
+		<date>2015-08-13</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -56,9 +56,8 @@
 		<instruction type="eventListener">eventListener.xml</instruction>
 	</instructions>
 	
-	<instructions type="update" fromversion="2.2.0 Beta 3">
+	<instructions type="update" fromversion="2.2.0">
 		<instruction type="file">files.tar</instruction>
-		<instruction type="language">language/*.xml</instruction>
 		<instruction type="template">templates.tar</instruction>
 	</instructions>
 </package>
