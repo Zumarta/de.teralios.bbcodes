@@ -59,5 +59,6 @@
 	<instructions type="update" fromversion="2.2.0">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
+		<instruction type="bbcode">bbcode.xml</instruction>
 	</instructions>
 </package>

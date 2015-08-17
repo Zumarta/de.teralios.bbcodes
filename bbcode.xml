@@ -78,10 +78,10 @@
 					<validationpattern>^[a-zA-Z0-9-]+$</validationpattern>
 				</attribute>
 				<attribute name="1">
-					<validationpattern>^(left|right|none|0|16|24|32|48|96)$</validationpattern>
+					<validationpattern>^(left|right|none|16|24|32|48|96)$</validationpattern>
 				</attribute>
 				<attribute name="2">
-					<validationpattern>^(left|right|none|0|16|24|32|48|96)$</validationpattern>
+					<validationpattern>^(left|right|none|16|24|32|48|96)$</validationpattern>
 				</attribute>
 			</attributes>
 			<allowedchildren>none</allowedchildren>
