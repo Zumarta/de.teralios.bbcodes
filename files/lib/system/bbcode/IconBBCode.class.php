@@ -32,7 +32,7 @@ class IconBBCode extends AbstractBBCode {
 		// map attributes
 		$this->mapAttributes(ArrayUtil::trim($openingTag['attributes']));
 		
-		return '<span class="teraIcon'.(($this->size > 0) ? ' icon'.$this->size : '').' '.$icon.(($this->float != 'none') ? ' iconBB'.ucfirst($this->float) : '').'"></span>';
+		return '<span class="icon'.(($this->size > 0) ? ' icon'.$this->size : '').' '.$icon.(($this->float != 'none') ? ' iconBB'.ucfirst($this->float) : '').' iconBBCode"></span>';
 	}
 	
 	/**
