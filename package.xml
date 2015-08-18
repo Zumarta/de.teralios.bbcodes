@@ -4,7 +4,7 @@
 		<packagename>Teralios' BBCodes</packagename>
 		<packagedescription>Teralios' BBCodes</packagedescription>
 		<version>2.2.1</version>
-		<date>2015-08-18</date>
+		<date>2015-08-19</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -22,11 +22,6 @@
 		<excludedpackage version="*">de.codequake.bbcode.icon</excludedpackage>
 	</excludedpackages>
 	
-	<optionalpackages>
-		<optionalpackage file="optionals/de.teralios.bbcodes.blog.tar">de.teralios.bbcodes.blog</optionalpackage>
-		<optionalpackage file="optionals/de.teralios.bbcodes.wbb.tar">de.teralios.bbcodes.wbb</optionalpackage>
-	</optionalpackages>
-
 	<instructions type="install">
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>

@@ -36,18 +36,4 @@
 			<environment>user</environment>
 		</templatelistener>
 	</import>
-	
-	<delete>
-		<templatelistener name="xattachButton">
-			<templatename>messageFormTabsInline</templatename>
-			<eventname>tabMenuContents</eventname>
-			<environment>user</environment>
-		</templatelistener>
-		
-		<templatelistener name="xattachButton">
-			<templatename>messageFormTabs</templatename>
-			<eventname>tabMenuContents</eventname>
-			<environment>user</environment>
-		</templatelistener>
-	</delete>
 </data>
