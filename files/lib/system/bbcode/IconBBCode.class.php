@@ -25,6 +25,11 @@ class IconBBCode extends AbstractBBCode {
 		
 		// first attribut is icon!
 		$icon = (isset($openingTag['attributes'][0])) ? StringUtil::trim($openingTag['attributes'][0]) : 'fa-rebel'; // Yes, Rebel icon as default icon! ;)
+		if (substr($icon, 0, 3) != 'fa-') {
+			$icon = 'fa-'.$icon;
+		}
+		
+		// map attributes
 		$this->mapAttributes(ArrayUtil::trim($openingTag['attributes']));
 		
 		return '<span class="teraIcon'.(($this->size > 0) ? ' icon'.$this->size : '').' '.$icon.(($this->float != 'none') ? ' iconBB'.ucfirst($this->float) : '').'"></span>';
