@@ -11,10 +11,12 @@ if (!Tera) {
 	var Tera = { };
 }
 
+Tera.BBCode = { };
+
 /**
  * Adds directory to place holder.
  */
-Tera.Directory = Class.extend({
+Tera.BBCode.Directory = Class.extend({
 	_id: '',
 	_addClass: '',
 	
@@ -44,7 +46,7 @@ Tera.Directory = Class.extend({
 });
 
 // icon bbcode insert
-Tera.IconBBCode = Class.extend({
+Tera.BBCode.Icon = Class.extend({
 	// contains icons for dialog.
 	_icons: null,
 	
@@ -226,7 +228,7 @@ Tera.IconBBCode = Class.extend({
 });
 
 // add xattach insert button to attachment list.
-Tera.xAttachBBCode = Class.extend({
+Tera.BBCode.xAttach = Class.extend({
 	_attachID: 0,
 	_wysiwygContainerID: '',
 	_addedButton: [],

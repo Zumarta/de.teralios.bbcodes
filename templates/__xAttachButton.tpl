@@ -13,7 +13,7 @@
 					'wcf.bbcode.xattach.position.right': '{lang}wcf.bbcode.xattach.position.right{/lang}',
 					'wcf.bbcode.xAttach.settings': '{lang}wcf.bbcode.xAttach.settings{/lang}'
 				});
-				new Tera.xAttachBBCode('{@$wysiwygContainerID}');
+				new Tera.BBCode.xAttach('{@$wysiwygContainerID}');
 			});
 			//]]>
 		</script>

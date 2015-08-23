@@ -20,7 +20,7 @@ if ($.browser.redactor) {
 			WCF.System.Event.addListener('com.woltlab.wcf.redactor', 'insertBBCode_icon_' + $editorName, function(data) {
 				data.cancel = true;
 				if ($iconBBCode === null) {
-					$iconBBCode = new Tera.IconBBCode(data.redactor, $iconJSON, {if "color"|allowedBBCode}true{else}false{/if});
+					$iconBBCode = new Tera.BBCode.Icon(data.redactor, $iconJSON, {if "color"|allowedBBCode}true{else}false{/if});
 				}
 				$iconBBCode.open();
 			});

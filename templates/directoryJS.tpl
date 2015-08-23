@@ -1,5 +1,3 @@
-{if $teraDirectoryID|isset}{assign var='directoryID' value=$teraDirectoryID}{/if}
-{if $teraDirectoryType|isset}{assign var='directoryType' value=$teraDirectoryType}{/if}
 {if $directory|isset && $directory->hasEntries() || $directoryJSCall|isset == false}
 	<div id="directoryParse" class="directoryHidden">
 		{if $directoryType|isset && $directoryType == 'sidebar'}
@@ -13,7 +11,7 @@
 		$(function(){
 			var id = '{if $directoryID|isset}{$directoryID}{else}#directoryPlaceholder{/if}';
 			var addClass = '{if $directoryAddClass|isset}{$directoryAddClass}{/if}';
-			new Tera.Directory(id, addClass);
+			new Tera.BBCode.Directory(id, addClass);
 		});
 		//]]>
 	</script>
