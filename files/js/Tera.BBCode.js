@@ -7,7 +7,9 @@
  * @license		Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) <http://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package		de.teralios.tjs.bbcodes
  */
-var Tera = { };
+if (!Tera) {
+	var Tera = { };
+}
 
 /**
  * Adds directory to place holder.
@@ -224,7 +226,7 @@ Tera.IconBBCode = Class.extend({
 });
 
 // add xattach insert button to attachment list.
-Tera.xAttach = Class.extend({
+Tera.xAttachBBCode = Class.extend({
 	_attachID: 0,
 	_wysiwygContainerID: '',
 	_addedButton: [],

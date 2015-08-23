@@ -1,1 +1,1 @@
-uglifyjs Tera.js -o Tera.min.js
+uglifyjs Tera.BBCode.js -o Tera.BBCode.min.js
