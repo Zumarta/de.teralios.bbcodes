@@ -43,4 +43,4 @@ For use a definition list in a bbcode text, use this syntax
 ```
 
 ##Licence
-This package is free software and puplished under the Creative Commons Attribution-ShareAlike 4.0 International Public License
+This package is free software and published under the Creative Commons Attribution-ShareAlike 4.0 International Public License
